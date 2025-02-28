@@ -3,8 +3,25 @@
 */
 
 // SOLUTION: USING HASHMAP METHOD
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
+    let map = new Map()
 
+    for(let i=0; i<nums.length; i++){
+        // target = nums[i]+ pairvalue
+        let pairvalue = target - nums[i]
 
+        if(map.has(pairvalue)){
+            return [map.get(pairvalue),i]
+        }
+        map.set(nums[i],i)
+    }
+
+};
 
 
 /**************************************** TWO SUM- II INPUT ARRAY IS SORTED  ********************************

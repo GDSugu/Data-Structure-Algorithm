@@ -1,5 +1,5 @@
 /*************************************** FIND ALL PERMUTATION  ***************************
- * Leetcode 1: https://leetcode.com/problems/next-permutation/description/
+ * Leetcode 1: https://leetcode.com/problems/permutations/description/
 */
 
 // SOLUTION 1: BACKTRACKING AND RECURSION (SWAPPING AND UNDO RECURSION)
@@ -41,7 +41,7 @@ var permute = function(nums) {
             return;
         }
 
-        for(let i=0; i<nums.length; i++){
+        for(let i=0; i<n; i++){
             generate(n-1);
 
             if(n % 2 === 0){
