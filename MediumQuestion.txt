@@ -1,0 +1,43 @@
+/**************************************** BEST TO BUY AND SELL THE STOCK  ******************
+ * Leetcode 1: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
+*/
+
+/**************************************** MAXIMUM MATRIX SUM  ******************************
+ * Leetcode 2: https://leetcode.com/problems/maximum-matrix-sum/description/
+*/
+
+/**************************************** COIN CHANGE PROBLEM  *****************************
+ * Leetcode 3: https://leetcode.com/problems/coin-change/
+*/
+
+/**************************************** LONGEST INCREASING SUBSEQUENCE  *******************
+ * Leetcode 4: https://leetcode.com/problems/longest-increasing-subsequence/
+*/
+
+/*************************************** FIND ALL PERMUTATION  ******************************
+ * Leetcode 5: https://leetcode.com/problems/permutations/description/
+*/
+
+/*************************************** NEXT PERMUTATION  ***********************************
+ * Leetcode 6: https://leetcode.com/problems/next-permutation/description/
+*/
+
+/*************************************** TWO SUM- II INPUT ARRAY IS SORTED  *******************
+ * Leetcode 7: https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
+*/
+
+/*************************************** House Robber - I *************************************
+ * Leetcode 8: https://leetcode.com/problems/house-robber/description/
+*/
+
+/**************************************** House Robber - II ************************************
+ * Leetcode 9: https://leetcode.com/problems/house-robber-ii/description/
+*/
+
+/************************************** GRID PUZZLE-I (UNIQUE PATH)*****************************
+ * Leetcode 10: https://leetcode.com/problems/unique-paths/description/
+*/
+
+/************************************** GRID PUZZLE-II (UNIQUE PATH) ***************************
+ * Leetcode 11:https://leetcode.com/problems/unique-paths-ii/description/
+*/
