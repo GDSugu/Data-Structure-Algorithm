@@ -132,3 +132,66 @@ var maxProfit = function(prices) {
     return secondProfit; // Max profit after at most two transactions
 };
 
+
+/****************************************  SLIDING WINDOW MAXIMUM  ********************************
+ * LEETCODE 4: https://leetcode.com/problems/sliding-window-maximum/
+*/
+
+
+// SOLUTION 2: BRUTE FORCE APPROACH -> O(n*k)
+
+var maxSlidingWindow = function(nums, k) {
+    let result = [];
+
+    // Iterate over all possible starting positions of the sliding window
+    for (let i = 0; i <= nums.length - k; i++) {
+        let maxVal = nums[i]; // Assume the first element of the window is the max
+        
+        // Iterate over the next k elements to find the max in this window
+        for (let j = i; j < i + k; j++) {
+            maxVal = Math.max(maxVal, nums[j]);
+        }
+
+        result.push(maxVal); // Store the maximum of the current window
+    }
+
+    return result;
+};
+
+// Example Usage:
+console.log(maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3));  
+// Output: [3, 3, 5, 5, 6, 7]
+
+// SOLUTION 2: DEQUE (DOUBLE ENDED QUEUE) -> O(n)
+
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number[]}
+ */
+var maxSlidingWindow = function(nums, k) {
+    let deque = [];  // Store indices
+    let result = [];
+
+    for (let i = 0; i < nums.length; i++) {
+        // Remove elements out of the current window
+        if (deque.length > 0 && deque[0] < i - k + 1) {
+            deque.shift();
+        }
+
+        // Remove all elements smaller than the current one
+        while (deque.length > 0 && nums[deque[deque.length - 1]] < nums[i]) {
+            deque.pop();
+        }
+
+        // Add current element index to deque
+        deque.push(i);
+
+        // Store the maximum for the window (only when i >= k - 1)
+        if (i >= k - 1) {
+            result.push(nums[deque[0]]);
+        }
+    }
+
+    return result;
+};
