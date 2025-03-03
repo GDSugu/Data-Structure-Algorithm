@@ -79,112 +79,56 @@ var largestRectangleArea = function(heights) {
     return maxArea;
 };
 
-
-
-/**************************************** SUDOKU SOLVER  ********************************
- * LEETCODE 2: https://leetcode.com/problems/sudoku-solver/description/
+/****************************************  SUPER EGG DROP  ********************************
+ * LEETCODE 4: https://leetcode.com/problems/super-egg-drop/
 */
 
-// SOLUTION:
+// SOLUTION: DYNAMIC PROGRAMMING
 
-/**************************************** SUDOKU SOLVER  ********************************
- * LEETCODE 2: https://leetcode.com/problems/sudoku-solver/description/
+/**
+ * @param {number} k
+ * @param {number} n
+ * @return {number}
+ */
+var superEggDrop = function(k, n) {
+    let dp = new Array(k + 1).fill(0);
+    let moves = 0;
+
+    while (dp[k] < n) {  // Keep increasing moves until we can check all n floors
+        moves++;
+        for (let egg = k; egg > 0; egg--) {
+            dp[egg] = dp[egg - 1] + dp[egg] + 1;
+        }
+    }
+
+    return moves;  // Return after the loop completes
+};
+
+
+/****************************************  BEST TIME TO BUY AND SELL STOCK  ********************************
+ * LEETCODE 4: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/
 */
 
-// SOLUTION:
+// SOLUTION: 
 
-/**************************************** SUDOKU SOLVER  ********************************
- * LEETCODE 2: https://leetcode.com/problems/sudoku-solver/description/
-*/
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+var maxProfit = function(prices) {
+    let firstBuy = Infinity;
+    let firstProfit = 0;
+    let secondBuy = Infinity;
+    let secondProfit = 0;
 
-// SOLUTION:
+    for (let price of prices) {
+        firstBuy = Math.min(firstBuy, price);                 // Min price to buy first stock
+        firstProfit = Math.max(firstProfit, price - firstBuy); // Max profit from first sell
+        
+        secondBuy = Math.min(secondBuy, price - firstProfit);  // Min cost to buy second stock
+        secondProfit = Math.max(secondProfit, price - secondBuy); // Max profit from second sell
+    }
 
-/**************************************** SUDOKU SOLVER  ********************************
- * LEETCODE 2: https://leetcode.com/problems/sudoku-solver/description/
-*/
+    return secondProfit; // Max profit after at most two transactions
+};
 
-// SOLUTION:
-
-/**************************************** SUDOKU SOLVER  ********************************
- * LEETCODE 2: https://leetcode.com/problems/sudoku-solver/description/
-*/
-
-// SOLUTION:
-
-/**************************************** SUDOKU SOLVER  ********************************
- * LEETCODE 2: https://leetcode.com/problems/sudoku-solver/description/
-*/
-
-// SOLUTION:
-
-/**************************************** SUDOKU SOLVER  ********************************
- * LEETCODE 2: https://leetcode.com/problems/sudoku-solver/description/
-*/
-
-// SOLUTION:
-
-/**************************************** SUDOKU SOLVER  ********************************
- * LEETCODE 2: https://leetcode.com/problems/sudoku-solver/description/
-*/
-
-// SOLUTION:
-
-/**************************************** SUDOKU SOLVER  ********************************
- * LEETCODE 2: https://leetcode.com/problems/sudoku-solver/description/
-*/
-
-// SOLUTION:
-
-/**************************************** SUDOKU SOLVER  ********************************
- * LEETCODE 2: https://leetcode.com/problems/sudoku-solver/description/
-*/
-
-// SOLUTION:
-
-/**************************************** SUDOKU SOLVER  ********************************
- * LEETCODE 2: https://leetcode.com/problems/sudoku-solver/description/
-*/
-
-// SOLUTION:
-
-/**************************************** SUDOKU SOLVER  ********************************
- * LEETCODE 2: https://leetcode.com/problems/sudoku-solver/description/
-*/
-
-// SOLUTION:
-
-/**************************************** SUDOKU SOLVER  ********************************
- * LEETCODE 2: https://leetcode.com/problems/sudoku-solver/description/
-*/
-
-// SOLUTION:
-
-/**************************************** SUDOKU SOLVER  ********************************
- * LEETCODE 2: https://leetcode.com/problems/sudoku-solver/description/
-*/
-
-// SOLUTION:
-
-/**************************************** SUDOKU SOLVER  ********************************
- * LEETCODE 2: https://leetcode.com/problems/sudoku-solver/description/
-*/
-
-// SOLUTION:
-
-/**************************************** SUDOKU SOLVER  ********************************
- * LEETCODE 2: https://leetcode.com/problems/sudoku-solver/description/
-*/
-
-// SOLUTION:
-
-/**************************************** SUDOKU SOLVER  ********************************
- * LEETCODE 2: https://leetcode.com/problems/sudoku-solver/description/
-*/
-
-// SOLUTION:
-
-/**************************************** SUDOKU SOLVER  ********************************
- * LEETCODE 2: https://leetcode.com/problems/sudoku-solver/description/
-*/
-
-// SOLUTION:
