@@ -186,3 +186,30 @@ var fourSum = function(nums, target) {
     
 };
 
+/************************************** REMOVE DUPLICATES FROM SORTED LIST II *************************************************
+ * Leetcode 13: https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/description/
+*/
+
+// SOLUTION: 
+var deleteDuplicates = function(head) {
+    let dummy = new ListNode(0, head); // Dummy node to handle edge cases
+
+    let prev = dummy;
+    let current = head;
+
+    while (current) {
+        while (current.next && current.val === current.next.val) {
+            current = current.next; // Skip all duplicates
+        }
+
+        if (prev.next === current) {
+            prev = prev.next; // Move prev forward only if no duplicates were found
+        } else {
+            prev.next = current.next; // Remove duplicates by linking prev to current.next
+        }
+
+        current = current.next; // Move to the next node
+    }
+
+    return dummy.next;
+};

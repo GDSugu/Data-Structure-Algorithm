@@ -1,4 +1,7 @@
-##################################  04-03-2025 - Wednesday #######################################
+            ################################################################################
+            #                     🌟  04 | March | 2025  🌟                               #
+            #                          📅  Wednesday 📅                                   #
+            ################################################################################
 
 /************************************** THREE SUM *************************************************
  * Leetcode: https://leetcode.com/problems/3sum/description/
@@ -16,16 +19,16 @@ Status: Completed
  * Leetcode: https://leetcode.com/problems/next-greater-element-ii/
 */
 
-Status:
+Status: 
 
 /************************************** REMOVE DUPLICATES FROM SORTED LIST II *************************************************
  * Leetcode: https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/description/
 */
 
-Status:
+Status: Completed
 
 /************************************** REVERSE LINKED LIST II *************************************************
  * Leetcode: https://leetcode.com/problems/reverse-linked-list-ii/
 */
 
-Status:
+Status: 
