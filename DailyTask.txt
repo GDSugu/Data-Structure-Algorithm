@@ -19,7 +19,7 @@ Status: Completed
  * Leetcode: https://leetcode.com/problems/next-greater-element-ii/
 */
 
-Status: 
+Status: completed
 
 /************************************** REMOVE DUPLICATES FROM SORTED LIST II *************************************************
  * Leetcode: https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/description/
