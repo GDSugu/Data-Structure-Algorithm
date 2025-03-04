@@ -41,3 +41,10 @@
 /************************************** GRID PUZZLE-II (UNIQUE PATH) ***************************
  * Leetcode 11:https://leetcode.com/problems/unique-paths-ii/description/
 */
+
+/************************************** THREE SUM ***************************
+ * Leetcode 12:https://leetcode.com/problems/3sum/description/
+*/
+
+
+
