@@ -62,4 +62,11 @@
  * Leetcode 16: https://leetcode.com/problems/search-in-rotated-sorted-array/description/
 */
 
+/************************************** SET MATRIX ZERO *************************************************
+ * Leetcode 17: https://leetcode.com/problems/set-matrix-zeroes/description/
+*/
+
+/************************************** LONGEST SUBSTRING WITHOUT REPEATING CHARACTER *************************************************
+ * Leetcode 18: https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
+*/
 

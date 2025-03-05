@@ -280,5 +280,106 @@ var search = function(nums, target) {
     return -1; // Target not found
 };
 
+/************************************** SET MATRIX ZERO *************************************************
+ * Leetcode 3: https://leetcode.com/problems/set-matrix-zeroes/description/
+*/
 
+// SOLUTION: MATRIX MARKERS
+
+/**
+ * @param {number[][]} matrix
+ * @return {void} Do not return anything, modify matrix in-place instead.
+ */
+var setZeroes = function(matrix) {
+    let m = matrix.length;
+    let n = matrix[0].length;
+
+    let firstRowZero = false;
+    let firstColumnZero = false;
+
+    // Check if first row contains zero
+    for(let j=0; j<n; j++){
+        if(matrix[0][j] === 0){
+            firstRowZero = true;
+        }
+    }
+
+    // Check if first column contains zero
+    for(let i=0; i<m; i++){
+        if(matrix[i][0] === 0){
+            firstColumnZero = true;
+        }
+    }
+
+    // Mark rows and columns
+    for(let i=1; i<m; i++){  // ✅ Added "let"
+        for(let j=1; j<n; j++){
+            if(matrix[i][j] === 0){
+                matrix[i][0] = 0;
+                matrix[0][j] = 0;
+            }
+        }
+    }
+
+    // Set matrix elements based on markers
+    for(let i=1; i<m; i++){
+        for(let j=1; j<n; j++){
+            if(matrix[0][j] === 0 || matrix[i][0] === 0){
+                matrix[i][j] = 0;
+            }
+        }
+    }
+
+    // Handle first row separately
+    if(firstRowZero){
+        for(let j=0; j<n; j++){
+            matrix[0][j] = 0;  // ✅ Fixed "=" instead of "==="
+        }
+    }
+
+    // Handle first column separately
+    if(firstColumnZero){
+        for(let i=0; i<m; i++){
+            matrix[i][0] = 0;  // ✅ Fixed "=" instead of "==="
+        }
+    }
+};
+
+/************************************** LONGEST SUBSTRING WITHOUT REPEATING CHARACTER *************************************************
+ * Leetcode 18: https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
+*/
+
+// SOLUTION: HASHMAP WITH SLIDING WINDOW -> O(n)
+
+function longestSubstringWithNoRepeatingChars(s) {
+    let left = 0; // Left pointer
+    let maxLength = 0; // Maximum length of substring without repeating characters
+    let charCount = new Map(); // Map to store character counts
+    
+    // Traverse the string with the right pointer
+    for (let right = 0; right < s.length; right++) {
+        let rightChar = s[right];
+
+        // Increment count of the character in the map
+        charCount.set(rightChar, (charCount.get(rightChar) || 0) + 1);
+
+        // If the character count exceeds 1, shrink the window from the left
+        while (charCount.get(rightChar) > 1) {
+            let leftChar = s[left];
+            charCount.set(leftChar, charCount.get(leftChar) - 1);
+            
+            // If count becomes 0, remove the character from the map
+            if (charCount.get(leftChar) === 0) {
+                charCount.delete(leftChar);
+            }
+            
+            left++; // Move the left pointer to shrink the window
+        }
+
+        // Update the maxLength after adjusting the window
+        maxLength = Math.max(maxLength, right - left + 1);
+    }
+
+    return maxLength; // ✅ Return the result instead of just logging it
+}
 
