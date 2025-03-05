@@ -70,3 +70,9 @@
  * Leetcode 18: https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
 */
 
+/************************************** MAXIMUM NUMBER OF VOWELS IN A SUBSTRING OF A GIVEN LENGTH *************************************************
+ * Leetcode 19: https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/
+*/
+
+
+

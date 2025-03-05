@@ -383,3 +383,35 @@ function longestSubstringWithNoRepeatingChars(s) {
     return maxLength; // ✅ Return the result instead of just logging it
 }
 
+/************************************** MAXIMUM NUMBER OF VOWELS IN A SUBSTRING OF A GIVEN LENGTH *************************************************
+ * Leetcode 4: https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/
+*/
+
+// SOLUTION: SLIDING WINDOW -> O(n)
+
+var maxVowels = function(s, k) {
+    let vowels = new Set(['a', 'e', 'i', 'o', 'u']); // Set for quick lookup
+    let maxVowelCount = 0, currentVowelCount = 0;
+    let left = 0;
+
+    for (let right = 0; right < s.length; right++) {
+        // Add right character to the window
+        if (vowels.has(s[right])) {
+            currentVowelCount++;
+        }
+
+        // If window size exceeds k, remove left character
+        if (right - left + 1 > k) {
+            if (vowels.has(s[left])) {
+                currentVowelCount--;
+            }
+            left++; // Shrink the window
+        }
+
+        // Update max vowels found in any window
+        maxVowelCount = Math.max(maxVowelCount, currentVowelCount);
+    }
+
+    return maxVowelCount;
+};
+

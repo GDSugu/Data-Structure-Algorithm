@@ -41,7 +41,7 @@ Status:
             ################################################################################
 
 
-/************************************** SERACH IN ROTATED SORTED ARRAY *************************************************
+/************************************** SEARCH IN ROTATED SORTED ARRAY *************************************************
  * Leetcode 1: https://leetcode.com/problems/search-in-rotated-sorted-array/description/
 */
 
@@ -51,18 +51,18 @@ Status: completed
  * Leetcode 2: https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
 */
 
-Status: 
+Status: completed
 
 /************************************** SET MATRIX ZERO *************************************************
  * Leetcode 3: https://leetcode.com/problems/set-matrix-zeroes/description/
 */
 
-Status: 
+Status: completed
 
 /************************************** MAXIMUM NUMBER OF VOWELS IN A SUBSTRING OF A GIVEN LENGTH *************************************************
  * Leetcode 4: https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/
 */
 
-Status: 
+Status: completed
 
 
