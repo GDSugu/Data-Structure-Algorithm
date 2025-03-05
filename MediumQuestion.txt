@@ -57,3 +57,9 @@
 /************************************** NEXT GREATER ELEMENT II *************************************************
  * Leetcode 15: https://leetcode.com/problems/next-greater-element-ii/
 */
+
+/************************************** SERACH IN ROTATED SORTED ARRAY *************************************************
+ * Leetcode 16: https://leetcode.com/problems/search-in-rotated-sorted-array/description/
+*/
+
+
