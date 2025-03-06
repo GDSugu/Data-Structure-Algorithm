@@ -280,5 +280,42 @@ var search = function(nums, target) {
     return -1; // Target not found
 };
 
+/************************************** GENERATE PARENTHESIS *************************************************
+ * Leetcode 1: https://leetcode.com/problems/generate-parentheses/
+*/
+
+// SOLUTION: BACKTRACKING
+
+/**
+ * @param {number} n
+ * @return {string[]}
+ */
+var generateParenthesis = function(n) {
+    const result = [];
+
+    // Helper function to perform backtracking
+    function backtrack(current, openCount, closeCount) {
+        // Base case: If we've used n opening and n closing parentheses, add the result
+        if (openCount === n && closeCount === n) {
+            result.push(current);
+            return;
+        }
+        
+        // Add opening parenthesis if we can
+        if (openCount < n) {
+            backtrack(current + '(', openCount + 1, closeCount);
+        }
+        
+        // Add closing parenthesis if we can
+        if (closeCount < openCount) {
+            backtrack(current + ')', openCount, closeCount + 1);
+        }
+    }
+    
+    // Start the backtracking process with an empty string
+    backtrack("", 0, 0);
+    
+    return result;
+};
 
 
