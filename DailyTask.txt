@@ -41,7 +41,7 @@ Status:
             ################################################################################
 
 
-/************************************** SERACH IN ROTATED SORTED ARRAY *************************************************
+/************************************** SEARCH IN ROTATED SORTED ARRAY *************************************************
  * Leetcode 1: https://leetcode.com/problems/search-in-rotated-sorted-array/description/
 */
 
