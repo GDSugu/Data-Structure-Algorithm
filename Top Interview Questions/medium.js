@@ -1,3 +1,27 @@
+/**************************************** BEST TO BUY AND SELL THE STOCK  ******************
+ * Leetcode 1: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
+*/
+
+// SOLUTION: GREEDY ALGORITHM -> O(n)
+
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+var maxProfit = function(prices) {
+    let maxProfit = 0;
+
+    for(let i=0; i<prices.length; i++){
+        if(prices[i] < prices[i+1] ){
+            currentProfit = prices[i+1] - prices[i];
+            maxProfit+= currentProfit;
+        }
+    }
+
+    return maxProfit;
+};
+
+
 /****************************************  MAXIMUM MATRIX SUM  ********************************
  * LEETCODE 1: https://leetcode.com/problems/maximum-matrix-sum/description/
 */

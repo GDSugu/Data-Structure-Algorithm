@@ -61,16 +61,6 @@ class Solution {
     }
   }
   
-  // Example Usage
-  let solution = new Solution();
-  console.log(solution.longestUniqueSubstr("abcabcbb")); // Output: 3 ("abc")
-  console.log(solution.longestUniqueSubstr("bbbbb")); // Output: 1 ("b")
-  console.log(solution.longestUniqueSubstr("pwwkew")); // Output: 3 ("wke")
-  
-
-
-
-
 /************************************** LENGTH OF LONGEST SUBSTRING WITH NO REPEATED CHARACTER ********
 
 Length of longest substring with no repeated characters
