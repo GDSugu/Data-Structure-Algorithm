@@ -78,3 +78,10 @@
  * Leetcode 20: https://leetcode.com/problems/generate-parentheses/
 */
 
+/************************************** NUMBER OF ISLANDS*********************************
+ * Leetcode 21: https://leetcode.com/problems/rotting-oranges/
+*/
+
+/************************************** GROUP ANAGRAMS *********************************
+ * Leetcode 22: https://leetcode.com/problems/group-anagrams/
+*/

@@ -1,3 +1,5 @@
+https://leetcode.com/discuss/post/6519304/2025-hiring-prep-sprint-big-tech-intervi-w7nl/
+            
             ################################################################################
             #                     🌟  04 | March | 2025  🌟                               #
             #                          📅  Tuesday 📅                                     #
@@ -79,8 +81,8 @@ Status: completed
 Status:completed 
 
             ################################################################################
-            #                     🌟  06 | March | 2025  🌟                               #
-            #                          📅  Thursday 📅                                    #
+            #                     🌟  07 | March | 2025  🌟                               #
+            #                          📅  Friday 📅                                      #
             ################################################################################
 
 
@@ -90,3 +92,33 @@ Status:completed
 
 Status: completed
 
+            ################################################################################
+            #                     🌟  12 | March | 2025  🌟                               #
+            #                          📅  Friday 📅                                      #
+            ################################################################################
+
+
+/************************************** MAXIMUM NUMBER OF EVENTS THAT CAN BE ATTENDED *************************************************
+ * Leetcode 1: https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended/description/
+*/
+
+Status: 
+
+/************************************** ROTTEN ORANGE *************************************************
+ * Leetcode 2: https://leetcode.com/problems/rotting-oranges/
+*/
+
+Status: 
+
+/************************************** NUMBER OF ISLANDS*********************************
+ * Leetcode 3: https://leetcode.com/problems/rotting-oranges/
+*/
+
+Status: completed
+
+
+/************************************** GROUP ANAGRAMS *********************************
+ * Leetcode 3: https://leetcode.com/problems/group-anagrams/
+*/
+
+Status: completed

@@ -1,1 +1,4 @@
-1) 
+/************************************** MERGE THE STRINGS ALTERNATIVELY ***********************************************
+ * Leetcode 1:https://leetcode.com/problems/merge-strings-alternately/
+*/
+

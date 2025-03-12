@@ -477,3 +477,106 @@ var generateParenthesis = function(n) {
     
     return result;
 };
+
+
+/************************************** NUMBER OF ISLANDS*********************************
+ * Leetcode 3: https://leetcode.com/problems/rotting-oranges/
+*/
+
+// SOLUTION: O(m×n)
+/**
+ * @param {character[][]} grid
+ * @return {number}
+ */
+var numIslands = function(grid) {
+    let islandCount = 0;
+    let rows = grid.length;
+    let columns = grid[0].length;
+
+    function dfs(r, c) {
+        // Base case: Stop if out of bounds or water is found
+        if (r < 0 || c < 0 || r >= rows || c >= columns || grid[r][c] === "0") {
+            return;
+        }
+
+        // Mark current land as visited
+        grid[r][c] = "0";
+
+        // Explore all 4 directions (right, left, down, up)
+        dfs(r, c + 1); // Right
+        dfs(r, c - 1); // Left
+        dfs(r + 1, c); // Down
+        dfs(r - 1, c); // Up
+    }
+
+    // Iterate through the entire grid
+    for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < columns; c++) {
+            if (grid[r][c] === "1") {
+                // Found a new island, increase count
+                islandCount++;
+                dfs(r, c); // Start DFS to mark the whole island
+            }
+        }
+    }
+
+    return islandCount;
+};
+
+
+/************************************** GROUP ANAGRAMS *********************************
+ * Leetcode 22: https://leetcode.com/problems/group-anagrams/
+*/
+
+// SOLUTION: O(n * k log k)
+var groupAnagrams = function(strs) {
+    let map = new Map();
+
+    for (let word of strs) {
+        // Correctly split the word into characters
+        let sorted = word.split("").sort().join("");  
+
+        // If the sorted word is not in the map, initialize a list
+        if (!map.has(sorted)) {
+            map.set(sorted, []);
+        }
+
+        // Add the original word to the group
+        map.get(sorted).push(word);
+    }
+
+    // Convert the values of the map to an array
+    return Array.from(map.values());
+};
+
+// SOLUTION 2: O(nk)
+
+/**
+ * @param {string[]} strs
+ * @return {string[][]}
+ */
+var groupAnagrams = function(strs) {
+    let map = new Map();
+
+    for (let word of strs) {
+        // Step 1: Create a frequency array of 26 zeros (for 'a' to 'z')
+        let freq = new Array(26).fill(0);
+
+        // Step 2: Count occurrences of each character in the word
+        for (let char of word) {
+            freq[char.charCodeAt(0) - 'a'.charCodeAt(0)]++;
+        }
+
+        // Step 3: Convert frequency array to a key (string format)
+        let key = freq.join("#");  // Joining with '#' to avoid collisions
+
+        // Step 4: Store words in the map using this key
+        if (!map.has(key)) {
+            map.set(key, []);
+        }
+        map.get(key).push(word);
+    }
+
+    // Step 5: Convert map values to an array and return
+    return Array.from(map.values());
+};
