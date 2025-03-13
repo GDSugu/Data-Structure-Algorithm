@@ -85,3 +85,11 @@
 /************************************** GROUP ANAGRAMS *********************************
  * Leetcode 22: https://leetcode.com/problems/group-anagrams/
 */
+
+/************************************** MAXIMUM NUMBER OF EVENTS THAT CAN BE ATTENDED *************************************************
+ * Leetcode 23: https://leetcode.com/problems/unique-length-3-palindromic-subsequences/
+*/
+
+/************************************** UNIQUE LENGTH - 3 PALINDROMIC SUBSEQUENCE  *************************************************
+ * Leetcode 24: https://leetcode.com/problems/minimum-number-of-work-sessions-to-finish-the-tasks/description/
+*/

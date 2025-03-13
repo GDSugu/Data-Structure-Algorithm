@@ -94,7 +94,7 @@ Status: completed
 
             ################################################################################
             #                     🌟  12 | March | 2025  🌟                               #
-            #                          📅  Friday 📅                                      #
+            #                          📅  Wednesday 📅                                      #
             ################################################################################
 
 
@@ -122,3 +122,22 @@ Status: completed
 */
 
 Status: completed
+
+            ################################################################################
+            #                     🌟  13 | March | 2025  🌟                               #
+            #                          📅  Thursday 📅                                      #
+            ################################################################################
+
+
+/************************************** UNIQUE LENGTH - 3 PALINDROMIC SUBSEQUENCE  *************************************************
+ * Leetcode 1: https://leetcode.com/problems/unique-length-3-palindromic-subsequences/
+*/
+
+Status: completed
+
+/************************************** UNIQUE LENGTH - 3 PALINDROMIC SUBSEQUENCE  *************************************************
+ * Leetcode 1: https://leetcode.com/problems/minimum-number-of-work-sessions-to-finish-the-tasks/description/
+*/
+
+Status: 
+

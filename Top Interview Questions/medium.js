@@ -580,3 +580,103 @@ var groupAnagrams = function(strs) {
     // Step 5: Convert map values to an array and return
     return Array.from(map.values());
 };
+
+
+/************************************** MAXIMUM NUMBER OF EVENTS THAT CAN BE ATTENDED *************************************************
+ * Leetcode 1: https://leetcode.com/problems/unique-length-3-palindromic-subsequences/
+*/
+
+// SOLUTION:
+
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var countPalindromicSubsequence = function(s) {
+    let n = s.length;
+    let result = 0;
+
+    // Store unique characters seen so far on the left
+    let leftSet = new Set();
+
+    // Map to store the frequency of each character on the right
+    let rightCount = new Map();
+    for (let ch of s) {
+        rightCount.set(ch, (rightCount.get(ch) || 0) + 1);
+    }
+
+    // Set to track unique palindromes
+    let seenPalindromes = new Set();
+
+    // Iterate over the string, treating s[i] as the middle character
+    for (let i = 0; i < n; i++) {
+        let midChar = s[i];
+
+        // Remove current character from rightCount
+        if (rightCount.get(midChar) === 1) {
+            rightCount.delete(midChar);
+        } else {
+            rightCount.set(midChar, rightCount.get(midChar) - 1);
+        }
+
+        // Check all possible left and right characters
+        for (let leftChar of leftSet) {
+            if (rightCount.has(leftChar)) {
+                let palindrome = leftChar + midChar + leftChar;
+                seenPalindromes.add(palindrome);
+            }
+        }
+
+        // Add current character to leftSet
+        leftSet.add(midChar);
+    }
+
+    return seenPalindromes.size;
+};
+
+
+/************************************** UNIQUE LENGTH - 3 PALINDROMIC SUBSEQUENCE  *************************************************
+ * Leetcode 1: https://leetcode.com/problems/minimum-number-of-work-sessions-to-finish-the-tasks/description/
+*/
+
+// SOLUTION: BACKTRACKING 
+
+/**
+ * @param {number[]} tasks
+ * @param {number} sessionTime
+ * @return {number}
+ */
+function minSessions(tasks, sessionTime) {
+    tasks.sort((a, b) => b - a); // Sort tasks in descending order
+    let n = tasks.length;
+    let minSessions = Infinity;
+
+    function backtrack(index, sessions) {
+        if (sessions.length >= minSessions) {
+            return; // Prune if current sessions exceed the minimum found
+        }
+
+        if (index === n) {
+            minSessions = Math.min(minSessions, sessions.length);
+            return;
+        }
+
+        // Try to assign the current task to an existing session
+        for (let i = 0; i < sessions.length; i++) {
+            if (sessions[i] + tasks[index] <= sessionTime) {
+                sessions[i] += tasks[index];
+                backtrack(index + 1, sessions);
+                sessions[i] -= tasks[index]; // Backtrack
+            }
+        }
+
+        // Start a new session with the current task
+        sessions.push(tasks[index]);
+        backtrack(index + 1, sessions);
+        sessions.pop(); // Backtrack
+    }
+
+    backtrack(0, []);
+    return minSessions;
+}
+
