@@ -680,3 +680,43 @@ function minSessions(tasks, sessionTime) {
     return minSessions;
 }
 
+function distributeCookies(cookies, k) {
+    let minUnfairness = Infinity;
+
+    // Initialize the children array with zeros
+    const children = new Array(k).fill(0);
+
+    // Backtracking function
+    function backtrack(index) {
+        if (index === cookies.length) {
+            // All bags are assigned, calculate unfairness
+            const currentUnfairness = Math.max(...children);
+            minUnfairness = Math.min(minUnfairness, currentUnfairness);
+            return;
+        }
+
+        for (let i = 0; i < k; i++) {
+            // Assign the current bag to the ith child
+            children[i] += cookies[index];
+            // Prune if the current unfairness is already worse than the best found
+            if (children[i] < minUnfairness) {
+                backtrack(index + 1);
+            }
+            // Backtrack
+            children[i] -= cookies[index];
+        }
+    }
+
+    // Start the backtracking process
+    backtrack(0);
+    return minUnfairness;
+}
+
+// Example usage:
+const n = 4, k = 2;
+const cookies = [2,2,2,2];
+
+
+
+
+console.log(distributeCookies(cookies, k)); // Output: 7
