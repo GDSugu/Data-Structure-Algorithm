@@ -93,3 +93,7 @@
 /************************************** UNIQUE LENGTH - 3 PALINDROMIC SUBSEQUENCE  *************************************************
  * Leetcode 24: https://leetcode.com/problems/minimum-number-of-work-sessions-to-finish-the-tasks/description/
 */
+
+/************************************** SPIRAL MATRIX  *************************************************
+ * Leetcode 25: https://leetcode.com/problems/spiral-matrix/description/
+*/
