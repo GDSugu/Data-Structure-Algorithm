@@ -106,3 +106,31 @@ function numSubarrayProductLessThanK(nums, k) {
 }
 
 
+/************************************** COMBINATIONS  *************************************************
+ * Leetcode 4: https://leetcode.com/problems/combinations/
+*/
+
+// SOLUTIONS: BACKTRACKING AND RECURSION
+
+var combine = function(n, k) {
+    let result = [];
+
+    function backtrack(start, currentCombination) {
+        // Base case: if the current combination is of size k, add it to the result
+        if (currentCombination.length === k) {
+            result.push([...currentCombination]); // Make a copy of the combination
+            return;
+        }
+
+        // Explore all possible numbers from start to n
+        for (let i = start; i <= n; i++) {
+            currentCombination.push(i); // Add the current number to the combination
+            backtrack(i + 1, currentCombination); // Recursively explore further
+            currentCombination.pop(); // Backtrack: remove the last number
+        }
+    }
+
+    // Start the backtracking process
+    backtrack(1, []);
+    return result;
+};
