@@ -1,0 +1,35 @@
+/************************************** GROUP ANAGRAMS *********************************
+ * Leetcode 3: https://leetcode.com/problems/group-anagrams/
+*/
+
+// SOLUTION 2: O(nk)
+
+/**
+ * @param {string[]} strs
+ * @return {string[][]}
+ */
+var groupAnagrams = function(strs) {
+    let map = new Map();
+
+    for (let word of strs) {
+        // Step 1: Create a frequency array of 26 zeros (for 'a' to 'z')
+        let freq = new Array(26).fill(0);
+
+        // Step 2: Count occurrences of each character in the word
+        for (let char of word) {
+            freq[char.charCodeAt(0) - 'a'.charCodeAt(0)]++;
+        }
+
+        // Step 3: Convert frequency array to a key (string format)
+        let key = freq.join("#");  // Joining with '#' to avoid collisions
+
+        // Step 4: Store words in the map using this key
+        if (!map.has(key)) {
+            map.set(key, []);
+        }
+        map.get(key).push(word);
+    }
+
+    // Step 5: Convert map values to an array and return
+    return Array.from(map.values());
+};
