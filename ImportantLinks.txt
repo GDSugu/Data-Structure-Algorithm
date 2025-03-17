@@ -1,0 +1,117 @@
+Master Data Structures & Algorithms with These LeetCode Patterns!🚀
+
+Cracking coding interviews at Google, Amazon, Meta, Netflix, and Apple & top tech companies requires pattern-based problem-solving! Instead of solving random problems, focus on topic-wise patterns that appear frequently in interviews.
+
+💡 Here’s your Ultimate LeetCode Guide to DSA Patterns!
+🔹 Graph Algorithms – https://lnkd.in/eKCM3Fnm
+🔹 Binary Search – https://lnkd.in/ecdDvJVH
+🔹 Greedy Algorithms – https://lnkd.in/ejdhN2-g
+🔹 String Problems – https://lnkd.in/eWk-eGvv
+🔹 Dynamic Programming (DP) – https://lnkd.in/eUccKXyM
+🔹 Binary Search Patterns – https://lnkd.in/ejBmDhUw
+🔹 Sliding Window Patterns – https://lnkd.in/eE-Tr7gF
+🔹 Greedy Algorithm Patterns – https://lnkd.in/eeitFH5U
+🔹 Tree Traversal Techniques – https://lnkd.in/ev2AMvSs
+🔹 System Design – https://lnkd.in/ekGABk6Y
+🔹 Math & Number Theory – https://lnkd.in/e-77tW6C
+🔹 Bit Manipulation – https://lnkd.in/eEYFqpKg
+
+🔥 Why Learn DSA?
+✅ Helps in cracking coding interviews
+✅ Enhances problem-solving skills
+✅ Prepares you for competitive programming
+✅ Essential for Software Development, AI & ML
+
+💡 Pro Tip: Focus on patterns, not just problems!
+
+
+
+📌 Best Resources to Follow
+📍 Arrays, Strings, Hashing → Neetcode 150, Striver’s SDE Sheet
+📍 Recursion & Backtracking → Striver’s Sheet + LeetCode Top 100
+📍 Stacks & Queues → GFG, LeetCode problems
+📍 Linked Lists → LeetCode 75, FAANG problems
+📍 Trees & BST → LeetCode + Neetcode 150
+📍 Graphs → LeetCode Graph Series + Striver’s Graph Playlist
+📍 Dynamic Programming → Striver’s DP Series, LeetCode DP Pattern
+
+
+
+I wish I had a cheat sheet like this when I was prepping for coding interviews
+
+Trust me, it would’ve saved me so much time. But now, I’m sharing it with you.
+
+Here’s the full breakdown:
+
+𝟭. 𝗗𝘆𝗻𝗮𝗺𝗶𝗰 𝗣𝗿𝗼𝗴𝗿𝗮𝗺𝗺𝗶𝗻𝗴
+ - https://lnkd.in/dBHKz3MH
+ - https://lnkd.in/dM9eaqXN
+ - https://lnkd.in/dC5gsUhG
+ - https://lnkd.in/dMXWrbqW 
+
+𝟮. 𝗟𝗶𝗻𝗸𝗲𝗱 𝗟𝗶𝘀𝘁
+ - https://lnkd.in/dn5HMnuA
+ - https://lnkd.in/d-xiu4gB
+
+𝟯. 𝗧𝘄𝗼 𝗽𝗼𝗶𝗻𝘁𝗲𝗿𝘀
+ - https://lnkd.in/dK_fB-Eg
+ - https://lnkd.in/d8ytqvbi
+
+𝟰. 𝗦𝘁𝗮𝗰𝗸 & 𝗤𝘂𝗲𝘂𝗲
+ - https://lnkd.in/dEFrRp2h
+ - https://lnkd.in/dMABxhmf
+
+𝟱. 𝗚𝗿𝗮𝗽𝗵𝘀
+ - https://lnkd.in/dCgzmMEr
+ - https://lnkd.in/d6QHviDU
+ - Union Find: https://lnkd.in/dcxQ8xW3
+
+𝟲. 𝗣𝗿𝗲𝗳𝗶𝘅 𝗦𝘂𝗺
+ - https://lnkd.in/dFQtwsrg
+
+𝟳. 𝗦𝗹𝗶𝗱𝗶𝗻𝗴 𝗪𝗶𝗻𝗱𝗼𝘄
+ - https://lnkd.in/dPiMzzpA
+
+𝟴. 𝗕𝗮𝗰𝗸𝘁𝗿𝗮𝗰𝗸𝗶𝗻𝗴
+ - https://lnkd.in/dUMsdB97
+ - https://lnkd.in/dgDTXJtr
+
+𝟵. 𝗧𝗿𝗲𝗲
+ - https://lnkd.in/d4W8A4JG
+ - https://lnkd.in/dyCemmkC
+ - https://lnkd.in/dNHsBERw
+
+𝟭𝟬. 𝗥𝗲𝗰𝘂𝘀𝗿𝗶𝗼𝗻
+ - https://lnkd.in/d7n2SAjC
+
+𝟭𝟭. 𝗛𝗲𝗮𝗽
+ - https://lnkd.in/dnNKNtah
+ - https://lnkd.in/dU2QGCXW
+
+𝟭𝟮. 𝗕𝗶𝗻𝗮𝗿𝘆 𝗦𝗲𝗮𝗿𝗰𝗵
+ - https://lnkd.in/dpqAttez
+ - https://lnkd.in/dxk7kdeb
+
+𝟭𝟯. 𝗚𝗿𝗲𝗲𝗱𝘆
+ - https://lnkd.in/ddydHD4n
+
+𝟭𝟰. 𝗕𝗶𝘁𝘀 𝗠𝗮𝗻𝗶𝗽𝘂𝗹𝗮𝘁𝗶𝗼𝗻
+ - https://lnkd.in/dU-tz766
+
+𝟭𝟱. 𝗦𝘁𝗿𝗶𝗻𝗴𝘀
+ - https://lnkd.in/dVAypcSx
+
+𝗦𝘆𝘀𝘁𝗲𝗺 𝗗𝗲𝘀𝗶𝗴𝗻 𝗔𝗿𝘁𝗶𝗰𝗹𝗲𝘀
+ - https://lnkd.in/dXUUm52n
+ - https://lnkd.in/dqaKd4nh
+ - https://lnkd.in/dAUnKCQ5
+
+𝗜 𝗵𝗮𝘃𝗲 𝗰𝗿𝗲𝗮𝘁𝗲𝗱 𝗮 𝗱𝗲𝘁𝗮𝗶𝗹𝗲𝗱 𝗦𝘆𝘀𝘁𝗲𝗺 𝗗𝗲𝘀𝗶𝗴𝗻 𝗜𝗻𝘁𝗲𝗿𝘃𝗶𝗲𝘄 𝗚𝘂𝗶𝗱𝗲
+
+𝗚𝗲𝘁 𝘁𝗵𝗲 𝗚𝘂𝗶𝗱𝗲 𝗵𝗲𝗿𝗲: https://lnkd.in/dte69Z5N
+
+Stay curious, keep learning, and keep sharing!
+
+
+https://leetcode.com/problems/minimum-size-subarray-sum/
+https://leetcode.com/problems/minimum-window-substring/

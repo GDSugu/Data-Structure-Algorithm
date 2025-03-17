@@ -55,3 +55,54 @@ let matrix = [
 console.log(spiralOrder(matrix)); 
 // Output: [1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7]
 
+
+/************************************** SUM OF TWO INTEGERS  *************************************************
+ * Leetcode 2: https://leetcode.com/problems/spiral-matrix/description/
+*/
+
+// SOLUTIONS: BITWISE OPERATOR
+
+/**
+ * @param {number} a
+ * @param {number} b
+ * @return {number}
+ */
+var getSum = function(a, b) {
+    while (b !== 0) {
+        let carry = (a & b) << 1; // Carry shifted left
+        a = a ^ b; // Sum without carry
+        b = carry; // Move carry to next iteration
+    }
+    return a;
+};
+
+/************************************** SUB ARRAY PRODUCT LESS THAN K  *************************************************
+ * Leetcode 3: https://leetcode.com/problems/subarray-product-less-than-k/
+*/
+
+// SOLUTION: SLIDING WINDOW + TWO POINTER APPROACH
+
+function numSubarrayProductLessThanK(nums, k) {
+    if (k <= 1) return 0; // Edge case
+
+    let left = 0; // Left boundary of the window
+    let product = 1; // Product of elements in the window
+    let count = 0; // Count of valid subarrays
+
+    for (let right = 0; right < nums.length; right++) {
+        product *= nums[right]; // Expand the window
+
+        // Shrink the window if product >= k
+        while (product >= k) {
+            product /= nums[left];
+            left++;
+        }
+
+        // Count valid subarrays ending at `right`
+        count += right - left + 1;
+    }
+
+    return count;
+}
+
+
