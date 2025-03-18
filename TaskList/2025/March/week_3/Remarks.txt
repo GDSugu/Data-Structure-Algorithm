@@ -1,0 +1,16 @@
+1) Subset problems -> [1,2,3]
+
+backtrack(0,[]) -> result = [[]]
+i=0 -> subset= [1]
+    -> backtrack(1,[1]) -> result = [[],[1]]
+i=1 -> subset = [1,2]
+    -> backtrack(2,[1,2]) -> result = [[],[1],[1,2]]
+i=2 -> subset = [1,2,3]
+    -> backtrack(3,[1,2,3]) -> result = [[],[1],[1,2],[1,2,3]]
+    -> Loop Ends 3 > 3 is False
+
+popSubset
+
+i=1 -> subset = [1,2]
+    -> backtrack(2,[1,2]) -> result = [[],[1],[1,2]]
+    -> 
