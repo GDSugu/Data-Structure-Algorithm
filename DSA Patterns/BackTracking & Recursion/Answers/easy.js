@@ -88,5 +88,3 @@ var climbStairs = function(n) {
     return prev1;
 };
 
-
-

@@ -1,3 +1,24 @@
+🚀 Must Do DSA Topics
+✅ Arrays & Strings → Sliding window, Two pointers, Kadane’s Algorithm
+
+✅ Recursion & Backtracking → Combinations, Permutations, N-Queens
+
+✅ Binary Search & Sorting → Upper/Lower bound, Merge Sort
+
+✅ Stack & Queue → Monotonic Stack, LRU Cache
+
+✅ Linked List → Reverse in groups, Detect Cycle (Floyd’s Algo)
+
+✅ Binary Tree & BST → LCA, Morris Traversal, Binary Search in BST
+
+✅ Graphs → BFS, DFS, Dijkstra, Bellman-Ford, Floyd Warshall
+
+✅ Dynamic Programming → Knapsack, LIS, Matrix Chain Multiplication
+
+✅ Bit Manipulation → XOR tricks, Single number problems
+
+✅ Trie & Segment Trees → Auto-complete feature, Range Queries
+
 Master Data Structures & Algorithms with These LeetCode Patterns!🚀
 
 Cracking coding interviews at Google, Amazon, Meta, Netflix, and Apple & top tech companies requires pattern-based problem-solving! Instead of solving random problems, focus on topic-wise patterns that appear frequently in interviews.
@@ -116,3 +137,196 @@ Stay curious, keep learning, and keep sharing!
 
 https://leetcode.com/problems/minimum-size-subarray-sum/
 https://leetcode.com/problems/minimum-window-substring/
+
+
+For an **SDE-1 position** in a **top product-based company** (like Google, Amazon, Microsoft, Meta, etc.), you need to **master Data Structures and Algorithms (DSA)** along with **System Design (Basics), OOPs, and CS fundamentals**.  
+
+---
+## **🚀 DSA Topics to Focus on for SDE-1**
+### **1️⃣ Arrays & Strings**
+✅ **Key Topics:**
+- Two Pointers (Sliding Window, Fast & Slow Pointers)
+- Kadane’s Algorithm (Max Subarray Sum)
+- Prefix Sum & Difference Arrays
+- Sorting (Merge Sort, Quick Sort, Bucket Sort)
+- Binary Search on Sorted Arrays
+- Subarray & Subsequence problems  
+
+💡 **Must Do Problems:**
+- Two Sum (**Leetcode 1**)
+- Longest Substring Without Repeating Characters (**Leetcode 3**)
+- Maximum Subarray (Kadane's Algorithm) (**Leetcode 53**)
+- Best Time to Buy and Sell Stock (**Leetcode 121**)
+- Product of Array Except Self (**Leetcode 238**)
+- Longest Palindromic Substring (**Leetcode 5**)
+
+---
+### **2️⃣ Hashing & Hash Maps**
+✅ **Key Topics:**
+- HashMap / HashSet usage  
+- Frequency Counter  
+- Collision Handling  
+
+💡 **Must Do Problems:**
+- Group Anagrams (**Leetcode 49**)  
+- Longest Consecutive Sequence (**Leetcode 128**)  
+- Subarray Sum Equals K (**Leetcode 560**)  
+- Find Duplicate Number (**Leetcode 287**)  
+
+---
+### **3️⃣ Recursion & Backtracking**
+✅ **Key Topics:**
+- Subsets & Permutations
+- N-Queens Problem
+- Sudoku Solver  
+- Word Search  
+
+💡 **Must Do Problems:**
+- Subsets (**Leetcode 78**)  
+- Combination Sum (**Leetcode 39**)  
+- Permutations (**Leetcode 46**)  
+- Word Search (**Leetcode 79**)  
+
+---
+### **4️⃣ Stack & Queue**
+✅ **Key Topics:**
+- Monotonic Stack / Monotonic Queue  
+- Next Greater Element  
+- Min Stack / Max Stack  
+- Sliding Window Maximum  
+
+💡 **Must Do Problems:**
+- Valid Parentheses (**Leetcode 20**)  
+- Min Stack (**Leetcode 155**)  
+- Next Greater Element (**Leetcode 496**)  
+- Largest Rectangle in Histogram (**Leetcode 84**)  
+
+---
+### **5️⃣ Linked Lists**
+✅ **Key Topics:**
+- Reverse a Linked List  
+- Fast & Slow Pointer Technique  
+- Merge Two Sorted Lists  
+- Detect Cycle in Linked List  
+
+💡 **Must Do Problems:**
+- Reverse a Linked List (**Leetcode 206**)  
+- Merge Two Sorted Lists (**Leetcode 21**)  
+- Detect Cycle in Linked List (**Leetcode 141**)  
+- Copy List with Random Pointer (**Leetcode 138**)  
+
+---
+### **6️⃣ Binary Search**
+✅ **Key Topics:**
+- Lower Bound & Upper Bound  
+- Binary Search on Answer (Search Space Reduction)  
+- Rotated Sorted Array  
+- Matrix Search  
+
+💡 **Must Do Problems:**
+- Search in Rotated Sorted Array (**Leetcode 33**)  
+- Find Peak Element (**Leetcode 162**)  
+- Kth Smallest Element in Sorted Matrix (**Leetcode 378**)  
+- Median of Two Sorted Arrays (**Leetcode 4**)  
+
+---
+### **7️⃣ Trees & Binary Trees**
+✅ **Key Topics:**
+- DFS & BFS Traversals (Preorder, Inorder, Postorder)  
+- Lowest Common Ancestor  
+- Tree Diameter  
+- Binary Search Tree (BST) Properties  
+
+💡 **Must Do Problems:**
+- Binary Tree Inorder Traversal (**Leetcode 94**)  
+- Diameter of Binary Tree (**Leetcode 543**)  
+- Lowest Common Ancestor (**Leetcode 236**)  
+- Validate Binary Search Tree (**Leetcode 98**)  
+
+---
+### **8️⃣ Graphs (Most Important for FAANG)**
+✅ **Key Topics:**
+- BFS & DFS  
+- Dijkstra’s Algorithm (Shortest Path)  
+- Union-Find (Disjoint Set Union - DSU)  
+- Topological Sorting (Kahn's Algorithm)  
+
+💡 **Must Do Problems:**
+- Number of Islands (**Leetcode 200**)  
+- Course Schedule (**Leetcode 207**)  
+- Word Ladder (**Leetcode 127**)  
+- Detect Cycle in a Graph (**Leetcode 785**)  
+
+---
+### **9️⃣ Dynamic Programming (DP)**
+✅ **Key Topics:**
+- Memoization & Tabulation  
+- Knapsack & Subset Sum  
+- LIS (Longest Increasing Subsequence)  
+- DP on Trees & Graphs  
+
+💡 **Must Do Problems:**
+- Fibonacci Number (**Leetcode 509**)  
+- Climbing Stairs (**Leetcode 70**)  
+- House Robber (**Leetcode 198**)  
+- Longest Palindromic Subsequence (**Leetcode 516**)  
+
+---
+### **🔟 Heaps & Priority Queue**
+✅ **Key Topics:**
+- Max Heap & Min Heap  
+- Top K Elements Problems  
+- Merge K Sorted Lists  
+- Median in a Data Stream  
+
+💡 **Must Do Problems:**
+- Kth Largest Element in an Array (**Leetcode 215**)  
+- Merge K Sorted Lists (**Leetcode 23**)  
+- Top K Frequent Elements (**Leetcode 347**)  
+- Find Median from Data Stream (**Leetcode 295**)  
+
+---
+## **🔥 Other Important Topics**
+### **🔹 Greedy Algorithms**
+- Activity Selection Problem  
+- Huffman Encoding  
+- Kruskal’s Algorithm  
+
+### **🔹 Bit Manipulation**
+- XOR Properties  
+- Power of Two  
+- Subsets using Bitmasking  
+
+---
+## **💡 System Design (Basic)**
+For **SDE-1**, deep system design isn’t required, but you should know:
+- Load Balancing  
+- Caching (LRU Cache)  
+- Sharding & Partitioning  
+- CAP Theorem  
+
+---
+## **📌 Resources to Prepare**
+🔹 **DSA Practice**:  
+- **Leetcode (Top 150 Problems for FAANG)**  
+- **GeeksforGeeks (Standard DSA Problems)**  
+- **Striver’s A2Z DSA Sheet**  
+
+🔹 **Books**:  
+- **"Cracking the Coding Interview" by Gayle Laakmann McDowell**  
+- **"Elements of Programming Interviews"**  
+
+🔹 **System Design**:  
+- **Grokking the System Design Interview (Educative.io)**  
+
+---
+## **💡 Final Tips**
+✅ **Practice Leetcode daily (Easy → Medium → Hard)**  
+✅ **Focus more on Graphs, DP, and Trees (Top 3 asked in FAANG)**  
+✅ **Write optimized code (Time & Space Complexity matters)**  
+✅ **Mock Interviews (Pramp, InterviewBit, or with peers)**  
+✅ **Be comfortable with at least one programming language (JavaScript, Python, Java, C++)**  
+
+🚀 **If you master these topics, you’ll be well-prepared for any SDE-1 interview!** 🔥🔥🔥  
+
+Would you like a **90-day preparation roadmap**? Let me know! 😊
