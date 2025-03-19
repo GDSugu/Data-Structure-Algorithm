@@ -160,3 +160,106 @@ var subsets = function(nums) {
     backtrack(0, []);
     return result;
 };
+
+/************************************** COMBINATION SUMS  *************************************************
+ * Leetcode 7: https://leetcode.com/problems/combination-sum/description/
+*/
+
+// SOLUTION 1: BACKTRACKING -> O(n^T)
+
+var combinationSum = function(candidates, target) {
+    let result = [];
+
+    function backtrack(start, combination, remainingTarget) {
+        if (remainingTarget === 0) {
+            result.push([...combination]);
+            return;
+        }
+        if (remainingTarget < 0) {
+            return;
+        }
+
+        for (let i = start; i < candidates.length; i++) {
+            combination.push(candidates[i]);
+            backtrack(i, combination, remainingTarget - candidates[i]);
+            combination.pop();  // Undo the last choice
+        }
+    }
+
+    backtrack(0, [], target);
+    return result;
+};
+
+// Example Usage:
+console.log(combinationSum([2,3,6,7], 7)); // Output: [[2,2,3],[7]]
+console.log(combinationSum([2,3,5], 8));   // Output: [[2,2,2,2],[2,3,3],[3,5]]
+console.log(combinationSum([2], 1));       // Output: []
+
+// SOLUTION 2: BACKTRACKING + SORTING -> O(n^T)
+
+function combinationSum(candidates, target) {
+    candidates.sort((a, b) => a - b); // Step 1: Sort the array
+    let result = [];
+
+    function backtrack(start, path, remainingTarget) {
+        if (remainingTarget === 0) {
+            result.push([...path]); // Found a valid combination
+            return;
+        }
+
+        for (let i = start; i < candidates.length; i++) {
+            if (candidates[i] > remainingTarget) break; // Early stopping
+
+            path.push(candidates[i]);
+            backtrack(i, path, remainingTarget - candidates[i]); // Allow repeated elements
+            path.pop(); // Backtrack
+        }
+    }
+
+    backtrack(0, [], target);
+    return result;
+}
+
+// Example Test Cases
+console.log(combinationSum([2,3,6,7], 7)); // Output: [[2,2,3],[7]]
+console.log(combinationSum([2,3,5], 8)); // Output: [[2,2,2,2],[2,3,3],[3,5]]
+console.log(combinationSum([2], 1)); // Output: []
+
+/************************************** COMBINATION SUMS - II  *************************************************
+ * Leetcode 8: https://leetcode.com/problems/combination-sum-ii/
+*/
+
+// SOLUTION: SORTING + BACKTRACKING -> O(n^T)
+var combinationSum2 = function(candidates, target) {
+    candidates.sort((a, b) => a - b); // Step 1: Sort to handle duplicates
+    let result = [];
+
+    function backtrack(start, combination, remainingTarget) {
+        if (remainingTarget === 0) {
+            result.push([...combination]); // Found a valid combination
+            return;
+        }
+
+        for (let i = start; i < candidates.length; i++) {
+            if (i > start && candidates[i] === candidates[i - 1]) continue; // Step 2: Skip duplicates
+
+            if (candidates[i] > remainingTarget) break; // Optimization: Stop if number exceeds target
+
+            combination.push(candidates[i]);
+            backtrack(i + 1, combination, remainingTarget - candidates[i]); // Move to next index
+            combination.pop(); // Undo choice (backtrack)
+        }
+    }
+
+    backtrack(0, [], target);
+    return result;
+};
+
+// Example Test Cases
+console.log(combinationSum2([10,1,2,7,6,1,5], 8));
+// Output: [[1,1,6],[1,2,5],[1,7],[2,6]]
+
+console.log(combinationSum2([2,5,2,1,2], 5));
+// Output: [[1,2,2],[5]]
+
+

@@ -1,2 +1,5 @@
 1) Sum of two integer - Bitwise operator
 2) Contiguous subarray product less than sum - Sliding window + Two pointer Approach
+3) Find Unique path - Backtracking - 
+     - check given matrix is N * N or M * N
+     - 

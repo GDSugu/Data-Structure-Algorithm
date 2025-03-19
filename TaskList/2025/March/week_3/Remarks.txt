@@ -19,3 +19,9 @@ i=2 -> subset = [1,3]
 
 pop subset [1,3] ->
 
+
+2) Combination Sum 2 problems
+     -> the backtracking recursive call should be backtrack(i+1) not backtrack(start+1)
+     -> to avoid duplicates in the set we must use the below 
+     -> if(i > start && candidates[i] === candidates[i-1]) continue;
+

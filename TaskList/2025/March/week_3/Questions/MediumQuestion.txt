@@ -14,6 +14,18 @@
  * Leetcode 4: https://leetcode.com/problems/combinations/
 */
 
-/**************************************   *************************************************
+/************************************** FIND ALL SUBSET  *************************************************
  * Leetcode 5: https://leetcode.com/problems/subsets/
+*/
+
+/************************************** Kth LARGEST ELEMNT IN THE ARRAY  *************************************************
+ * Leetcode 6: https://leetcode.com/problems/kth-largest-element-in-an-array/description/
+*/
+
+/************************************** COMBINATION SUMS  *************************************************
+ * Leetcode 7: https://leetcode.com/problems/combination-sum/description/
+*/
+
+/************************************** COMBINATION SUMS - II  *************************************************
+ * Leetcode 8: https://leetcode.com/problems/combination-sum-ii/
 */
