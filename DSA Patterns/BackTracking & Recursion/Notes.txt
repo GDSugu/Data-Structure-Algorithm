@@ -50,3 +50,65 @@ Here’s how you can **answer step by step**:
 Let me know if you need a more **graphical or code-based** explanation! 😊
 
 
+First Iteration (i = 0, nums = [1, 2, 3])
+Recursive Call: backtrack(0, [])
+
+Base case not reached: result = [[]]
+
+Add nums[0] = 1 to currentSubset: currentSubset = [1]
+
+First Iteration (i = 1, nums = [1, 2, 3])
+
+Recursive Call: backtrack(1, [1])
+
+Base case not reached: result = [[], [1]]
+
+Add nums[1] = 2 to currentSubset: currentSubset = [1, 2]
+
+First Iteration (i = 2, nums = [1, 2, 3])
+
+Recursive Call: backtrack(2, [1, 2])
+Base case not reached: result = [[], [1], [1, 2]]
+
+Add nums[2] = 3 to currentSubset: currentSubset = [1, 2, 3]
+
+Recursive Call: backtrack(3, [1, 2, 3])
+
+Base case reached: result = [[], [1], [1, 2], [1, 2, 3]]
+Backtrack: Remove 3 → currentSubset = [1, 2]
+Second Iteration (i = 2, nums = [1, 2, 3])
+
+Backtrack: Remove 2 → currentSubset = [1]
+
+Add nums[2] = 3 to currentSubset: currentSubset = [1, 3]
+
+Recursive Call: backtrack(3, [1, 3])
+
+Base case reached: result = [[], [1], [1, 2], [1, 2, 3], [1, 3]]
+Backtrack: Remove 3 → currentSubset = [1]
+Backtrack: Remove 1 → currentSubset = []
+
+Second Iteration (i = 1, nums = [1, 2, 3])
+
+Add nums[1] = 2 to currentSubset: currentSubset = [2]
+
+Recursive Call: backtrack(2, [2])
+
+Base case not reached: result = [[], [1], [1, 2], [1, 2, 3], [1, 3], [2]]
+
+Add nums[2] = 3 to currentSubset: currentSubset = [2, 3]
+
+Recursive Call: backtrack(3, [2, 3])
+
+Base case reached: result = [[], [1], [1, 2], [1, 2, 3], [1, 3], [2], [2, 3]]
+Backtrack: Remove 3 → currentSubset = [2]
+Backtrack: Remove 2 → currentSubset = []
+
+Third Iteration (i = 2, nums = [1, 2, 3])
+
+Add nums[2] = 3 to currentSubset: currentSubset = [3]
+
+Recursive Call: backtrack(3, [3])
+
+Base case reached: result = [[], [1], [1, 2], [1, 2, 3], [1, 3], [2], [2, 3], [3]]
+Backtrack: Remove 3 → currentSubset = []

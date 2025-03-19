@@ -18,8 +18,8 @@
  * Leetcode 5: https://leetcode.com/problems/subsets/
 */
 
-/************************************** Kth LARGEST ELEMNT IN THE ARRAY  *************************************************
- * Leetcode 6: https://leetcode.com/problems/kth-largest-element-in-an-array/description/
+/****************************************  COIN CHANGE PROBLEM  ********************************
+ * Leetcode 6: https://leetcode.com/problems/coin-change/
 */
 
 /************************************** COMBINATION SUMS  *************************************************
@@ -28,4 +28,20 @@
 
 /************************************** COMBINATION SUMS - II  *************************************************
  * Leetcode 8: https://leetcode.com/problems/combination-sum-ii/
+*/
+
+/************************************** FIBONACCI NUMBERS *************************************************
+ * Leetcode 9: https://leetcode.com/problems/combination-sum-ii/
+*/
+
+/************************************** CLIMBING STAIRS *************************************************
+ * Leetcode 10: https://leetcode.com/problems/climbing-stairs/
+*/
+
+/****************************************  MAXIMUM MATRIX SUM  ********************************
+ * Leetcode 11: https://leetcode.com/problems/maximum-matrix-sum/description/
+*/
+
+/**************************************** BEST TO BUY AND SELL THE STOCK  ******************
+ * Leetcode 12: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
 */

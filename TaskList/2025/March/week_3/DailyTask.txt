@@ -41,11 +41,20 @@ Status: completed
 
 Status: completed
 
-/************************************** Kth LARGEST ELEMNT IN THE ARRAY  *************************************************
- * Leetcode 1: https://leetcode.com/problems/kth-largest-element-in-an-array/description/
+/****************************************  COIN CHANGE PROBLEM  ********************************
+ * Leetcode 2: https://leetcode.com/problems/coin-change/
+*/
+Status: completed
+
+/****************************************  MAXIMUM MATRIX SUM  ********************************
+ * Leetcode 3: https://leetcode.com/problems/maximum-matrix-sum/description/
 */
 
-Status:
+/************************************** Kth LARGEST ELEMNT IN THE ARRAY  *************************************************
+ * Leetcode 4: https://leetcode.com/problems/kth-largest-element-in-an-array/description/
+*/
+
+Status: 
 
             ################################################################################
             #                     🌟  19 | March | 2025  🌟                               #
@@ -71,9 +80,14 @@ Status: completed
 Status: completed
 
 /************************************** CLIMBING STAIRS *************************************************
- * Leetcode 3: https://leetcode.com/problems/climbing-stairs/
+ * Leetcode 4: https://leetcode.com/problems/climbing-stairs/
 */
 
+Status: completed
+
+/**************************************** BEST TO BUY AND SELL THE STOCK  ******************
+ * Leetcode 5: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
+*/
 Status: completed
 
 

@@ -1,0 +1,79 @@
+/************************************** THREE SUM *************************************************
+ * Leetcode 1: https://leetcode.com/problems/3sum/description/
+*/
+
+/************************************** FOUR SUM *************************************************
+ * Leetcode 2: https://leetcode.com/problems/4sum/description/
+*/
+
+/************************************** NEXT GREATER ELEMENT II *************************************************
+ * Leetcode 3: https://leetcode.com/problems/next-greater-element-ii/
+*/
+
+/************************************** REMOVE DUPLICATES FROM SORTED LIST II *************************************************
+ * Leetcode 4: https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/description/
+*/
+
+/************************************** SEARCH IN ROTATED SORTED ARRAY *************************************************
+ * Leetcode 5: https://leetcode.com/problems/search-in-rotated-sorted-array/description/
+*/
+
+/************************************** LONGEST SUBSTRING WITHOUT REPEATING CHARACTER *************************************************
+ * Leetcode 6: https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
+*/
+
+/************************************** SET MATRIX ZERO *************************************************
+ * Leetcode 7: https://leetcode.com/problems/set-matrix-zeroes/description/
+*/
+
+/************************************** MAXIMUM NUMBER OF VOWELS IN A SUBSTRING OF A GIVEN LENGTH *************************************************
+ * Leetcode 8: https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/
+*/
+
+/************************************** GENERATE PARENTHESIS *************************************************
+ * Leetcode 9: https://leetcode.com/problems/generate-parentheses/
+*/
+
+/************************************** MAXIMUM NUMBER OF EVENTS THAT CAN BE ATTENDED *************************************************
+ * Leetcode 10: https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended/description/
+*/
+
+/************************************** NUMBER OF ISLANDS*********************************
+ * Leetcode 11: https://leetcode.com/problems/rotting-oranges/
+*/
+
+/************************************** GROUP ANAGRAMS *********************************
+ * Leetcode 12: https://leetcode.com/problems/group-anagrams/
+*/
+
+/************************************** UNIQUE LENGTH - 3 PALINDROMIC SUBSEQUENCE  *************************************************
+ * Leetcode 13: https://leetcode.com/problems/unique-length-3-palindromic-subsequences/
+*/
+
+/****************************************  LONGEST INCREASING SUBSEQUENCE  ********************************
+ * Leetcode 14: https://leetcode.com/problems/longest-increasing-subsequence/
+*/
+
+/****************************************  REMOVE DUPLICATES FROM THE SORTED ARRAY  ********************************
+ * Leetcode 15: https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
+*/
+
+/**************************************** RAIN WATER TRAPPING  ********************************
+ * Leetcode 16: https://leetcode.com/problems/trapping-rain-water/
+*/
+
+/**************************************** LARGEST RTECTANGLE IN HISTOGRAM  ********************************
+ * Leetcode 17: https://leetcode.com/problems/largest-rectangle-in-histogram/
+*/
+
+/****************************************  SUPER EGG DROP  ********************************
+ * Leetcode 18: https://leetcode.com/problems/super-egg-drop/
+*/
+
+/****************************************  BEST TIME TO BUY AND SELL STOCK  ********************************
+ * Leetcode 19: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/
+*/
+
+/****************************************  SLIDING WINDOW MAXIMUM  ********************************
+ * Leetcode 20: https://leetcode.com/problems/sliding-window-maximum/
+*/

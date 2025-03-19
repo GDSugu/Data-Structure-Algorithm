@@ -77,8 +77,18 @@ Status: completed
 /************************************** GENERATE PARENTHESIS *************************************************
  * Leetcode 1: https://leetcode.com/problems/generate-parentheses/
 */
-
 Status:completed 
+
+/****************************************  BEST TIME TO BUY AND SELL STOCK  ********************************
+ * Leetcode 2: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/
+*/
+Status:completed 
+
+/****************************************  SLIDING WINDOW MAXIMUM  ********************************
+ * Leetcode 3: https://leetcode.com/problems/sliding-window-maximum/
+*/
+Status:completed 
+
 
             ################################################################################
             #                     🌟  07 | March | 2025  🌟                               #
@@ -89,8 +99,23 @@ Status:completed
 /************************************** LONGEST CONSECUTIVE SEQUENCE *************************************************
  * Leetcode 1: https://leetcode.com/problems/longest-consecutive-sequence/description/
 */
+Status: 
 
+/****************************************  LONGEST INCREASING SUBSEQUENCE  ********************************
+ * Leetcode 2: https://leetcode.com/problems/longest-increasing-subsequence/
+*/
 Status: completed
+
+/**************************************** LARGEST RTECTANGLE IN HISTOGRAM  ********************************
+ * Leetcode 3: https://leetcode.com/problems/largest-rectangle-in-histogram/
+*/
+Status: completed
+
+/****************************************  SUPER EGG DROP  ********************************
+ * Leetcode 4: https://leetcode.com/problems/super-egg-drop/
+*/
+Status: completed
+
 
             ################################################################################
             #                     🌟  12 | March | 2025  🌟                               #
@@ -102,7 +127,7 @@ Status: completed
  * Leetcode 1: https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended/description/
 */
 
-Status: 
+Status: completed
 
 /************************************** ROTTEN ORANGE *************************************************
  * Leetcode 2: https://leetcode.com/problems/rotting-oranges/
@@ -118,7 +143,7 @@ Status: completed
 
 
 /************************************** GROUP ANAGRAMS *********************************
- * Leetcode 3: https://leetcode.com/problems/group-anagrams/
+ * Leetcode 4: https://leetcode.com/problems/group-anagrams/
 */
 
 Status: completed
@@ -135,17 +160,20 @@ Status: completed
 
 Status: completed
 
-/************************************** UNIQUE LENGTH - 3 PALINDROMIC SUBSEQUENCE  *************************************************
- * Leetcode 1: https://leetcode.com/problems/minimum-number-of-work-sessions-to-finish-the-tasks/description/
+/************************************** MINIMUM NUMBER OF WORK SESSION TO FINISH TASK  *************************************************
+ * Leetcode 2: https://leetcode.com/problems/minimum-number-of-work-sessions-to-finish-the-tasks/description/
 */
 
 Status: 
 
-            ################################################################################
-            #                     🌟  13 | March | 2025  🌟                               #
-            #                          📅  Thursday 📅                                    #
-            ################################################################################
-
-/************************************** UNIQUE LENGTH - 3 PALINDROMIC SUBSEQUENCE  *************************************************
- * Leetcode 1: https://leetcode.com/problems/minimum-number-of-work-sessions-to-finish-the-tasks/description/
+/****************************************  REMOVE DUPLICATES FROM THE SORTED ARRAY  ********************************
+ * LEETCODE 3: https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
 */
+
+Status: completed
+
+/**************************************** RAIN WATER TRAPPING  ********************************
+ * LEETCODE 4: https://leetcode.com/problems/trapping-rain-water/
+*/
+
+Status: completed

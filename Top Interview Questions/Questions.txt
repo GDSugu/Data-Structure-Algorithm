@@ -97,3 +97,7 @@
 /************************************** SPIRAL MATRIX  *************************************************
  * Leetcode 25: https://leetcode.com/problems/spiral-matrix/description/
 */
+
+/************************************** MERGE THE STRINGS ALTERNATIVELY ***********************************************
+ * Leetcode 26:https://leetcode.com/problems/merge-strings-alternately/
+*/

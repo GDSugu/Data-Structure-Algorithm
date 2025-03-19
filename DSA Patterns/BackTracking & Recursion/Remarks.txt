@@ -1,0 +1,16 @@
+🚀🚀 **Combination Sum II & Subset II (Key Points)*** 🚀🚀 
+
+✅ **1) Correct Backtracking Call:**  
+   - The recursive call should be `backtrack(i + 1, …)` inside the loop, **not** `backtrack(start + 1, …)`.  
+   - This ensures that each element is only considered **once per subset/combination**.  
+
+✅ **2) Sort the Input First:**  
+   - Sorting ensures that duplicate elements appear **consecutively**, making it easier to **skip duplicates**.  
+
+✅ **3) Skip Duplicates in the Loop:**  
+   - Use the condition inside the loop to avoid duplicate subsets/combinations:  
+     ```js
+     if (i > start && candidates[i] === candidates[i - 1]) continue;
+     ```
+   - This prevents picking the **same number** at the same recursion level.  
+

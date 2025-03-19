@@ -1,124 +1,5 @@
-/**************************************** BEST TO BUY AND SELL THE STOCK  ******************
- * Leetcode 1: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
-*/
-
-// SOLUTION: GREEDY ALGORITHM -> O(n)
-
-/**
- * @param {number[]} prices
- * @return {number}
- */
-var maxProfit = function(prices) {
-    let maxProfit = 0;
-
-    for(let i=0; i<prices.length; i++){
-        if(prices[i] < prices[i+1] ){
-            currentProfit = prices[i+1] - prices[i];
-            maxProfit+= currentProfit;
-        }
-    }
-
-    return maxProfit;
-};
-
-
-/****************************************  MAXIMUM MATRIX SUM  ********************************
- * LEETCODE 1: https://leetcode.com/problems/maximum-matrix-sum/description/
-*/
-
-// SOLUTION : GREEDY ALGORITHM -> O(n^2)
-
-/**
- * @param {number[][]} matrix
- * @return {number}
- */
-
-var maxMatrixSum = function(matrix) {
-
-    let totalSum = 0;
-    let totalNegativeCount = 0;
-    let minAbsolute = Infinity;
-    
-    for(let row of matrix){
-        for(let value of row){
-            totalSum+= Math.abs(value);
-            if(value < 0){
-                totalNegativeCount++;
-            }
-            minAbsolute = Math.min(minAbsolute,Math.abs(value))
-        }
-    }
-
-    if(totalNegativeCount % 2 === 0){
-        return totalSum;
-    }
-
-    return totalSum -2 * minAbsolute;
-};
-
-
-/****************************************  COIN CHANGE PROBLEM  ********************************
- * LEETCODE 1: https://leetcode.com/problems/coin-change/
-*/
-
-// SOLUTION : DYNAMIC PROGRAMMING (Bottom-Up DP APPROACH)
-
-
-/**
- * @param {number[]} coins
- * @param {number} amount
- * @return {number}
- */
-function coinChange(coins, amount) {
-    let dp = new Array(amount + 1).fill(Infinity);
-    dp[0] = 0;  // Base case: 0 coins needed for amount 0
-
-    for (let i = 1; i <= amount; i++) {
-        for (let coin of coins) {
-            if (i >= coin) {
-                dp[i] = Math.min(dp[i], 1 + dp[i - coin]);
-            }
-        }
-    }
-
-    return dp[amount] === Infinity ? -1 : dp[amount];
-}
-
-
-/****************************************  LONGEST INCREASING SUBSEQUENCE  ********************************
- * LEETCODE 1: https://leetcode.com/problems/longest-increasing-subsequence/
-*/
-
-// SOLUTION : BINARY SEARCH WITH GREEDY -> O(log n)
-
-/**
- * @param {number[]} nums
- * @return {number}
- */
-var lengthOfLIS = function(nums) {
-    let sub = [];
-
-    for (let num of nums) {
-        let left = 0, right = sub.length - 1;
-        
-        // Binary search to find the first element >= num
-        while (left <= right) {
-            let mid = Math.floor((left + right) / 2);
-            if (sub[mid] >= num) right = mid - 1;
-            else left = mid + 1;
-        }
-
-        // If left is within the array, replace; otherwise, append
-        if (left < sub.length) sub[left] = num;
-        else sub.push(num);
-    }
-
-    return sub.length;
-};
-
-
 /************************************** THREE SUM ***************************
- * Leetcode 12:https://leetcode.com/problems/3sum/description/
+ * Leetcode 1: https://leetcode.com/problems/3sum/description/
 */
 
 // SOLUTION: SORTING + TWO POINTER
@@ -160,9 +41,8 @@ function threeSum(nums) {
     return result;
 }
 
-
 /************************************** FOUR SUM ***************************
- * Leetcode 12:https://leetcode.com/problems/4sum/description/
+ * Leetcode 2: https://leetcode.com/problems/4sum/description/
 */
 
 // SOLUTION: SORTING + TWO POINTER
@@ -210,8 +90,33 @@ var fourSum = function(nums, target) {
     
 };
 
+/************************************** NEXT GREATER ELEMENT II *************************************************
+ * Leetcode 3: https://leetcode.com/problems/next-greater-element-ii/
+*/
+
+// MONOTONIC DECREASING STACK
+
+const nextGreaterElements = nums => {
+    const n = nums.length;
+    const result = new Array(n).fill(-1);
+    const stack = [];
+
+    for (let i = 0; i < 2 * n; i++) {
+        while (stack.length > 0 && nums[i % n] > nums[stack[stack.length - 1]]) {
+            const index = stack.pop();
+            result[index] = nums[i % n];
+        }
+
+        if (i < n) {
+            stack.push(i);
+        }
+    }
+
+    return result;
+};
+
 /************************************** REMOVE DUPLICATES FROM SORTED LIST II *************************************************
- * Leetcode 13: https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/description/
+ * Leetcode 4: https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/description/
 */
 
 // SOLUTION: 
@@ -239,34 +144,9 @@ var deleteDuplicates = function(head) {
 };
 
 
-/************************************** NEXT GREATER ELEMENT II *************************************************
- * Leetcode: https://leetcode.com/problems/next-greater-element-ii/
-*/
-
-// MONOTONIC DECREASING STACK
-
-const nextGreaterElements = nums => {
-    const n = nums.length;
-    const result = new Array(n).fill(-1);
-    const stack = [];
-
-    for (let i = 0; i < 2 * n; i++) {
-        while (stack.length > 0 && nums[i % n] > nums[stack[stack.length - 1]]) {
-            const index = stack.pop();
-            result[index] = nums[i % n];
-        }
-
-        if (i < n) {
-            stack.push(i);
-        }
-    }
-
-    return result;
-};
-
 
 /************************************** SERACH IN ROTATED SORTED ARRAY *************************************************
- * Leetcode 16: https://leetcode.com/problems/search-in-rotated-sorted-array/description/
+ * Leetcode 5: https://leetcode.com/problems/search-in-rotated-sorted-array/description/
 */
 
 // SOLUTION: BINARY SEARCH -> O(log n)
@@ -304,8 +184,50 @@ var search = function(nums, target) {
     return -1; // Target not found
 };
 
+
+
+/************************************** LONGEST SUBSTRING WITHOUT REPEATING CHARACTER *************************************************
+ * Leetcode 6: https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
+*/
+
+// SOLUTION: HASHMAP WITH SLIDING WINDOW -> O(n)
+
+function longestSubstringWithNoRepeatingChars(s) {
+    let left = 0; // Left pointer
+    let maxLength = 0; // Maximum length of substring without repeating characters
+    let charCount = new Map(); // Map to store character counts
+    
+    // Traverse the string with the right pointer
+    for (let right = 0; right < s.length; right++) {
+        let rightChar = s[right];
+
+        // Increment count of the character in the map
+        charCount.set(rightChar, (charCount.get(rightChar) || 0) + 1);
+
+        // If the character count exceeds 1, shrink the window from the left
+        while (charCount.get(rightChar) > 1) {
+            let leftChar = s[left];
+            charCount.set(leftChar, charCount.get(leftChar) - 1);
+            
+            // If count becomes 0, remove the character from the map
+            if (charCount.get(leftChar) === 0) {
+                charCount.delete(leftChar);
+            }
+            
+            left++; // Move the left pointer to shrink the window
+        }
+
+        // Update the maxLength after adjusting the window
+        maxLength = Math.max(maxLength, right - left + 1);
+    }
+
+    return maxLength; // ✅ Return the result instead of just logging it
+}
+
+
+
 /************************************** SET MATRIX ZERO *************************************************
- * Leetcode 3: https://leetcode.com/problems/set-matrix-zeroes/description/
+ * Leetcode 7: https://leetcode.com/problems/set-matrix-zeroes/description/
 */
 
 // SOLUTION: MATRIX MARKERS
@@ -369,46 +291,10 @@ var setZeroes = function(matrix) {
     }
 };
 
-/************************************** LONGEST SUBSTRING WITHOUT REPEATING CHARACTER *************************************************
- * Leetcode 18: https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
-*/
 
-// SOLUTION: HASHMAP WITH SLIDING WINDOW -> O(n)
-
-function longestSubstringWithNoRepeatingChars(s) {
-    let left = 0; // Left pointer
-    let maxLength = 0; // Maximum length of substring without repeating characters
-    let charCount = new Map(); // Map to store character counts
-    
-    // Traverse the string with the right pointer
-    for (let right = 0; right < s.length; right++) {
-        let rightChar = s[right];
-
-        // Increment count of the character in the map
-        charCount.set(rightChar, (charCount.get(rightChar) || 0) + 1);
-
-        // If the character count exceeds 1, shrink the window from the left
-        while (charCount.get(rightChar) > 1) {
-            let leftChar = s[left];
-            charCount.set(leftChar, charCount.get(leftChar) - 1);
-            
-            // If count becomes 0, remove the character from the map
-            if (charCount.get(leftChar) === 0) {
-                charCount.delete(leftChar);
-            }
-            
-            left++; // Move the left pointer to shrink the window
-        }
-
-        // Update the maxLength after adjusting the window
-        maxLength = Math.max(maxLength, right - left + 1);
-    }
-
-    return maxLength; // ✅ Return the result instead of just logging it
-}
 
 /************************************** MAXIMUM NUMBER OF VOWELS IN A SUBSTRING OF A GIVEN LENGTH *************************************************
- * Leetcode 4: https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/
+ * Leetcode 8: https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/
 */
 
 // SOLUTION: SLIDING WINDOW -> O(n)
@@ -440,8 +326,9 @@ var maxVowels = function(s, k) {
 };
 
 
+
 /************************************** GENERATE PARENTHESIS *************************************************
- * Leetcode 1: https://leetcode.com/problems/generate-parentheses/
+ * Leetcode 9: https://leetcode.com/problems/generate-parentheses/
 */
 
 // SOLUTION: BACKTRACKING
@@ -479,8 +366,61 @@ var generateParenthesis = function(n) {
 };
 
 
+/************************************** MAXIMUM NUMBER OF EVENTS THAT CAN BE ATTENDED *************************************************
+ * Leetcode 10: https://leetcode.com/problems/unique-length-3-palindromic-subsequences/
+*/
+
+// SOLUTION: 
+
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var countPalindromicSubsequence = function(s) {
+    let n = s.length;
+    let result = 0;
+
+    // Store unique characters seen so far on the left
+    let leftSet = new Set();
+
+    // Map to store the frequency of each character on the right
+    let rightCount = new Map();
+    for (let ch of s) {
+        rightCount.set(ch, (rightCount.get(ch) || 0) + 1);
+    }
+
+    // Set to track unique palindromes
+    let seenPalindromes = new Set();
+
+    // Iterate over the string, treating s[i] as the middle character
+    for (let i = 0; i < n; i++) {
+        let midChar = s[i];
+
+        // Remove current character from rightCount
+        if (rightCount.get(midChar) === 1) {
+            rightCount.delete(midChar);
+        } else {
+            rightCount.set(midChar, rightCount.get(midChar) - 1);
+        }
+
+        // Check all possible left and right characters
+        for (let leftChar of leftSet) {
+            if (rightCount.has(leftChar)) {
+                let palindrome = leftChar + midChar + leftChar;
+                seenPalindromes.add(palindrome);
+            }
+        }
+
+        // Add current character to leftSet
+        leftSet.add(midChar);
+    }
+
+    return seenPalindromes.size;
+};
+
+
 /************************************** NUMBER OF ISLANDS*********************************
- * Leetcode 3: https://leetcode.com/problems/rotting-oranges/
+ * Leetcode 11: https://leetcode.com/problems/rotting-oranges/
 */
 
 // SOLUTION: O(m×n)
@@ -524,8 +464,9 @@ var numIslands = function(grid) {
 };
 
 
+
 /************************************** GROUP ANAGRAMS *********************************
- * Leetcode 22: https://leetcode.com/problems/group-anagrams/
+ * Leetcode 12: https://leetcode.com/problems/group-anagrams/
 */
 
 // SOLUTION: O(n * k log k)
@@ -582,61 +523,8 @@ var groupAnagrams = function(strs) {
 };
 
 
-/************************************** MAXIMUM NUMBER OF EVENTS THAT CAN BE ATTENDED *************************************************
- * Leetcode 1: https://leetcode.com/problems/unique-length-3-palindromic-subsequences/
-*/
-
-// SOLUTION:
-
-/**
- * @param {string} s
- * @return {number}
- */
-var countPalindromicSubsequence = function(s) {
-    let n = s.length;
-    let result = 0;
-
-    // Store unique characters seen so far on the left
-    let leftSet = new Set();
-
-    // Map to store the frequency of each character on the right
-    let rightCount = new Map();
-    for (let ch of s) {
-        rightCount.set(ch, (rightCount.get(ch) || 0) + 1);
-    }
-
-    // Set to track unique palindromes
-    let seenPalindromes = new Set();
-
-    // Iterate over the string, treating s[i] as the middle character
-    for (let i = 0; i < n; i++) {
-        let midChar = s[i];
-
-        // Remove current character from rightCount
-        if (rightCount.get(midChar) === 1) {
-            rightCount.delete(midChar);
-        } else {
-            rightCount.set(midChar, rightCount.get(midChar) - 1);
-        }
-
-        // Check all possible left and right characters
-        for (let leftChar of leftSet) {
-            if (rightCount.has(leftChar)) {
-                let palindrome = leftChar + midChar + leftChar;
-                seenPalindromes.add(palindrome);
-            }
-        }
-
-        // Add current character to leftSet
-        leftSet.add(midChar);
-    }
-
-    return seenPalindromes.size;
-};
-
-
 /************************************** UNIQUE LENGTH - 3 PALINDROMIC SUBSEQUENCE  *************************************************
- * Leetcode 1: https://leetcode.com/problems/minimum-number-of-work-sessions-to-finish-the-tasks/description/
+ * Leetcode 13: https://leetcode.com/problems/minimum-number-of-work-sessions-to-finish-the-tasks/description/
 */
 
 // SOLUTION: BACKTRACKING 
@@ -680,101 +568,244 @@ function minSessions(tasks, sessionTime) {
     return minSessions;
 }
 
-function distributeCookies(cookies, k) {
-    let minUnfairness = Infinity;
-
-    // Initialize the children array with zeros
-    const children = new Array(k).fill(0);
-
-    // Backtracking function
-    function backtrack(index) {
-        if (index === cookies.length) {
-            // All bags are assigned, calculate unfairness
-            const currentUnfairness = Math.max(...children);
-            minUnfairness = Math.min(minUnfairness, currentUnfairness);
-            return;
-        }
-
-        for (let i = 0; i < k; i++) {
-            // Assign the current bag to the ith child
-            children[i] += cookies[index];
-            // Prune if the current unfairness is already worse than the best found
-            if (children[i] < minUnfairness) {
-                backtrack(index + 1);
-            }
-            // Backtrack
-            children[i] -= cookies[index];
-        }
-    }
-
-    // Start the backtracking process
-    backtrack(0);
-    return minUnfairness;
-}
-
-// Example usage:
-const n = 4, k = 2;
-const cookies = [2,2,2,2];
 
 
-
-
-console.log(distributeCookies(cookies, k)); // Output: 7
-
-
-/************************************** SPIRAL MATRIX  *************************************************
- * Leetcode 1: https://leetcode.com/problems/spiral-matrix/description/
+/****************************************  LONGEST INCREASING SUBSEQUENCE  ********************************
+ * LEETCODE 14: https://leetcode.com/problems/longest-increasing-subsequence/
 */
 
-// SOLUTION: ITERATIVE USING BOUNDARIES
+// SOLUTION : BINARY SEARCH WITH GREEDY -> O(log n)
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var lengthOfLIS = function(nums) {
+    let sub = [];
+
+    for (let num of nums) {
+        let left = 0, right = sub.length - 1;
+        
+        // Binary search to find the first element >= num
+        while (left <= right) {
+            let mid = Math.floor((left + right) / 2);
+            if (sub[mid] >= num) right = mid - 1;
+            else left = mid + 1;
+        }
+
+        // If left is within the array, replace; otherwise, append
+        if (left < sub.length) sub[left] = num;
+        else sub.push(num);
+    }
+
+    return sub.length;
+};
 
 
-function spiralOrder(matrix) {
-    if (!matrix.length || !matrix[0].length) return [];
-    
-    let result = [];
-    let firstRow = 0, lastRow = matrix.length - 1;
-    let firstCol = 0, lastCol = matrix[0].length - 1;
-    
-    while (firstRow <= lastRow && firstCol <= lastCol) {
-        // Traverse from left to right (along firstRow)
-        for (let i = firstCol; i <= lastCol; i++) {
-            result.push(matrix[firstRow][i]);
-        }
-        firstRow++;
-        
-        // Traverse from top to bottom (along lastCol)
-        for (let i = firstRow; i <= lastRow; i++) {
-            result.push(matrix[i][lastCol]);
-        }
-        lastCol--;
-        
-        // Traverse from right to left (along lastRow, if valid)
-        if (firstRow <= lastRow) {
-            for (let i = lastCol; i >= firstCol; i--) {
-                result.push(matrix[lastRow][i]);
-            }
-            lastRow--;
-        }
-        
-        // Traverse from bottom to top (along firstCol, if valid)
-        if (firstCol <= lastCol) {
-            for (let i = lastRow; i >= firstRow; i--) {
-                result.push(matrix[i][firstCol]);
-            }
-            firstCol++;
+/****************************************  REMOVE DUPLICATES FROM THE SORTED ARRAY  ********************************
+ * Leetcode 15: https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
+*/
+
+// SOLUTION : TWO POINTER METHOD -> O(n)
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var removeDuplicates = function(nums) {
+    let i = 0; // Tracks unique element position
+
+    for (let j = 1; j < nums.length; j++) {
+        if (nums[i] !== nums[j]) { 
+            i++;  // Move `i` only when we find a new unique element
+            nums[i] = nums[j];  // Place the unique element at `i`
         }
     }
-    
+
+    return i + 1;  // Length of unique elements
+};
+
+
+
+/**************************************** RAIN WATER TRAPPING  ********************************
+ * Leetcode 16: https://leetcode.com/problems/trapping-rain-water/
+*/
+
+// SOLUTION: TWO POINTER METHOD
+
+/**
+ * @param {number[]} height
+ * @return {number}
+ */
+var trap = function(height) {
+    let left = 0; right = height.length - 1;
+    let leftMax = 0; rightMax = 0;
+    let trappedWater = 0;
+
+    while(left < right){
+        if(height[left] < height[right]){
+            leftMax = Math.max(leftMax,height[left]);
+            trappedWater+= leftMax - height[left]
+            left++;
+        }else{
+            rightMax = Math.max(rightMax, height[right]);
+            trappedWater+= rightMax - height[right];
+            right--;
+        }
+    }
+
+    return trappedWater;
+
+};
+
+/**************************************** LARGEST RTECTANGLE IN HISTOGRAM  ********************************
+ * Leetcode 17: https://leetcode.com/problems/largest-rectangle-in-histogram/
+*/
+
+// SOLUTION: MONOTONIC INCREASING STACK
+
+/**
+ * @param {number[]} heights
+ * @return {number}
+ */
+var largestRectangleArea = function(heights) {
+    let maxArea = 0;
+    let stack = [];
+    heights.push(0); // Append 0 to ensure all elements get processed
+
+    for (let i = 0; i < heights.length; i++) {
+        while (stack.length > 0 && heights[i] < heights[stack[stack.length - 1]]) {
+            let height = heights[stack.pop()]; // Get the height of the popped bar
+            let width;
+            
+            if (stack.length === 0) {
+                width = i; // No left boundary, so width spans from 0 to i
+            } else {
+                width = i - stack[stack.length - 1] - 1; // Width is between current index and previous stack top
+            }
+
+            maxArea = Math.max(maxArea, height * width);
+        }
+        stack.push(i); // Push the current index to the stack
+    }
+
+    return maxArea;
+};
+
+
+/****************************************  SUPER EGG DROP  ********************************
+ * Leetcode 18: https://leetcode.com/problems/super-egg-drop/
+*/
+
+// SOLUTION: DYNAMIC PROGRAMMING
+
+/**
+ * @param {number} k
+ * @param {number} n
+ * @return {number}
+ */
+var superEggDrop = function(k, n) {
+    let dp = new Array(k + 1).fill(0);
+    let moves = 0;
+
+    while (dp[k] < n) {  // Keep increasing moves until we can check all n floors
+        moves++;
+        for (let egg = k; egg > 0; egg--) {
+            dp[egg] = dp[egg - 1] + dp[egg] + 1;
+        }
+    }
+
+    return moves;  // Return after the loop completes
+};
+
+/****************************************  BEST TIME TO BUY AND SELL STOCK  ********************************
+ * Leetcode 19: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/
+*/
+
+// SOLUTION: 
+
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+var maxProfit = function(prices) {
+    let firstBuy = Infinity;
+    let firstProfit = 0;
+    let secondBuy = Infinity;
+    let secondProfit = 0;
+
+    for (let price of prices) {
+        firstBuy = Math.min(firstBuy, price);                 // Min price to buy first stock
+        firstProfit = Math.max(firstProfit, price - firstBuy); // Max profit from first sell
+        
+        secondBuy = Math.min(secondBuy, price - firstProfit);  // Min cost to buy second stock
+        secondProfit = Math.max(secondProfit, price - secondBuy); // Max profit from second sell
+    }
+
+    return secondProfit; // Max profit after at most two transactions
+};
+
+
+
+/****************************************  SLIDING WINDOW MAXIMUM  ********************************
+ * Leetcode 20: https://leetcode.com/problems/sliding-window-maximum/
+*/
+
+
+// SOLUTION 2: BRUTE FORCE APPROACH -> O(n*k)
+
+var maxSlidingWindow = function(nums, k) {
+    let result = [];
+
+    // Iterate over all possible starting positions of the sliding window
+    for (let i = 0; i <= nums.length - k; i++) {
+        let maxVal = nums[i]; // Assume the first element of the window is the max
+        
+        // Iterate over the next k elements to find the max in this window
+        for (let j = i; j < i + k; j++) {
+            maxVal = Math.max(maxVal, nums[j]);
+        }
+
+        result.push(maxVal); // Store the maximum of the current window
+    }
+
     return result;
-}
+};
 
-// Example usage
-let matrix = [
-  [1,  2,  3,  4 ],
-  [5,  6,  7,  8 ],
-  [9, 10, 11, 12]
-];
-console.log(spiralOrder(matrix)); 
-// Output: [1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7]
+// Example Usage:
+console.log(maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3));  
+// Output: [3, 3, 5, 5, 6, 7]
 
+// SOLUTION 2: DEQUE (DOUBLE ENDED QUEUE) -> O(n)
+
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number[]}
+ */
+var maxSlidingWindow = function(nums, k) {
+    let deque = [];  // Store indices
+    let result = [];
+
+    for (let i = 0; i < nums.length; i++) {
+        // Remove elements out of the current window
+        if (deque.length > 0 && deque[0] < i - k + 1) {
+            deque.shift();
+        }
+
+        // Remove all elements smaller than the current one
+        while (deque.length > 0 && nums[deque[deque.length - 1]] < nums[i]) {
+            deque.pop();
+        }
+
+        // Add current element index to deque
+        deque.push(i);
+
+        // Store the maximum for the window (only when i >= k - 1)
+        if (i >= k - 1) {
+            result.push(nums[deque[0]]);
+        }
+    }
+
+    return result;
+};
