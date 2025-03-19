@@ -1,0 +1,17 @@
+  
+🚀🚀 **Subarray Product Less Than K (Key Points)** 🚀🚀  
+
+✅ **1) Handle Edge Case First:**  
+   - If `k <= 1`, return `0` immediately since no positive subarray product can be less than `k`.  
+
+✅ **2) Expand the Window:**  
+   - Multiply `product` by `nums[right]` while expanding the window to the right.  
+
+✅ **3) Shrink the Window When Needed:**  
+   - If `product >= k`, shrink the window by dividing `product` by `nums[left]` and increment `left`.  
+
+✅ **4) Update Count:**  
+   - Add `right - left + 1` to `count` for every valid window, since all subarrays ending at `right` are valid.
+
+
+   
