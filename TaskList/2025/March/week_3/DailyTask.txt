@@ -99,5 +99,9 @@ Status: completed
 /************************************** MAXIMIZE THE CONFUSION OF EXAM  *************************************************
  * Leetcode 1: https://leetcode.com/problems/maximize-the-confusion-of-an-exam/
 */
+Status: completed
 
+/************************************** MAXIMUM SUM SUBARRAY  *************************************************
+ * Leetcode 14: https://leetcode.com/problems/maximum-subarray/
+*/
 Status: completed

@@ -1,0 +1,20 @@
+🚀**1️⃣ What is Kadane’s Algorithm?**🚀
+
+- ✅ Kadane’s Algorithm is an efficient method to find the **maximum sum subarray** in a given integer array.  
+- ✅ It follows the **Dynamic Programming (DP) approach**.  
+- ✅ Runs in **O(n) time complexity**.  
+
+
+Why currentSum = Math.max(currentSum + num, num); works?
+The key idea behind Kadane’s algorithm is "extend the current subarray or start a new one?"
+
+Understanding the Two Choices in Math.max(currentSum + num, num)
+Extend the previous subarray → currentSum + num
+
+If adding num increases the sum, then we should keep extending the subarray.
+Start a new subarray with num → num
+
+If currentSum + num becomes smaller than num itself, it means the previous sum is hurting us.
+In this case, drop the old subarray and start fresh from num.
+
+

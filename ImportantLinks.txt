@@ -139,7 +139,8 @@ https://leetcode.com/problems/minimum-size-subarray-sum/
 https://leetcode.com/problems/minimum-window-substring/
 
 
-For an **SDE-1 position** in a **top product-based company** (like Google, Amazon, Microsoft, Meta, etc.), you need to **master Data Structures and Algorithms (DSA)** along with **System Design (Basics), OOPs, and CS fundamentals**.  
+For an **SDE-1 position** in a **top product-based company** (like Google, Amazon, Microsoft, Meta, etc.), 
+you need to **master Data Structures and Algorithms (DSA)** along with **System Design (Basics), OOPs, and CS fundamentals**.  
 
 ---
 ## **🚀 DSA Topics to Focus on for SDE-1**

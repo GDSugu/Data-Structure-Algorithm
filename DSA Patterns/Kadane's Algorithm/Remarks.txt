@@ -1,0 +1,17 @@
+🚀🚀 ** Maximum Sum Subarray ** 🚀🚀
+
+### ✅ **Kadane’s Algorithm – Why `currentSum = Math.max(currentSum + num, num);` Works?**  
+
+✔️ **Key Idea:**  
+- The algorithm decides whether to **extend the current subarray** or **start a new one**.  
+
+✔️ **Understanding the Two Choices in `Math.max(currentSum + num, num)`**  
+
+1️⃣ **Extend the previous subarray → `currentSum + num`**  
+   - If adding `num` **increases the sum**, continue extending the subarray.
+
+2️⃣ **Start a new subarray with `num` → `num`**  
+   - If `currentSum + num` **is smaller than `num`**, the previous sum is **hurting us**.
+   - **Drop the old subarray** and start fresh from `num`.  
+
+✔️ **This ensures `currentSum` always stores the best possible sum ending at the current index.**  
