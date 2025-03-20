@@ -91,4 +91,13 @@ Status: completed
 Status: completed
 
 
+            ################################################################################
+            #                     🌟  19 | March | 2025  🌟                               #
+            #                          📅  Wednesday 📅                                   #
+            ################################################################################
 
+/************************************** MAXIMIZE THE CONFUSION OF EXAM  *************************************************
+ * Leetcode 1: https://leetcode.com/problems/maximize-the-confusion-of-an-exam/
+*/
+
+Status: completed

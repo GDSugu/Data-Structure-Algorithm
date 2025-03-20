@@ -45,3 +45,8 @@
 /**************************************** BEST TO BUY AND SELL THE STOCK  ******************
  * Leetcode 12: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
 */
+
+/************************************** MAXIMIZE THE CONFUSION OF EXAM  *************************************************
+ * Leetcode 13: https://leetcode.com/problems/maximize-the-confusion-of-an-exam/
+*/
+
