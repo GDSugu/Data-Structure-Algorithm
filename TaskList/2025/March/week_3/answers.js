@@ -503,3 +503,29 @@ function maxSubArray(nums) {
 console.log(maxSubArray([-2,1,-3,4,-1,2,1,-5,4])); // Output: 6
 console.log(maxSubArray([1])); // Output: 1
 console.log(maxSubArray([5,4,-1,7,8])); // Output: 23
+
+
+let largeArr = Array.from({ length: 100 }, (_, i) => i + 1);
+
+// ✅ Precompute the HashMap outside the function
+let map = new Map(largeArr.map(num => [num, num]));
+
+function findValueLarge(arr) {
+    for (let num of arr) {
+        if (num === 50) {
+            return;
+        }
+    }
+}
+
+function hashmapValueLarge() {
+    map.has(50); // ✅ Only lookup, no creation
+}
+
+console.time("Large Array Search");
+findValueLarge(largeArr);
+console.timeEnd("Large Array Search");
+
+console.time("Large HashMap Search");
+hashmapValueLarge();
+console.timeEnd("Large HashMap Search");

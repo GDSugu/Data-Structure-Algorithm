@@ -1,3 +1,13 @@
+DSA Notes
+https://docs.google.com/spreadsheets/d/1l0Py4m-E_qnO7kfb7yZuEQzV096DjWG42Gnp5YdUZMg/edit?usp=sharing
+
+DSA Explanation
+https://docs.google.com/spreadsheets/d/1zf02JTnlLbUHzHVT_8oOFHaFZ1161dIc7dxe3UE0KaA/edit?usp=sharing
+
+System Design
+https://www.karanpratapsingh.com/courses/system-design/sql-databases
+
+
 🚀 Must Do DSA Topics
 ✅ Arrays & Strings → Sliding window, Two pointers, Kadane’s Algorithm
 
