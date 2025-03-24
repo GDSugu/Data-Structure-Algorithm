@@ -1,3 +1,7 @@
 /************************************** INSERT INTO A BINARY SERACH TREE  *************************************************
  * Leetcode 1: https://leetcode.com/problems/insert-into-a-binary-search-tree/
 */
+
+/************************************** PATH SUM  *************************************************
+ * Leetcode 1: https://leetcode.com/problems/path-sum-ii/
+*/

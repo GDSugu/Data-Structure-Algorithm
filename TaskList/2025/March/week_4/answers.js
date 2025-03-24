@@ -40,3 +40,50 @@ var insertIntoBST = function(root, val) {
     
     return root;
 };
+
+
+/************************************** PATH SUM  *************************************************
+ * Leetcode 1: https://leetcode.com/problems/path-sum-ii/
+*/
+
+// SOLUTION: BACKTRACKING AND RECURSION - O(N)
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @param {number} targetSum
+ * @return {number[][]}
+ */
+var pathSum = function(root, targetSum) {
+    let result = [];
+
+    function dfs(node, currentPath, currentSum) {
+        if (!node) return;  // Base case: if node is null, return
+
+        // Include current node in path
+        currentPath.push(node.val);
+        currentSum += node.val;
+
+        // If it's a leaf node and sum matches targetSum, add path to result
+        if (!node.left && !node.right && currentSum === targetSum) {
+            result.push([...currentPath]); // Copy the array
+        }
+
+        // Recur for left and right children
+        dfs(node.left, currentPath, currentSum);
+        dfs(node.right, currentPath, currentSum);
+
+        // Backtracking: Remove the last node before returning
+        currentPath.pop();
+    }
+
+    dfs(root, [], 0);
+    return result;
+};
