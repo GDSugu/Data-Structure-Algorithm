@@ -87,3 +87,37 @@ var pathSum = function(root, targetSum) {
     dfs(root, [], 0);
     return result;
 };
+
+
+/************************************** SMALLEST STRING STARTING FROM LEAF  *************************************************
+ * Leetcode 3: https://leetcode.com/problems/smallest-string-starting-from-leaf/
+*/
+
+// SOLUTION: O(N)
+
+var smallestFromLeaf = function(root) {
+    let smallest = null;
+
+    function dfs(node, path) {
+        if (!node) return;
+        
+        // Convert node value to character and prepend to path
+        path = String.fromCharCode(97 + node.val) + path;
+        
+        // If leaf node, update smallest if needed
+        if (!node.left && !node.right) {
+            if (smallest === null || path < smallest) {
+                smallest = path;
+            }
+        }
+
+        // Recur for left and right subtrees
+        dfs(node.left, path);
+        dfs(node.right, path);
+    }
+
+    dfs(root, "");
+    return smallest;
+};
+
+
