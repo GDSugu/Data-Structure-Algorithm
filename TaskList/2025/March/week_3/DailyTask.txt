@@ -105,3 +105,18 @@ Status: completed
  * Leetcode 14: https://leetcode.com/problems/maximum-subarray/
 */
 Status: completed
+
+            ################################################################################
+            #                     🌟  23 | March | 2025  🌟                               #
+            #                          📅  Sunday 📅                                   #
+            ################################################################################
+
+/************************************** LOWEST COMMON ANCESTOR - BST  *************************************************
+ * Leetcode 1: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/description/
+*/
+Status: completed
+
+/************************************** LOWEST COMMON ANCESTOR - BST  *************************************************
+ * Leetcode 1: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/description/
+*/
+Status: completed
