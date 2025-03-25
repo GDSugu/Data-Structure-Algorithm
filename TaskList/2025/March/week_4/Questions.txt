@@ -9,3 +9,11 @@
 /************************************** SMALLEST STRING STARTING FROM LEAF  *************************************************
  * Leetcode 3: https://leetcode.com/problems/smallest-string-starting-from-leaf/
 */
+
+/************************************** MAXIMUM DIFFERENCE BETWEEN NODE AND ANCESTOR  *************************************************
+ * Leetcode 4: https://leetcode.com/problems/maximum-difference-between-node-and-ancestor/description/
+*/
+
+/************************************** MAXIMUM LEVEL SUM OF A BINARY TREE  *************************************************
+ * Leetcode 5: https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree/description/
+*/

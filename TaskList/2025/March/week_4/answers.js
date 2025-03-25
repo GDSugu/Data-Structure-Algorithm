@@ -121,3 +121,87 @@ var smallestFromLeaf = function(root) {
 };
 
 
+/************************************** MAXIMUM DIFFERENCE BETWEEN NODE AND ANCESTOR  *************************************************
+ * Leetcode 2: https://leetcode.com/problems/maximum-difference-between-node-and-ancestor/description/
+*/
+
+// SOLUTION: BACKTRACKING AND RECURSION
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+var maxAncestorDiff = function(root) {
+    function dfs(node, maxVal, minVal) {
+        if (!node) return maxVal - minVal; // Base case: return max difference so far
+
+        // Update max and min values for the current path
+        maxVal = Math.max(maxVal, node.val);
+        minVal = Math.min(minVal, node.val);
+
+        // Recur for left and right subtrees
+        let left = dfs(node.left, maxVal, minVal);
+        let right = dfs(node.right, maxVal, minVal);
+
+        // Return the maximum difference found in both subtrees
+        return Math.max(left, right);
+    }
+
+    return dfs(root, root.val, root.val);
+};
+
+
+/************************************** MAXIMUM LEVEL SUM OF A BINARY TREE  *************************************************
+ * Leetcode 4: https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree/description/
+*/
+
+// SOLUTION: BREADTH FIRST SEARCH - BFS -> O(N)
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+var maxLevelSum = function(root) {
+    if(!root) return 0;
+    let maxSum = -Infinity;
+    let queue = [root];
+    let resultLevel = 0;
+    let currentLevel = 0;
+
+    while(queue.length > 0){
+        currentLevel++;
+        let levelSum = 0;
+        const levelSize = queue.length;
+
+        for(let i=0; i<levelSize; i++){
+            const node = queue.shift();
+            levelSum += node.val;
+
+            if(node.left) queue.push(node.left);
+            if(node.right) queue.push(node.right);
+        }
+
+        if(levelSum > maxSum){
+            maxSum = levelSum;
+            resultLevel = currentLevel;
+        }
+    }
+
+    return resultLevel;
+};
