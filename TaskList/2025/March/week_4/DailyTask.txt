@@ -61,5 +61,9 @@ Status:
 /************************************** VALIDATE THE BINARY SEARCH TREE   *************************************************
  * Leetcode 3: https://leetcode.com/problems/validate-binary-search-tree/description/
 */
-Status:
+Status: completed
 
+/************************************** BINARY TREE CAMERA   *************************************************
+ * Leetcode 3: https://leetcode.com/problems/validate-binary-search-tree/description/
+*/
+Status: completed

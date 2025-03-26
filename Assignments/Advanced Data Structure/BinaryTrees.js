@@ -331,3 +331,103 @@ class Solution {
         console.log(numbers.join(""));
     }
 }
+
+
+/************************************** WATCHMEN OF BINARY TREE ********************************
+  * Given HeyCoach land’s Binary Tree Society, we have to place watchmen to keep an eye on the whole Society, each watchman can keep an eye on itself, parent node and immediate children. Calculate minimum number of Watchmen required to keep an eye on all houses of the HeyCoach Land.
+
+For example: Given the Binary Tree
+
+       1
+     /   \
+   2       3
+  /    
+ 6
+The minimum number of watchmen would be two which can be placed at node value '2' and '3'.
+
+Input Format:
+A single line that represents the value of the nodes and the value of '- 1' denotes NULL node.
+Output Format:
+Return a single integer representing the minimum number of watchmen required to keep an eye on the society.
+Sample Input 1:
+1 2 3 6 -1 -1 -1 -1 -1
+Sample Output 1:
+2
+Explanation :
+In the given binary tree (1 2 3 6 -1 -1 -1 -1 -1), placing a watchman at node '2' covers itself, node '6', and the root node '1'. Another watchman at node '3' covers itself and the root, resulting in a total of 2 watchmen.
+
+Sample Input 2:
+1 2 3 -1 -1 -1 -1
+Sample Output 2:
+1
+Explanation :
+Placing a watchman at the root node 1 covers the entire binary tree because the root node can monitor itself and its two children (2 and 3). Therefore, only 1 watchman is needed to monitor all the nodes in the tree.
+
+Constraints:
+
+0 <= N <= 10^4
+
+0 <= data <= 10^3
+
+Where 'N' denotes the total number of nodes and 'data' denotes the value of the node
+Note: Function should return the result.
+
+*/
+
+// SOLUTION: O(N)
+
+/*
+class TreeNode {
+    constructor(data) {
+        this.data = data;
+        this.left = null;
+        this.right = null;
+    }
+}
+*/
+
+class Solution {
+    constructor() {
+        this.cnt = 0; // This variable is not needed in the current implementation
+    }
+    
+    solve(root) {
+        // Define three states for nodes
+        const NOT_WATCHED = 0;  // Node is not monitored
+        const WATCHED = 1;      // Node is covered by a watchman (camera)
+        const HAS_WATCHMEN = 2; // Node has a watchman (camera) installed
+
+        let watchmen = 0; // Counter to track the number of watchmen (cameras) used
+
+        // Depth-First Search (DFS) function to traverse the tree
+        function dfs(node) {
+            if (!node) return WATCHED; // Null nodes are considered as already covered
+
+            let left = dfs(node.left);  // Recursively traverse left subtree
+            let right = dfs(node.right); // Recursively traverse right subtree
+
+            // If any child is NOT_WATCHED, install a watchman at the current node
+            if (left === NOT_WATCHED || right === NOT_WATCHED) {
+                watchmen++; // Increase the watchman (camera) count
+                return HAS_WATCHMEN; // Mark the current node as having a watchman
+            }
+
+            // If any child has a watchman, the current node is considered WATCHED
+            if (left === HAS_WATCHMEN || right === HAS_WATCHMEN) {
+                return WATCHED; // This node is covered but does not need a watchman
+            }
+
+            // If both children are WATCHED but do not have a watchman, mark this node as NOT_WATCHED
+            return NOT_WATCHED;
+        }
+
+        let rootNode = dfs(root); // Start DFS traversal from the root
+
+        // If the root node is NOT_WATCHED after traversal, place a watchman at the root
+        if (rootNode === NOT_WATCHED) {
+            watchmen++;
+        }
+
+        return watchmen; // Return the minimum number of watchmen (cameras) needed
+    }
+}

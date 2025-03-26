@@ -43,7 +43,7 @@ var insertIntoBST = function(root, val) {
 
 
 /************************************** PATH SUM  *************************************************
- * Leetcode 1: https://leetcode.com/problems/path-sum-ii/
+ * Leetcode 2: https://leetcode.com/problems/path-sum-ii/
 */
 
 // SOLUTION: BACKTRACKING AND RECURSION - O(N)
@@ -122,7 +122,7 @@ var smallestFromLeaf = function(root) {
 
 
 /************************************** MAXIMUM DIFFERENCE BETWEEN NODE AND ANCESTOR  *************************************************
- * Leetcode 2: https://leetcode.com/problems/maximum-difference-between-node-and-ancestor/description/
+ * Leetcode 4: https://leetcode.com/problems/maximum-difference-between-node-and-ancestor/description/
 */
 
 // SOLUTION: BACKTRACKING AND RECURSION
@@ -160,7 +160,7 @@ var maxAncestorDiff = function(root) {
 
 
 /************************************** MAXIMUM LEVEL SUM OF A BINARY TREE  *************************************************
- * Leetcode 4: https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree/description/
+ * Leetcode 5: https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree/description/
 */
 
 // SOLUTION: BREADTH FIRST SEARCH - BFS -> O(N)
@@ -207,7 +207,7 @@ var maxLevelSum = function(root) {
 };
 
 /************************************** Kth SMALLEST ELEMENT IN THE BST  *************************************************
- * Leetcode 1: https://leetcode.com/problems/kth-smallest-element-in-a-bst/
+ * Leetcode 6: https://leetcode.com/problems/kth-smallest-element-in-a-bst/
 */
 
 // SOLUTION: O(N)
@@ -232,4 +232,93 @@ var kthSmallest = function(root, k) {
 
     inorder(root);  // Start inorder traversal from the root
     return result;  // Return the kth smallest element
+};
+
+/************************************** BINARY TREE CAMERA   *************************************************
+ * Leetcode 7: https://leetcode.com/problems/validate-binary-search-tree/description/
+*/
+
+// SOLUTION: O(N)
+
+/*
+function TreeNode(val, left, right) {
+    this.val = (val === undefined ? 0 : val);
+    this.left = (left === undefined ? null : left);
+    this.right = (right === undefined ? null : right);
+}
+*/
+
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+var minCameraCover = function(root) {
+    // Define three states for nodes
+    const NOT_WATCHED = 0; // Node is not monitored
+    const WATCHED = 1;      // Node is covered by a camera
+    const HAS_CAMERA = 2;   // Node has a camera
+
+    let cameras = 0; // Counter to keep track of the total cameras used
+
+    // Depth-First Search (DFS) function to traverse the tree
+    function dfs_traverse(node = root) {
+        if (!node) return WATCHED; // Null nodes are considered as already covered
+
+        let left = dfs_traverse(node.left);  // Traverse left subtree
+        let right = dfs_traverse(node.right); // Traverse right subtree
+
+        // If any of the children are NOT_WATCHED, place a camera at the current node
+        if (left == NOT_WATCHED || right == NOT_WATCHED) {
+            cameras++;  // Increase the camera count
+            return HAS_CAMERA; // Mark current node as having a camera
+        }
+
+        // If any child has a camera, the current node is watched
+        if (left == HAS_CAMERA || right == HAS_CAMERA) {
+            return WATCHED; // This node is covered but does not need a camera
+        }
+
+        // If both children are watched but have no cameras, mark this node as NOT_WATCHED
+        return NOT_WATCHED;
+    }
+
+    let rootStatus = dfs_traverse(); // Start DFS traversal from the root
+
+    // If the root is NOT_WATCHED after traversal, we must place a camera there
+    if (rootStatus == NOT_WATCHED) cameras++;
+
+    return cameras; // Return the minimum number of cameras needed
+};
+
+/************************************** VALIDATE THE BINARY SEARCH TREE   *************************************************
+ * Leetcode 8: https://leetcode.com/problems/validate-binary-search-tree/description/
+*/
+
+/*
+function TreeNode(val, left, right) {
+    this.val = (val === undefined ? 0 : val);
+    this.left = (left === undefined ? null : left);
+    this.right = (right === undefined ? null : right);
+}
+*/
+
+/**
+ * @param {TreeNode} root
+ * @return {boolean}
+ */
+var isValidBST = function(root) {
+    function dfs(node, min, max) {
+        if (!node) return true; // Base case: empty subtree is valid
+        
+        // Check if current node's value is within the valid range
+        if (node.val > min && node.val < max) {
+            // Recursively check left and right subtrees with updated ranges
+            return dfs(node.left, min, node.val) && dfs(node.right, node.val, max);
+        } else {
+            return false; // Current node violates BST property
+        }
+    }
+    
+    // Start with the root and full range (-Infinity to Infinity)
+    return dfs(root, -Infinity, Infinity);
 };

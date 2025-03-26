@@ -21,3 +21,11 @@
 /************************************** Kth SMALLEST ELEMENT IN THE BST  *************************************************
  * Leetcode 6: https://leetcode.com/problems/kth-smallest-element-in-a-bst/
 */
+
+/************************************** BINARY TREE CAMERA   *************************************************
+ * Leetcode 7: https://leetcode.com/problems/validate-binary-search-tree/description/
+*/
+
+/************************************** VALIDATE THE BINARY SEARCH TREE   *************************************************
+ * Leetcode 8: https://leetcode.com/problems/validate-binary-search-tree/description/
+*/
