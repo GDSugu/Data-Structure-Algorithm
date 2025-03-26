@@ -23,9 +23,14 @@
 */
 
 /************************************** BINARY TREE CAMERA   *************************************************
- * Leetcode 7: https://leetcode.com/problems/validate-binary-search-tree/description/
+ * Leetcode 7: https://leetcode.com/problems/binary-tree-cameras/description/
 */
 
 /************************************** VALIDATE THE BINARY SEARCH TREE   *************************************************
  * Leetcode 8: https://leetcode.com/problems/validate-binary-search-tree/description/
 */
+
+/************************************** BINARY SEARCH TREE ITERATOR  *************************************************
+ * Leetcode 9: https://leetcode.com/problems/binary-search-tree-iterator/
+*/
+

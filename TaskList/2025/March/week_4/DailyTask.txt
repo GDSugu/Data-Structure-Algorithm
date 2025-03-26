@@ -56,7 +56,7 @@ Status: completed
 /************************************** BINARY SEARCH TREE ITERATOR  *************************************************
  * Leetcode 2: https://leetcode.com/problems/binary-search-tree-iterator/
 */
-Status:
+Status:completed
 
 /************************************** VALIDATE THE BINARY SEARCH TREE   *************************************************
  * Leetcode 3: https://leetcode.com/problems/validate-binary-search-tree/description/
@@ -64,6 +64,6 @@ Status:
 Status: completed
 
 /************************************** BINARY TREE CAMERA   *************************************************
- * Leetcode 3: https://leetcode.com/problems/validate-binary-search-tree/description/
+ * Leetcode 4: https://leetcode.com/problems/binary-tree-cameras/description/
 */
 Status: completed

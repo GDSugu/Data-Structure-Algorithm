@@ -235,7 +235,7 @@ var kthSmallest = function(root, k) {
 };
 
 /************************************** BINARY TREE CAMERA   *************************************************
- * Leetcode 7: https://leetcode.com/problems/validate-binary-search-tree/description/
+ * Leetcode 7: https://leetcode.com/problems/binary-tree-cameras/description/
 */
 
 // SOLUTION: O(N)
@@ -322,3 +322,56 @@ var isValidBST = function(root) {
     // Start with the root and full range (-Infinity to Infinity)
     return dfs(root, -Infinity, Infinity);
 };
+
+/************************************** BINARY SEARCH TREE ITERATOR  *************************************************
+ * Leetcode 9: https://leetcode.com/problems/binary-search-tree-iterator/
+*/
+
+// SOLUTION: INORDER TRAVERSAL + STACK -> O(N)
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ */
+var BSTIterator = function(root) {
+    this.stack = [];
+    this._pushLeft(root)
+};
+
+BSTIterator.prototype._pushLeft = function(node) {
+    while(node){
+        this.stack.push(node);
+        node = node.left;
+    }
+    
+};
+
+/**
+ * @return {number}
+ */
+BSTIterator.prototype.next = function() {
+    let node = this.stack.pop();
+    this._pushLeft(node.right);
+    return node.val;
+};
+
+/**
+ * @return {boolean}
+ */
+BSTIterator.prototype.hasNext = function() {
+    return this.stack.length > 0;
+};
+
+/** 
+ * Your BSTIterator object will be instantiated and called as such:
+ * var obj = new BSTIterator(root)
+ * var param_1 = obj.next()
+ * var param_2 = obj.hasNext()
+ */
