@@ -17,3 +17,7 @@
 /************************************** MAXIMUM LEVEL SUM OF A BINARY TREE  *************************************************
  * Leetcode 5: https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree/description/
 */
+
+/************************************** Kth SMALLEST ELEMENT IN THE BST  *************************************************
+ * Leetcode 6: https://leetcode.com/problems/kth-smallest-element-in-a-bst/
+*/

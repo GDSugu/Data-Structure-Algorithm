@@ -205,3 +205,31 @@ var maxLevelSum = function(root) {
 
     return resultLevel;
 };
+
+/************************************** Kth SMALLEST ELEMENT IN THE BST  *************************************************
+ * Leetcode 1: https://leetcode.com/problems/kth-smallest-element-in-a-bst/
+*/
+
+// SOLUTION: O(N)
+
+var kthSmallest = function(root, k) {
+    let count = 0;  // Keeps track of the number of nodes visited in inorder traversal
+    let result = null;  // Stores the kth smallest element once found
+
+    function inorder(node) {
+        if (!node || result !== null) return;  // Stop if node is null or we have already found the kth element
+
+        inorder(node.left);  // Traverse the left subtree (smaller values)
+
+        count++;  // Increment count when visiting a node
+        if (count === k) {  // If this is the kth node visited
+            result = node.val;  // Store the kth smallest value
+            return;  // Stop further traversal
+        }
+
+        inorder(node.right);  // Traverse the right subtree (larger values)
+    }
+
+    inorder(root);  // Start inorder traversal from the root
+    return result;  // Return the kth smallest element
+};

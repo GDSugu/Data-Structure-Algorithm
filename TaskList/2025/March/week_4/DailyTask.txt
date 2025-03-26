@@ -20,7 +20,7 @@ Status: completed
 
             ################################################################################
             #                     🌟  25 | March | 2025  🌟                               #
-            #                          📅  Tuesday 📅                                      #
+            #                          📅  Tuesday 📅                                     #
             ################################################################################
 
 /************************************** SMALLEST SUBTREE WITH ALL THE DEEPEST NODES  *************************************************
@@ -42,3 +42,24 @@ Status:
  * Leetcode 4: https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree/description/
 */
 Status:completed
+
+            ################################################################################
+            #                     🌟  26 | March | 2025  🌟                               #
+            #                          📅  Wednesday 📅                                   #
+            ################################################################################
+
+/************************************** Kth SMALLEST ELEMENT IN THE BST  *************************************************
+ * Leetcode 1: https://leetcode.com/problems/kth-smallest-element-in-a-bst/
+*/
+Status: completed
+
+/************************************** BINARY SEARCH TREE ITERATOR  *************************************************
+ * Leetcode 2: https://leetcode.com/problems/binary-search-tree-iterator/
+*/
+Status:
+
+/************************************** VALIDATE THE BINARY SEARCH TREE   *************************************************
+ * Leetcode 3: https://leetcode.com/problems/validate-binary-search-tree/description/
+*/
+Status:
+
