@@ -67,3 +67,29 @@ Status: completed
  * Leetcode 4: https://leetcode.com/problems/binary-tree-cameras/description/
 */
 Status: completed
+
+
+            ################################################################################
+            #                     🌟  27 | March | 2025  🌟                               #
+            #                          📅  Thursday 📅                                    #
+            ################################################################################
+
+/************************************** SUM ROOT TO LEAF *************************************************
+ * Leetcode 1: https://leetcode.com/problems/sum-root-to-leaf-numbers/description/
+*/
+Status: 
+
+/************************************** ALL ELEMENTS IN TWO BINARY SEARCH TREE  *************************************************
+ * Leetcode 2: https://leetcode.com/problems/all-elements-in-two-binary-search-trees/description/
+*/
+Status:
+
+/************************************** MAXIMUM WIDTH OF BINARY TREE   *************************************************
+ * Leetcode 3: https://leetcode.com/problems/maximum-width-of-binary-tree/description/
+*/
+Status: 
+
+/************************************** TRIM BINARY SEARCH TREE  *************************************************
+ * Leetcode 4: https://leetcode.com/problems/trim-a-binary-search-tree/description/
+*/
+Status: 
