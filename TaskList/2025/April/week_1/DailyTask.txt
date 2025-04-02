@@ -1,0 +1,26 @@
+https://leetcode.com/discuss/post/6519304/2025-hiring-prep-sprint-big-tech-intervi-w7nl/
+            
+            ################################################################################
+            #                     🌟  31 | March | 2025  🌟                               #
+            #                          📅  Monday 📅                                      #
+            ################################################################################
+
+/************************************** PARTITION LABELS *************************************************
+ * Leetcode 1: https://leetcode.com/problems/partition-labels/description/
+*/
+Status: Completed
+
+/************************************** STRINGS WITHOUT 'AAA' OR 'BBB' *************************************************
+ * Leetcode 2: https://leetcode.com/problems/string-without-aaa-or-bbb/
+*/
+Status: Completed
+
+            ################################################################################
+            #                     🌟  01 | April | 2025  🌟                               #
+            #                          📅  Tuesday 📅                                      #
+            ################################################################################
+
+/************************************** GROUP THE PEOPLE GIVEN THE GROUP SIZE THEY BELONGS TO  *************************************************
+ * Leetcode 1: https://leetcode.com/problems/group-the-people-given-the-group-size-they-belong-to/description/
+*/
+Status: Completed
