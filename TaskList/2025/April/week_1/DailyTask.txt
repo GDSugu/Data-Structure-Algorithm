@@ -17,10 +17,40 @@ Status: Completed
 
             ################################################################################
             #                     🌟  01 | April | 2025  🌟                               #
-            #                          📅  Tuesday 📅                                      #
+            #                          📅  Tuesday 📅                                     #
             ################################################################################
 
 /************************************** GROUP THE PEOPLE GIVEN THE GROUP SIZE THEY BELONGS TO  *************************************************
  * Leetcode 1: https://leetcode.com/problems/group-the-people-given-the-group-size-they-belong-to/description/
+*/
+Status: Completed
+
+            ################################################################################
+            #                     🌟  02 | April | 2025  🌟                               #
+            #                          📅  Wednesday 📅                                   #
+            ################################################################################
+
+/************************************** GROUP THE PEOPLE GIVEN THE GROUP SIZE THEY BELONGS TO  *************************************************
+ * Leetcode 1: https://leetcode.com/problems/group-the-people-given-the-group-size-they-belong-to/description/
+*/
+Status: Completed
+
+/************************************** GROUP THE PEOPLE GIVEN THE GROUP SIZE THEY BELONGS TO  *************************************************
+ * Leetcode 2: https://leetcode.com/problems/number-of-burgers-with-no-waste-of-ingredients/description/
+*/
+Status: Completed
+
+/************************************** FIND THE CENTER OF STAR GRAPH  *************************************************
+ * Leetcode 3: https://leetcode.com/problems/find-center-of-star-graph/
+*/
+Status: Completed
+
+/************************************** GAS STATION  *************************************************
+ * Leetcode 4: https://leetcode.com/problems/find-center-of-star-graph/
+*/
+Status: Completed
+
+/************************************** GAS STATION  *************************************************
+ * Leetcode 5: https://leetcode.com/problems/cinema-seat-allocation/
 */
 Status: Completed

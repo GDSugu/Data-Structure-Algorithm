@@ -77,7 +77,7 @@ var strWithout3a3b = function (a, b) {
  * Leetcode 3: https://leetcode.com/problems/group-the-people-given-the-group-size-they-belong-to/description/
 */
 
-// SOLUTION: 
+// SOLUTION: GREEDY ALGORITHM
 
 /**
  * @param {number[]} groupSizes
@@ -110,3 +110,157 @@ var groupThePeople = function(groupSizes) {
     return result; // Return the list of grouped people.
  };
  
+ /************************************** GROUP THE PEOPLE GIVEN THE GROUP SIZE THEY BELONGS TO  *************************************************
+ * Leetcode 4: https://leetcode.com/problems/number-of-burgers-with-no-waste-of-ingredients/description/
+*/
+
+// SOLUTION: LINEAR EQUATION SOLVING -> O(1)
+
+/**
+ * @param {number} tomatoSlices - Number of tomato slices available.
+ * @param {number} cheeseSlices - Number of cheese slices available.
+ * @return {number[]} - An array [jumboCount, smallCount] if a valid combination exists, otherwise an empty array [].
+ */
+var numOfBurgers = function(tomatoSlices, cheeseSlices) {
+    // If the number of tomato slices is odd, it's impossible to form valid burgers
+    if (tomatoSlices % 2 !== 0) return [];
+
+    // If we have more cheese slices than tomato slices, it's impossible to form valid burgers
+    if (cheeseSlices > tomatoSlices) return [];
+
+    // Calculate the number of Jumbo Burgers (x)
+    // Using the derived formula: x = (tomatoSlices - 2 * cheeseSlices) / 2
+    let jumboCount = (tomatoSlices - 2 * cheeseSlices) / 2;
+
+    // Calculate the number of Small Burgers (y)
+    // Using the equation: y = cheeseSlices - x
+    let smallCount = cheeseSlices - jumboCount;
+
+    // Check if both jumboCount and smallCount are non-negative integers
+    if (jumboCount >= 0 && smallCount >= 0 && Number.isInteger(jumboCount) && Number.isInteger(smallCount)) {
+        return [jumboCount, smallCount]; // Return the valid number of jumbo and small burgers
+    } else {
+        return []; // Return an empty array if no valid combination exists
+    }
+};
+
+/************************************** FIND THE CENTER OF STAR GRAPH  *************************************************
+ * Leetcode 3: https://leetcode.com/problems/find-center-of-star-graph/
+*/
+
+// SOLUTION: 
+
+/**
+ * @param {number[][]} edges
+ * @return {number}
+ */
+var findCenter = function(edges) {
+    // Extract nodes from the first edge
+    let [u1, v1] = edges[0];  // First edge (u1 -- v1)
+    let [u2, v2] = edges[1];  // Second edge (u2 -- v2)
+
+    // The center node must appear in both edges
+    // Check if u1 appears in the second edge
+    if (u1 === u2 || u1 === v2) {
+        return u1;  // u1 is the center node
+    } else {
+        return v1;  // Otherwise, v1 is the center node
+    }
+};
+
+
+/************************************** GAS STATION  *************************************************
+ * Leetcode 3: https://leetcode.com/problems/find-center-of-star-graph/
+*/
+
+// SOLUTION: GREEDY ALGORITHM -> O(N)
+
+/**
+ * @param {number[]} gas
+ * @param {number[]} cost
+ * @return {number}
+ */
+var canCompleteCircuit = function(gas, cost) {
+    // Step 1: Calculate total gas available and total cost required
+    let totalGas = gas.reduce((sum, g) => sum + g, 0);  // Sum of all gas stations
+    let totalCost = cost.reduce((sum, c) => sum + c, 0); // Sum of all costs
+
+    // Step 2: If total gas is less than total cost, it's impossible to complete the circuit
+    if (totalGas < totalCost) return -1;
+
+    // Step 3: Initialize variables to track remaining gas and starting station index
+    let remainingGas = 0, start = 0;
+
+    // Step 4: Iterate through each gas station
+    for (let i = 0; i < gas.length; i++) {
+        remainingGas += gas[i] - cost[i]; // Update remaining gas after reaching next station
+
+        // Step 5: If remaining gas becomes negative, reset start index to the next station
+        if (remainingGas < 0) {
+            start = i + 1; // Set new starting station
+            remainingGas = 0; // Reset remaining gas
+        }
+    }
+
+    // Step 6: Return the starting station index
+    return start;
+};
+
+/************************************** GAS STATION  *************************************************
+ * Leetcode 5: https://leetcode.com/problems/cinema-seat-allocation/
+*/
+
+// SOLUTION: GREEDY ALGORITHM -> O(N)
+
+/**
+ * @param {number} n - Number of rows in the cinema.
+ * @param {number[][]} reservedSeats - Array of reserved seat positions [row, seat].
+ * @return {number} - Maximum number of 4-person groups that can be seated.
+ */
+var maxNumberOfFamilies = function(n, reservedSeats) {
+    
+    // Define seat groups where a 4-person group can sit
+    let placeLeft = [2, 3, 4, 5];  // Left block
+    let placeRight = [6, 7, 8, 9]; // Right block
+    let placeMiddle = [4, 5, 6, 7]; // Middle block (fallback if left and right are occupied)
+
+    let map = new Map(); // Map to store reserved seats per row
+
+    // Populate the map with reserved seats for each row
+    for (let [row, seat] of reservedSeats) {
+        if (!map.has(row)) {
+            map.set(row, new Set()); // Create a new Set for the row if not present
+        }
+        map.get(row).add(seat); // Add the reserved seat to the Set
+    }
+
+    let maxGroups = 0;
+
+    // Process only rows that have reserved seats
+    for (let [row, seat] of map) {
+        let count = 0;
+
+        // Check if the left block (2-5) is available
+        if (!placeLeft.some(s => seat.has(s))) {
+            count += 1;
+        }
+
+        // Check if the right block (6-9) is available
+        if (!placeRight.some(s => seat.has(s))) {
+            count += 1;
+        }
+
+        // If neither left nor right are available, check the middle block (4-7)
+        if (count === 0 && !placeMiddle.some(s => seat.has(s))) {
+            count += 1;
+        }
+
+        maxGroups += count;
+    }
+
+    // Add rows that have no reservations (each row can fit 2 groups)
+    maxGroups += (n - map.size) * 2;
+
+    return maxGroups;
+};
+

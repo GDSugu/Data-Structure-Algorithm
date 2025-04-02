@@ -10,3 +10,18 @@
  * Leetcode 3: https://leetcode.com/problems/group-the-people-given-the-group-size-they-belong-to/description/
 */
 
+/************************************** GROUP THE PEOPLE GIVEN THE GROUP SIZE THEY BELONGS TO  *************************************************
+ * Leetcode 4: https://leetcode.com/problems/number-of-burgers-with-no-waste-of-ingredients/description/
+*/
+
+/************************************** FIND THE CENTER OF STAR GRAPH  *************************************************
+ * Leetcode 5: https://leetcode.com/problems/find-center-of-star-graph/
+*/
+
+/************************************** GAS STATION  *************************************************
+ * Leetcode 6: https://leetcode.com/problems/find-center-of-star-graph/
+*/
+
+/************************************** GAS STATION  *************************************************
+ * Leetcode 7: https://leetcode.com/problems/cinema-seat-allocation/
+*/
