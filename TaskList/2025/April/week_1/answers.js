@@ -264,3 +264,38 @@ var maxNumberOfFamilies = function(n, reservedSeats) {
     return maxGroups;
 };
 
+/************************************** BOATS TO SAVE PEOPLE  *************************************************
+ * Leetcode 1: https://leetcode.com/problems/boats-to-save-people/description/
+*/
+
+// SOLUTION: GREEDY ALGORITHM  -> O(N)
+
+/**
+ * @param {number[]} people - Array of people's weights
+ * @param {number} limit - Maximum weight a boat can carry
+ * @return {number} - Minimum number of boats required
+ */
+var numRescueBoats = function(people, limit) {
+    // Sort the array in ascending order to easily pair the lightest and heaviest
+    people.sort((a, b) => a - b);
+
+    let left = 0; // Pointer to the lightest person
+    let right = people.length - 1; // Pointer to the heaviest person
+    let count = 0; // Boat count
+
+    // Continue until all people are placed in boats
+    while (left <= right) {
+        // If the lightest and heaviest person can share a boat
+        if (people[left] + people[right] <= limit) {
+            left++; // Lightest boards the boat
+        }
+
+        // Heaviest person boards the boat (either alone or with lightest)
+        right--;
+
+        // One boat used in either case
+        count++;
+    }
+
+    return count;
+};

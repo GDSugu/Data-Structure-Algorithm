@@ -54,3 +54,13 @@ Status: Completed
  * Leetcode 5: https://leetcode.com/problems/cinema-seat-allocation/
 */
 Status: Completed
+
+            ################################################################################
+            #                     🌟  04 | April | 2025  🌟                               #
+            #                          📅  Friday 📅                                   #
+            ################################################################################
+
+/************************************** BOATS TO SAVE PEOPLE  *************************************************
+ * Leetcode 1: https://leetcode.com/problems/boats-to-save-people/description/
+*/
+Status: Completed

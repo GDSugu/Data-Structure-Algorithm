@@ -25,3 +25,7 @@
 /************************************** GAS STATION  *************************************************
  * Leetcode 7: https://leetcode.com/problems/cinema-seat-allocation/
 */
+
+/************************************** BOATS TO SAVE PEOPLE  *************************************************
+ * Leetcode 8: https://leetcode.com/problems/boats-to-save-people/description/
+*/
