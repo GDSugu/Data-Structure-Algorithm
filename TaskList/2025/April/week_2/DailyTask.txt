@@ -3,7 +3,27 @@
             #                          📅  Monday 📅                                      #
             ################################################################################
 
-/************************************** BOATS TO SAVE PEOPLE  *************************************************
- * Leetcode 1: https://leetcode.com/problems/boats-to-save-people/description/
+/************************************** Sort Colors  *************************************************
+ * Leetcode 1: https://leetcode.com/problems/sort-colors/
+*/
+Status: Completed
+
+/************************************** Sum of Square Numbers  ****************************************
+ * Leetcode 2: https://leetcode.com/problems/sum-of-square-numbers/
+*/
+Status: Completed
+
+/************************************** Sort Array by Parity  ****************************************
+ * Leetcode 3: https://leetcode.com/problems/sort-array-by-parity/
+*/
+Status: Completed
+
+/************************************** Reverse only Letters  ****************************************
+ * Leetcode 4: https://leetcode.com/problems/reverse-only-letters
+*/
+Status: Completed
+
+/************************************** PARTITION LIST  ****************************************
+ * Leetcode 5: https://leetcode.com/problems/partition-list/
 */
 Status: Completed
