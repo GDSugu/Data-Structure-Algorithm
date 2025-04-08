@@ -22,10 +22,6 @@
  * Leetcode 6: https://leetcode.com/problems/next-permutation/description/
 */
 
-/*************************************** TWO SUM- II INPUT ARRAY IS SORTED  *******************
- * Leetcode 7: https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
-*/
-
 /*************************************** House Robber - I *************************************
  * Leetcode 8: https://leetcode.com/problems/house-robber/description/
 */

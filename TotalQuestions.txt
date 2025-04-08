@@ -1,0 +1,16 @@
+/*************************************** FIND ALL PERMUTATION  ***************************
+ * Leetcode 1: https://leetcode.com/problems/permutations/description/
+*/
+
+/*************************************** NEXT PERMUTATION  ***************************
+ * Leetcode 2: https://leetcode.com/problems/next-permutation/description/
+*/
+
+/*************************************** TWO SUM- II INPUT ARRAY IS SORTED  *******************
+ * Leetcode 3: https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
+*/
+
+/**************************************** TWO SUM  ********************************
+ * LEETCODE 4: https://leetcode.com/problems/two-sum/
+*/
+

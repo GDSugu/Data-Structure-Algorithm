@@ -1,5 +1,5 @@
             ################################################################################
-            #                     🌟  08 | April | 2025  🌟                               #
+            #                     🌟  07 | April | 2025  🌟                               #
             #                          📅  Monday 📅                                      #
             ################################################################################
 
@@ -25,5 +25,25 @@ Status: Completed
 
 /************************************** PARTITION LIST  ****************************************
  * Leetcode 5: https://leetcode.com/problems/partition-list/
+*/
+Status: Completed
+
+            ################################################################################
+            #                     🌟  08 | April | 2025  🌟                               #
+            #                          📅  Tuesday 📅                                     #
+            ################################################################################
+
+/************************************** NUMBER OF SUBARRAYS WITH BOUNDED MAXIMUM  *************************************************
+ * Leetcode 1: https://leetcode.com/problems/number-of-subarrays-with-bounded-maximum/
+*/
+Status: Completed
+
+/**************************************** TWO SUM- II INPUT ARRAY IS SORTED  ********************************
+ * Leetcode 2: https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
+*/
+Status: Completed
+
+/**************************************** TWO SUM  ********************************
+ * Leetcode 3: https://leetcode.com/problems/two-sum/
 */
 Status: Completed
