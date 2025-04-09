@@ -9,37 +9,50 @@
  * @return {number[][]}
  */
 function threeSum(nums) {
+    // Step 1: Sort the array to make it easier to avoid duplicates and use two-pointer technique
+    nums.sort((a, b) => a - b);
 
-    nums.sort((a,b) => a-b);
     let result = [];
 
-    for(let i=0; i<nums.length-2; i++){
+    // Step 2: Loop through the array, treating nums[i] as the first number of the triplet
+    for (let i = 0; i < nums.length - 2; i++) {
+        // Skip duplicate values for the first number to avoid duplicate triplets
+        if (i > 0 && nums[i] === nums[i - 1]) continue;
 
-        if(i>0 && nums[i] === nums[i-1]) continue;
+        // Step 3: Use two pointers to find the other two numbers that sum to zero with nums[i]
+        let left = i + 1;              // Second number starts right after i
+        let right = nums.length - 1;   // Third number starts from the end
 
-        let left = i+1;
-        let right = nums.length-1;
+        while (left < right) {
+            let sum = nums[i] + nums[left] + nums[right];
 
-        while(left < right){
-            let sum = nums[i]+ nums[left]+ nums[right];
+            // Case 1: Triplet found
+            if (sum === 0) {
+                result.push([nums[i], nums[left], nums[right]]);
 
-            if(sum === 0){
-                result.push([nums[i],nums[left],nums[right]]);
-                while(left < right && nums[left] === nums[left+1]) left++;
-                while(left < right && nums[right] === nums[right -1]) right--;
+                // Skip duplicates for the second number
+                while (left < right && nums[left] === nums[left + 1]) left++;
+                // Skip duplicates for the third number
+                while (left < right && nums[right] === nums[right - 1]) right--;
 
+                // Move both pointers after finding a valid triplet
                 left++;
                 right--;
-            }else if(sum < 0){
+            }
+            // Case 2: Sum is too small → move left pointer to increase the sum
+            else if (sum < 0) {
                 left++;
-            }else{
+            }
+            // Case 3: Sum is too large → move right pointer to decrease the sum
+            else {
                 right--;
             }
         }
     }
 
-    return result;
+    return result; // Return all unique triplets that sum to zero
 }
+
 
 /************************************** FOUR SUM ***************************
  * Leetcode 2: https://leetcode.com/problems/4sum/description/
@@ -48,65 +61,86 @@ function threeSum(nums) {
 // SOLUTION: SORTING + TWO POINTER
 
 /**
- * @param {number[]} nums
- * @param {number} target
- * @return {number[][]}
+ * @param {number[]} nums - Input array of integers
+ * @param {number} target - Target sum to find four numbers that add up to it
+ * @return {number[][]} - Array of all unique quadruplets that sum to the target
  */
-var fourSum = function(nums, target) {
-    nums.sort((a,b) => a-b);
+var fourSum = function (nums, target) {
+    // Step 1: Sort the input array to simplify duplicate removal and two-pointer logic
+    nums.sort((a, b) => a - b);
 
     let result = [];
 
-    for(let i=0; i<nums.length-3; i++){
-        if(i>0 && nums[i] === nums[i-1]) continue;
+    // Step 2: Outer loop to fix the first number (nums[i])
+    for (let i = 0; i < nums.length - 3; i++) {
+        // Skip duplicates for the first number
+        if (i > 0 && nums[i] === nums[i - 1]) continue;
 
-        for(j=i+1; j<nums.length -2; j++){
-            if(j>i+1 && nums[j] === nums[j-1]) continue;
+        // Step 3: Second loop to fix the second number (nums[j])
+        for (let j = i + 1; j < nums.length - 2; j++) {
+            // Skip duplicates for the second number
+            if (j > i + 1 && nums[j] === nums[j - 1]) continue;
 
-            let left = j+1;
-            let right = nums.length -1;
+            // Step 4: Initialize two pointers for the remaining two numbers
+            let left = j + 1;
+            let right = nums.length - 1;
 
-            while(left < right){
-                let sum = nums[i]+nums[j]+nums[left]+nums[right];
+            // Step 5: Two-pointer approach to find the other two numbers
+            while (left < right) {
+                let sum = nums[i] + nums[j] + nums[left] + nums[right];
 
-                if(sum === target){
-                    result.push([nums[i],nums[j],nums[left],nums[right]]);
+                // Case 1: Found a valid quadruplet
+                if (sum === target) {
+                    result.push([nums[i], nums[j], nums[left], nums[right]]);
 
-                    while(left < right && nums[left] === nums[left+1]) left++;
-                    while(left < right && nums[right] === nums[right-1]) right--;
+                    // Skip duplicates for the third number
+                    while (left < right && nums[left] === nums[left + 1]) left++;
+                    // Skip duplicates for the fourth number
+                    while (left < right && nums[right] === nums[right - 1]) right--;
 
+                    // Move pointers inward after recording the valid result
                     left++;
                     right--;
-                }else if(sum < target){
+                }
+                // Case 2: Sum is too small, move left pointer to increase the sum
+                else if (sum < target) {
                     left++;
-                }else{
+                }
+                // Case 3: Sum is too large, move right pointer to decrease the sum
+                else {
                     right--;
                 }
             }
         }
     }
 
+    // Step 6: Return the list of unique quadruplets
     return result;
-    
 };
 
 /************************************** NEXT GREATER ELEMENT II *************************************************
  * Leetcode 3: https://leetcode.com/problems/next-greater-element-ii/
 */
 
-// MONOTONIC DECREASING STACK
+// SOLUTION: MONOTONIC DECREASING STACK -> O(N)
 
-const nextGreaterElements = nums => {
-    const n = nums.length;
-    const result = new Array(n).fill(-1);
-    const stack = [];
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var nextGreaterElements = function (nums) {
+    let n = nums.length;
+    let result = new Array(n).fill(-1); // Initialize result with -1
+    let stack = []; // Monotonic decreasing stack (stores indices)
 
+    // Traverse the array twice to simulate circular behavior
     for (let i = 0; i < 2 * n; i++) {
-        while (stack.length > 0 && nums[i % n] > nums[stack[stack.length - 1]]) {
-            const index = stack.pop();
-            result[index] = nums[i % n];
+        while (stack.length > 0 && nums[stack[stack.length - 1]] < nums[i % n]) {
+            let index = stack.pop(); // Get index of smaller element
+            result[index] = nums[i % n]; // Update result for this index
         }
 
+        // Only push indices from first pass (0 to n-1)
         if (i < n) {
             stack.push(i);
         }
@@ -115,12 +149,13 @@ const nextGreaterElements = nums => {
     return result;
 };
 
+
 /************************************** REMOVE DUPLICATES FROM SORTED LIST II *************************************************
  * Leetcode 4: https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/description/
 */
 
 // SOLUTION: 
-var deleteDuplicates = function(head) {
+var deleteDuplicates = function (head) {
     let dummy = new ListNode(0, head); // Dummy node to handle edge cases
 
     let prev = dummy;
@@ -151,7 +186,7 @@ var deleteDuplicates = function(head) {
 
 // SOLUTION: BINARY SEARCH -> O(log n)
 
-var search = function(nums, target) {
+var search = function (nums, target) {
     let left = 0, right = nums.length - 1;
 
     while (left <= right) {
@@ -169,9 +204,9 @@ var search = function(nums, target) {
             } else {
                 left = mid + 1; // Search right
             }
-        } 
+        }
         // Otherwise, the right half must be sorted
-        else { 
+        else {
             // If target is in the right sorted range
             if (nums[mid] < target && target <= nums[right]) {
                 left = mid + 1; // Search right
@@ -196,7 +231,7 @@ function longestSubstringWithNoRepeatingChars(s) {
     let left = 0; // Left pointer
     let maxLength = 0; // Maximum length of substring without repeating characters
     let charCount = new Map(); // Map to store character counts
-    
+
     // Traverse the string with the right pointer
     for (let right = 0; right < s.length; right++) {
         let rightChar = s[right];
@@ -208,12 +243,12 @@ function longestSubstringWithNoRepeatingChars(s) {
         while (charCount.get(rightChar) > 1) {
             let leftChar = s[left];
             charCount.set(leftChar, charCount.get(leftChar) - 1);
-            
+
             // If count becomes 0, remove the character from the map
             if (charCount.get(leftChar) === 0) {
                 charCount.delete(leftChar);
             }
-            
+
             left++; // Move the left pointer to shrink the window
         }
 
@@ -236,7 +271,7 @@ function longestSubstringWithNoRepeatingChars(s) {
  * @param {number[][]} matrix
  * @return {void} Do not return anything, modify matrix in-place instead.
  */
-var setZeroes = function(matrix) {
+var setZeroes = function (matrix) {
     let m = matrix.length;
     let n = matrix[0].length;
 
@@ -244,23 +279,23 @@ var setZeroes = function(matrix) {
     let firstColumnZero = false;
 
     // Check if first row contains zero
-    for(let j=0; j<n; j++){
-        if(matrix[0][j] === 0){
+    for (let j = 0; j < n; j++) {
+        if (matrix[0][j] === 0) {
             firstRowZero = true;
         }
     }
 
     // Check if first column contains zero
-    for(let i=0; i<m; i++){
-        if(matrix[i][0] === 0){
+    for (let i = 0; i < m; i++) {
+        if (matrix[i][0] === 0) {
             firstColumnZero = true;
         }
     }
 
     // Mark rows and columns
-    for(let i=1; i<m; i++){  // ✅ Added "let"
-        for(let j=1; j<n; j++){
-            if(matrix[i][j] === 0){
+    for (let i = 1; i < m; i++) {  // ✅ Added "let"
+        for (let j = 1; j < n; j++) {
+            if (matrix[i][j] === 0) {
                 matrix[i][0] = 0;
                 matrix[0][j] = 0;
             }
@@ -268,24 +303,24 @@ var setZeroes = function(matrix) {
     }
 
     // Set matrix elements based on markers
-    for(let i=1; i<m; i++){
-        for(let j=1; j<n; j++){
-            if(matrix[0][j] === 0 || matrix[i][0] === 0){
+    for (let i = 1; i < m; i++) {
+        for (let j = 1; j < n; j++) {
+            if (matrix[0][j] === 0 || matrix[i][0] === 0) {
                 matrix[i][j] = 0;
             }
         }
     }
 
     // Handle first row separately
-    if(firstRowZero){
-        for(let j=0; j<n; j++){
+    if (firstRowZero) {
+        for (let j = 0; j < n; j++) {
             matrix[0][j] = 0;  // ✅ Fixed "=" instead of "==="
         }
     }
 
     // Handle first column separately
-    if(firstColumnZero){
-        for(let i=0; i<m; i++){
+    if (firstColumnZero) {
+        for (let i = 0; i < m; i++) {
             matrix[i][0] = 0;  // ✅ Fixed "=" instead of "==="
         }
     }
@@ -299,7 +334,7 @@ var setZeroes = function(matrix) {
 
 // SOLUTION: SLIDING WINDOW -> O(n)
 
-var maxVowels = function(s, k) {
+var maxVowels = function (s, k) {
     let vowels = new Set(['a', 'e', 'i', 'o', 'u']); // Set for quick lookup
     let maxVowelCount = 0, currentVowelCount = 0;
     let left = 0;
@@ -337,7 +372,7 @@ var maxVowels = function(s, k) {
  * @param {number} n
  * @return {string[]}
  */
-var generateParenthesis = function(n) {
+var generateParenthesis = function (n) {
     const result = [];
 
     // Helper function to perform backtracking
@@ -347,21 +382,21 @@ var generateParenthesis = function(n) {
             result.push(current);
             return;
         }
-        
+
         // Add opening parenthesis if we can
         if (openCount < n) {
             backtrack(current + '(', openCount + 1, closeCount);
         }
-        
+
         // Add closing parenthesis if we can
         if (closeCount < openCount) {
             backtrack(current + ')', openCount, closeCount + 1);
         }
     }
-    
+
     // Start the backtracking process with an empty string
     backtrack("", 0, 0);
-    
+
     return result;
 };
 
@@ -376,7 +411,7 @@ var generateParenthesis = function(n) {
  * @param {string} s
  * @return {number}
  */
-var countPalindromicSubsequence = function(s) {
+var countPalindromicSubsequence = function (s) {
     let n = s.length;
     let result = 0;
 
@@ -428,7 +463,7 @@ var countPalindromicSubsequence = function(s) {
  * @param {character[][]} grid
  * @return {number}
  */
-var numIslands = function(grid) {
+var numIslands = function (grid) {
     let islandCount = 0;
     let rows = grid.length;
     let columns = grid[0].length;
@@ -470,12 +505,12 @@ var numIslands = function(grid) {
 */
 
 // SOLUTION: O(n * k log k)
-var groupAnagrams = function(strs) {
+var groupAnagrams = function (strs) {
     let map = new Map();
 
     for (let word of strs) {
         // Correctly split the word into characters
-        let sorted = word.split("").sort().join("");  
+        let sorted = word.split("").sort().join("");
 
         // If the sorted word is not in the map, initialize a list
         if (!map.has(sorted)) {
@@ -496,7 +531,7 @@ var groupAnagrams = function(strs) {
  * @param {string[]} strs
  * @return {string[][]}
  */
-var groupAnagrams = function(strs) {
+var groupAnagrams = function (strs) {
     let map = new Map();
 
     for (let word of strs) {
@@ -580,12 +615,12 @@ function minSessions(tasks, sessionTime) {
  * @param {number[]} nums
  * @return {number}
  */
-var lengthOfLIS = function(nums) {
+var lengthOfLIS = function (nums) {
     let sub = [];
 
     for (let num of nums) {
         let left = 0, right = sub.length - 1;
-        
+
         // Binary search to find the first element >= num
         while (left <= right) {
             let mid = Math.floor((left + right) / 2);
@@ -612,11 +647,11 @@ var lengthOfLIS = function(nums) {
  * @param {number[]} nums
  * @return {number}
  */
-var removeDuplicates = function(nums) {
+var removeDuplicates = function (nums) {
     let i = 0; // Tracks unique element position
 
     for (let j = 1; j < nums.length; j++) {
-        if (nums[i] !== nums[j]) { 
+        if (nums[i] !== nums[j]) {
             i++;  // Move `i` only when we find a new unique element
             nums[i] = nums[j];  // Place the unique element at `i`
         }
@@ -637,19 +672,19 @@ var removeDuplicates = function(nums) {
  * @param {number[]} height
  * @return {number}
  */
-var trap = function(height) {
+var trap = function (height) {
     let left = 0; right = height.length - 1;
     let leftMax = 0; rightMax = 0;
     let trappedWater = 0;
 
-    while(left < right){
-        if(height[left] < height[right]){
-            leftMax = Math.max(leftMax,height[left]);
-            trappedWater+= leftMax - height[left]
+    while (left < right) {
+        if (height[left] < height[right]) {
+            leftMax = Math.max(leftMax, height[left]);
+            trappedWater += leftMax - height[left]
             left++;
-        }else{
+        } else {
             rightMax = Math.max(rightMax, height[right]);
-            trappedWater+= rightMax - height[right];
+            trappedWater += rightMax - height[right];
             right--;
         }
     }
@@ -668,7 +703,7 @@ var trap = function(height) {
  * @param {number[]} heights
  * @return {number}
  */
-var largestRectangleArea = function(heights) {
+var largestRectangleArea = function (heights) {
     let maxArea = 0;
     let stack = [];
     heights.push(0); // Append 0 to ensure all elements get processed
@@ -677,7 +712,7 @@ var largestRectangleArea = function(heights) {
         while (stack.length > 0 && heights[i] < heights[stack[stack.length - 1]]) {
             let height = heights[stack.pop()]; // Get the height of the popped bar
             let width;
-            
+
             if (stack.length === 0) {
                 width = i; // No left boundary, so width spans from 0 to i
             } else {
@@ -704,7 +739,7 @@ var largestRectangleArea = function(heights) {
  * @param {number} n
  * @return {number}
  */
-var superEggDrop = function(k, n) {
+var superEggDrop = function (k, n) {
     let dp = new Array(k + 1).fill(0);
     let moves = 0;
 
@@ -728,7 +763,7 @@ var superEggDrop = function(k, n) {
  * @param {number[]} prices
  * @return {number}
  */
-var maxProfit = function(prices) {
+var maxProfit = function (prices) {
     let firstBuy = Infinity;
     let firstProfit = 0;
     let secondBuy = Infinity;
@@ -737,7 +772,7 @@ var maxProfit = function(prices) {
     for (let price of prices) {
         firstBuy = Math.min(firstBuy, price);                 // Min price to buy first stock
         firstProfit = Math.max(firstProfit, price - firstBuy); // Max profit from first sell
-        
+
         secondBuy = Math.min(secondBuy, price - firstProfit);  // Min cost to buy second stock
         secondProfit = Math.max(secondProfit, price - secondBuy); // Max profit from second sell
     }
@@ -754,13 +789,13 @@ var maxProfit = function(prices) {
 
 // SOLUTION 2: BRUTE FORCE APPROACH -> O(n*k)
 
-var maxSlidingWindow = function(nums, k) {
+var maxSlidingWindow = function (nums, k) {
     let result = [];
 
     // Iterate over all possible starting positions of the sliding window
     for (let i = 0; i <= nums.length - k; i++) {
         let maxVal = nums[i]; // Assume the first element of the window is the max
-        
+
         // Iterate over the next k elements to find the max in this window
         for (let j = i; j < i + k; j++) {
             maxVal = Math.max(maxVal, nums[j]);
@@ -773,7 +808,7 @@ var maxSlidingWindow = function(nums, k) {
 };
 
 // Example Usage:
-console.log(maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3));  
+console.log(maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3));
 // Output: [3, 3, 5, 5, 6, 7]
 
 // SOLUTION 2: DEQUE (DOUBLE ENDED QUEUE) -> O(n)
@@ -783,7 +818,7 @@ console.log(maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3));
  * @param {number} k
  * @return {number[]}
  */
-var maxSlidingWindow = function(nums, k) {
+var maxSlidingWindow = function (nums, k) {
     let deque = [];  // Store indices
     let result = [];
 

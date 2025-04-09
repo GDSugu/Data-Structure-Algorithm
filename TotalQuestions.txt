@@ -11,6 +11,47 @@
 */
 
 /**************************************** TWO SUM  ********************************
- * LEETCODE 4: https://leetcode.com/problems/two-sum/
+ * Leetcode 4: https://leetcode.com/problems/two-sum/
 */
+
+/************************************** NEXT GREATER ELEMENT II *************************************************
+ * Leetcode 5: https://leetcode.com/problems/next-greater-element-ii/
+*/
+
+Remarks:
+1) create a monotonic stack to store the next greater index
+2) for loop should condition should be 2 * n because circular
+3) condition [i % n] because for twice iteration
+
+
+/************************************** THREE SUM ***************************
+ * Leetcode 6: https://leetcode.com/problems/3sum/description/
+*/
+
+Remarks:
+1) dont forget to sort the nums;
+2) for loop iteration must have condition nums.length -2;
+3) condition for checking duplicates
+
+/************************************** FOUR SUM ***************************
+ * Leetcode 7: https://leetcode.com/problems/4sum/description/
+*/
+
+/************************************** Sort Colors  *************************************************
+ * Leetcode 8: https://leetcode.com/problems/sort-colors/
+*/
+
+Remarks:
+1) need three pointers left,mid,right
+2) left,mid should be start at same;
+
+/************************************** Sum of Square Numbers  ****************************************
+ * Leetcode 9: https://leetcode.com/problems/sum-of-square-numbers/
+*/
+
+Remarks:
+1) use two pointer left will be start at 0 and 
+2) right should be found from the round value of sqrt of target value
+
+
 
