@@ -44,6 +44,7 @@ Remarks:
 Remarks:
 1) need three pointers left,mid,right
 2) left,mid should be start at same;
+3) while loop condition shoul be while(mid <= right) missed
 
 /************************************** Sum of Square Numbers  ****************************************
  * Leetcode 9: https://leetcode.com/problems/sum-of-square-numbers/
@@ -53,5 +54,11 @@ Remarks:
 1) use two pointer left will be start at 0 and 
 2) right should be found from the round value of sqrt of target value
 
+/****************************************  COIN CHANGE PROBLEM  ********************************
+ * Leetcode 10: https://leetcode.com/problems/coin-change/
+*/
 
+/************************************** COIN CHANGE - II  *************************************************
+ * Leetcode 11: htthttps://leetcode.com/problems/coin-change-ii/
+*/
 
