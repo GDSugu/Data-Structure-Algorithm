@@ -35,7 +35,7 @@ Status: Completed
 */
 Status: Completed
 
-/************************************** GROUP THE PEOPLE GIVEN THE GROUP SIZE THEY BELONGS TO  *************************************************
+/************************************** NUMBER OF BURGERS WITH NO WASTE OF INGREDIENTS  *************************************************
  * Leetcode 2: https://leetcode.com/problems/number-of-burgers-with-no-waste-of-ingredients/description/
 */
 Status: Completed
