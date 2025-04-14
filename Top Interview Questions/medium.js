@@ -57,34 +57,6 @@ var maxMatrixSum = function(matrix) {
 };
 
 
-/****************************************  COIN CHANGE PROBLEM  ********************************
- * LEETCODE 1: https://leetcode.com/problems/coin-change/
-*/
-
-// SOLUTION : DYNAMIC PROGRAMMING (Bottom-Up DP APPROACH)
-
-
-/**
- * @param {number[]} coins
- * @param {number} amount
- * @return {number}
- */
-function coinChange(coins, amount) {
-    let dp = new Array(amount + 1).fill(Infinity);
-    dp[0] = 0;  // Base case: 0 coins needed for amount 0
-
-    for (let i = 1; i <= amount; i++) {
-        for (let coin of coins) {
-            if (i >= coin) {
-                dp[i] = Math.min(dp[i], 1 + dp[i - coin]);
-            }
-        }
-    }
-
-    return dp[amount] === Infinity ? -1 : dp[amount];
-}
-
-
 /****************************************  LONGEST INCREASING SUBSEQUENCE  ********************************
  * LEETCODE 1: https://leetcode.com/problems/longest-increasing-subsequence/
 */

@@ -6,10 +6,6 @@
  * Leetcode 2: https://leetcode.com/problems/maximum-matrix-sum/description/
 */
 
-/**************************************** COIN CHANGE PROBLEM  *****************************
- * Leetcode 3: https://leetcode.com/problems/coin-change/
-*/
-
 /**************************************** LONGEST INCREASING SUBSEQUENCE  *******************
  * Leetcode 4: https://leetcode.com/problems/longest-increasing-subsequence/
 */

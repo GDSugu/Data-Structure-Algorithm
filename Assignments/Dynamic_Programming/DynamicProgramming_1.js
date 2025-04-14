@@ -11,26 +11,37 @@ return the maximum amount of money you can rob tonight without alerting the poli
 
 */
 
-function linearhouseRobbery(house){
-    let n = house.length
+function linearhouseRobbery(house) {
+    let n = house.length;
 
-    if(n === 0) return 0;
-    if(n === 1) return house[0];
-    if(n === 2) return Math.max(house[0],house[1]);
+    // 🏠 Edge case: no house to rob
+    if (n === 0) return 0;
 
+    // 🏠 Only one house — rob it
+    if (n === 1) return house[0];
+
+    // 🏠 Two houses — rob the one with more money
+    if (n === 2) return Math.max(house[0], house[1]);
+
+    // 💰 previousStolen stores the max money till house[i - 2]
+    // 💰 currentStolen stores the max money till house[i - 1]
     let previousStolen = 0;
     let currentStolen = 0;
 
-    for(let money of house){
-        let tempMax = Math.max(currentStolen, previousStolen + money)
+    // 🚶 Traverse each house
+    for (let money of house) {
+        // 🧠 Decide: rob this house (previousStolen + money) or skip (currentStolen)
+        let tempMax = Math.max(currentStolen, previousStolen + money);
 
-        previousStolen = currentStolen;
-        currentStolen = tempMax;
+        // 🧳 Shift forward for next iteration
+        previousStolen = currentStolen;   // i - 2 becomes i - 1
+        currentStolen = tempMax;          // i - 1 becomes i
     }
-    console.log(currentStolen)
+
+    // ✅ Final value is the max money we can rob without alerting police
     return currentStolen;
-    
 }
+
 let linearHouse = [1,2,4,6,7,9]
 //linearhouseRobbery(linearHouse)
 

@@ -166,7 +166,7 @@ var subsets = function(nums) {
  * Leetcode 6: https://leetcode.com/problems/coin-change/
 */
 
-// SOLUTION : DYNAMIC PROGRAMMING (Bottom-Up DP APPROACH)
+// SOLUTION : DYNAMIC PROGRAMMING (Bottom-Up DP APPROACH) -> O(amount * n)
 
 
 /**
@@ -188,6 +188,24 @@ function coinChange(coins, amount) {
 
     return dp[amount] === Infinity ? -1 : dp[amount];
 }
+
+/*
+What this is doing:
+
+Compare:
+
+dp[i] → current minimum coins needed to form i (starts as Infinity)
+
+1 + dp[i - coin] → if we use this coin, how many coins do we need?
+
+1 for the current coin
+
+dp[i - coin] = coins needed to make the remaining amount
+
+So as soon as 1 + dp[i - coin] is smaller than Infinity, we replace it.
+
+*/
+
 
 /************************************** COMBINATION SUMS  *************************************************
  * Leetcode 7: https://leetcode.com/problems/combination-sum/description/
