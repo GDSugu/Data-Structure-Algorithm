@@ -176,3 +176,91 @@ var partition = function(head, x) {
 
     return lesserList.next;                   // Skip dummy node
 };
+
+
+/************************************** NUMBER OF SUBARRAYS WITH BOUNDED MAXIMUM  *************************************************
+ * Leetcode 6: https://leetcode.com/problems/number-of-subarrays-with-bounded-maximum/
+*/
+
+// SOLUTION: MATHEMATICAL WAY -> O(N)
+
+/**
+ * @param {number[]} nums
+ * @param {number} left
+ * @param {number} right
+ * @return {number}
+ */
+var numSubarrayBoundedMax = function(nums, left, right) {
+    return count(nums, right) - count(nums, left - 1);
+};
+
+function count(nums, bound) {
+    let totalSubarray = 0;
+    let currentCount = 0;
+
+    for (let num of nums) {
+        if (num <= bound) {
+            currentCount++; // extend current valid subarrays
+        } else {
+            currentCount = 0; // reset on invalid number
+        }
+        totalSubarray += currentCount; // add valid subarrays ending here
+    }
+
+    return totalSubarray;
+};
+
+
+/**************************************** TWO SUM  ********************************
+ * Leetcode 7: https://leetcode.com/problems/two-sum/
+*/
+
+// SOLUTION: USING HASHMAP METHOD -> O(N)
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
+    let map = new Map()
+
+    for(let i=0; i<nums.length; i++){
+        // target = nums[i]+ pairvalue
+        let pairvalue = target - nums[i]
+
+        if(map.has(pairvalue)){
+            return [map.get(pairvalue),i]
+        }
+        map.set(nums[i],i)
+    }
+
+};
+
+
+/**************************************** TWO SUM- II INPUT ARRAY IS SORTED  ********************************
+ * Leetcode 8: https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
+*/
+
+// SOLUTION:  USING TWO POINTER METHOD -> O(N)
+
+/**
+ * @param {number[]} numbers
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(numbers, target) {
+    let left = 0;
+    let right = numbers.length -1;
+
+    while(left < right){
+        let sum = numbers[left] + numbers[right]
+
+        if(sum === target){
+            return [left+1,right+1];
+        }else if(sum > target){
+            right--;
+        }else{
+            left++;
+        }
+    }
+};

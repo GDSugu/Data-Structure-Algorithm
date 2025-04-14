@@ -110,7 +110,7 @@ var groupThePeople = function(groupSizes) {
     return result; // Return the list of grouped people.
  };
  
- /************************************** GROUP THE PEOPLE GIVEN THE GROUP SIZE THEY BELONGS TO  *************************************************
+ /************************************** NUMBER OF BURGERS WITH NO WASTE OF INGREDIENTS  *************************************************
  * Leetcode 4: https://leetcode.com/problems/number-of-burgers-with-no-waste-of-ingredients/description/
 */
 
@@ -130,6 +130,15 @@ var numOfBurgers = function(tomatoSlices, cheeseSlices) {
 
     // Calculate the number of Jumbo Burgers (x)
     // Using the derived formula: x = (tomatoSlices - 2 * cheeseSlices) / 2
+    /*
+        x + y = cheeseSlices → y = cheeseSlices - x
+        4x + 2(cheeseSlices - x) = tomatoSlices
+        4x + 2*cheeseSlices - 2x = tomatoSlices
+        2x + 2*cheeseSlices = tomatoSlices
+        2x = tomatoSlices - 2*cheeseSlices
+        x = (tomatoSlices - 2*cheeseSlices) / 2
+        */
+
     let jumboCount = (tomatoSlices - 2 * cheeseSlices) / 2;
 
     // Calculate the number of Small Burgers (y)

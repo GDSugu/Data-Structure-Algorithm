@@ -17,3 +17,15 @@
 /************************************** PARTITION LIST  ****************************************
  * Leetcode 5: https://leetcode.com/problems/partition-list/
 */
+
+/************************************** NUMBER OF SUBARRAYS WITH BOUNDED MAXIMUM  *************************************************
+ * Leetcode 6: https://leetcode.com/problems/number-of-subarrays-with-bounded-maximum/
+*/
+
+/**************************************** TWO SUM  ********************************
+ * LEETCODE 7: https://leetcode.com/problems/two-sum/
+*/
+
+/**************************************** TWO SUM- II INPUT ARRAY IS SORTED  ********************************
+ * Leetcode 8: https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
+*/

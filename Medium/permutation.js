@@ -64,7 +64,7 @@ console.log(permutations1);
  * Leetcode 2: https://leetcode.com/problems/next-permutation/description/
 */
 
-// Solution:
+// Solution 1: GREEDY ALGORITHM + TWO POINTER -> O(N)
 
 var nextPermutation = function(nums) {
     let n = nums.length;
@@ -94,6 +94,59 @@ var nextPermutation = function(nums) {
     }
 
     return nums;
+};
+
+
+// Solution 1: GREEDY ALGORITHM + TWO POINTER -> O(N)
+
+/**
+ * Rearranges numbers into the lexicographically next greater permutation.
+ * If no such permutation exists (i.e., the array is in descending order),
+ * it rearranges the array into the lowest possible order (i.e., ascending).
+ * 
+ * @param {number[]} nums - The array of numbers to modify in-place.
+ * @return {void}
+ */
+var nextPermutation = function(nums) {
+    // Step 1: Find the first index from the right where nums[i] < nums[i+1]
+    // This means nums[i] can be increased to form the next permutation
+    let firstDecreasing = -1;
+
+    for(let i = nums.length - 2; i >= 0; i--){
+        if(nums[i] < nums[i + 1]){
+            firstDecreasing = i;
+            break;
+        }
+    }
+
+    // Step 2: If such index is found, find the next greater number on the right side
+    if(firstDecreasing >= 0){
+        let nextGreater = nums.length - 1;
+
+        // Find the smallest number greater than nums[firstDecreasing] from the end
+        for(let i = nextGreater; i >= 0; i--){
+            if(nums[i] > nums[firstDecreasing]){
+                nextGreater = i;
+                break;
+            }
+        }
+
+        // Step 3: Swap them
+        [nums[firstDecreasing], nums[nextGreater]] = 
+        [nums[nextGreater], nums[firstDecreasing]];
+    }
+
+    // Step 4: Reverse the part after firstDecreasing to get the next smallest lexicographic order
+    let left = firstDecreasing + 1;
+    let right = nums.length - 1;
+
+    while(left < right){
+        [nums[left], nums[right]] = [nums[right], nums[left]];
+        left++;
+        right--;
+    }
+
+    // No need to return anything since we modify the array in-place
 };
 
 
