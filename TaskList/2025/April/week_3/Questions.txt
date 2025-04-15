@@ -1,3 +1,7 @@
 /************************************** COIN CHANGE - II  *************************************************
  * Leetcode 1: htthttps://leetcode.com/problems/coin-change-ii/
 */
+
+/************************************** LONGEST CONSECUTIVE SEQUENCE *************************************************
+ * Leetcode 2: https://leetcode.com/problems/longest-consecutive-sequence/description/
+*/

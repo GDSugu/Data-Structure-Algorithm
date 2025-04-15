@@ -95,12 +95,6 @@ Status:completed
             #                          📅  Friday 📅                                      #
             ################################################################################
 
-
-/************************************** LONGEST CONSECUTIVE SEQUENCE *************************************************
- * Leetcode 1: https://leetcode.com/problems/longest-consecutive-sequence/description/
-*/
-Status: 
-
 /****************************************  LONGEST INCREASING SUBSEQUENCE  ********************************
  * Leetcode 2: https://leetcode.com/problems/longest-increasing-subsequence/
 */

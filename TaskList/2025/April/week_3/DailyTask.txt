@@ -7,3 +7,13 @@
  * Leetcode 1: htthttps://leetcode.com/problems/coin-change-ii/
 */
 Status: completed
+
+            ################################################################################
+            #                     🌟  15 | April | 2025  🌟                               #
+            #                          📅  Tuesday 📅                                     #
+            ################################################################################
+
+/************************************** LONGEST CONSECUTIVE SEQUENCE *************************************************
+ * Leetcode 1: https://leetcode.com/problems/longest-consecutive-sequence/description/
+*/
+Status:
