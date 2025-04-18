@@ -5,3 +5,11 @@
 /************************************** LONGEST CONSECUTIVE SEQUENCE *************************************************
  * Leetcode 2: https://leetcode.com/problems/longest-consecutive-sequence/description/
 */
+
+/************************************** JUMP GAME - II *************************************************
+ * Leetcode 3: https://leetcode.com/problems/longest-consecutive-sequence/description/
+*/
+
+/************************************** PERMUTATION - II *************************************************
+ * Leetcode 4: https://leetcode.com/problems/permutations-ii/
+*/

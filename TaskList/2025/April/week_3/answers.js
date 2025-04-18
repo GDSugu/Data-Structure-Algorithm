@@ -71,3 +71,93 @@ var longestConsecutive = function(nums) {
     // Step 6: Return the length of the longest consecutive sequence found
     return maxLength;
 };
+
+/************************************** JUMP GAME - II *************************************************
+ * Leetcode 3: https://leetcode.com/problems/longest-consecutive-sequence/description/
+*/
+
+// SOLUTION: GREEDY ALGORITHM -> O(N)
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var jump = function(nums) {
+    let jumps = 0;           // Count of total jumps made
+    let currentEnd = 0;      // End of the current jump's range
+    let farthest = 0;        // Farthest index we can reach so far
+
+    // Loop until the second-to-last element (we stop once we jump into the last index)
+    for (let i = 0; i < nums.length - 1; i++) {
+        
+        // From index i, calculate the farthest index we can reach
+        farthest = Math.max(farthest, i + nums[i]);
+
+        // If we've reached the end of the current jump's range
+        if (i === currentEnd) {
+            jumps++;                 // Make a jump
+            currentEnd = farthest;  // Set the new range end for the next jump
+        }
+    }
+
+    // Return the total number of jumps needed to reach the end
+    return jumps;
+};
+
+
+/************************************** PERMUTATION - II *************************************************
+ * Leetcode 1: https://leetcode.com/problems/permutations-ii/
+*/
+
+// SOLUTION: BACKTRACKING AND RECURSION -> O(N * N!)
+
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+var permuteUnique = function (nums) {
+    // 1. First sort the array to group duplicates together
+    nums.sort((a, b) => a - b);
+
+    // 2. Initialize the result array to store all unique permutations
+    const result = [];
+
+    // 3. Define the backtracking function (nested for closure access)
+    function backtrack(current, used) {
+        // Base case: if current permutation is complete
+        if (current.length === nums.length) {
+            result.push([...current]); // Add a copy to results
+            return;
+        }
+
+        // Recursive case: try adding each available number
+        for (let i = 0; i < nums.length; i++) {
+            // Skip already used numbers
+            if (used[i]) continue;
+
+            /* Skip duplicates only when:
+               - Not the first element AND
+               - Same as previous number AND
+               - Previous duplicate wasn't used yet
+               (This prevents duplicate permutations) */
+            if (i > 0 && nums[i] === nums[i - 1] && !used[i - 1]) continue;
+
+            // Choose the current number
+            used[i] = true;
+            current.push(nums[i]);
+
+            // Recursively build the permutation
+            backtrack(current, used);
+
+            // Unchoose (backtrack)
+            current.pop();
+            used[i] = false;
+        }
+    }
+
+    // 4. Start the backtracking with empty permutation
+    backtrack([], Array(nums.length).fill(false));
+
+    // 5. Return all unique permutations
+    return result;
+};

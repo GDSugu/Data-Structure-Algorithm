@@ -62,3 +62,7 @@ Remarks:
  * Leetcode 11: htthttps://leetcode.com/problems/coin-change-ii/
 */
 
+/************************************** MAXIMUM SUM SUBARRAY  *************************************************
+ * Leetcode 12: https://leetcode.com/problems/maximum-subarray/
+*/
+
