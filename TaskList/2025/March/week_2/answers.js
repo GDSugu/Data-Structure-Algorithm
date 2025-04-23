@@ -136,8 +136,8 @@ var nextGreaterElements = function (nums) {
     // Traverse the array twice to simulate circular behavior
     for (let i = 0; i < 2 * n; i++) {
         while (stack.length > 0 && nums[stack[stack.length - 1]] < nums[i % n]) {
-            let index = stack.pop(); // Get index of smaller element
-            result[index] = nums[i % n]; // Update result for this index
+            let smallest = stack.pop(); // Get index of smaller element
+            result[smallest] = nums[i % n]; // Update result for this index
         }
 
         // Only push indices from first pass (0 to n-1)

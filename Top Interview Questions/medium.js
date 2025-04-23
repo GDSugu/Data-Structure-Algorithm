@@ -224,8 +224,8 @@ const nextGreaterElements = nums => {
 
     for (let i = 0; i < 2 * n; i++) {
         while (stack.length > 0 && nums[i % n] > nums[stack[stack.length - 1]]) {
-            const index = stack.pop();
-            result[index] = nums[i % n];
+            const smallest = stack.pop();
+            result[smallest] = nums[i % n];
         }
 
         if (i < n) {
