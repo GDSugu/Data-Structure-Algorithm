@@ -121,10 +121,10 @@ var nextPermutation = function(nums) {
 
     // Step 2: If such index is found, find the next greater number on the right side
     if(firstDecreasing >= 0){
-        let nextGreater = nums.length - 1;
+        let nextGreater = 0;
 
         // Find the smallest number greater than nums[firstDecreasing] from the end
-        for(let i = nextGreater; i >= 0; i--){
+        for(let i = nums.length-1; i >= 0; i--){
             if(nums[i] > nums[firstDecreasing]){
                 nextGreater = i;
                 break;

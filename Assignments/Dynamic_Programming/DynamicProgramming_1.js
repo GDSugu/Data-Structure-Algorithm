@@ -11,36 +11,39 @@ return the maximum amount of money you can rob tonight without alerting the poli
 
 */
 
-function linearhouseRobbery(house) {
+function linearHouseRobbery(house) {
     let n = house.length;
 
-    // 🏠 Edge case: no house to rob
+    // 🏠 If there are no houses, there's nothing to rob
     if (n === 0) return 0;
 
-    // 🏠 Only one house — rob it
+    // 🏠 If there's only one house, rob it
     if (n === 1) return house[0];
 
-    // 🏠 Two houses — rob the one with more money
-    if (n === 2) return Math.max(house[0], house[1]);
+    // 💰 Initialize:
+    // firstStolen = max money if we rob only the first house
+    // secondStolen = max money if we consider the first two houses
+    let firstStolen = house[0];
+    let secondStolen = Math.max(house[0], house[1]);
 
-    // 💰 previousStolen stores the max money till house[i - 2]
-    // 💰 currentStolen stores the max money till house[i - 1]
-    let previousStolen = 0;
-    let currentStolen = 0;
+    // 🚶 Start from the 3rd house (index 2) to the last
+    for (let i = 2; i < n; i++) {
+        // 🧠 Option 1: skip current house → keep secondStolen
+        // 🧠 Option 2: rob current house → firstStolen + current money
+        // Take the better of the two options
+        let tempMax = Math.max(secondStolen, firstStolen + house[i]);
 
-    // 🚶 Traverse each house
-    for (let money of house) {
-        // 🧠 Decide: rob this house (previousStolen + money) or skip (currentStolen)
-        let tempMax = Math.max(currentStolen, previousStolen + money);
-
-        // 🧳 Shift forward for next iteration
-        previousStolen = currentStolen;   // i - 2 becomes i - 1
-        currentStolen = tempMax;          // i - 1 becomes i
+        // 🔁 Move the window forward:
+        // - secondStolen becomes firstStolen for next round
+        // - tempMax becomes secondStolen (i.e., current max loot)
+        firstStolen = secondStolen;
+        secondStolen = tempMax;
     }
 
-    // ✅ Final value is the max money we can rob without alerting police
-    return currentStolen;
+    // ✅ After checking all houses, secondStolen has the max money we can rob
+    return secondStolen;
 }
+
 
 let linearHouse = [1,2,4,6,7,9]
 //linearhouseRobbery(linearHouse)
@@ -59,33 +62,51 @@ return the maximum amount of money you can rob tonight without alerting the poli
 
 */
 
-function CircularHouseRobbery(house){
-    let n = house.length
+function CircularHouseRobbery(house) {
+    let n = house.length;
 
-    if(n === 0) return 0;
-    if(n === 1) return house[0];
-    if(n === 2) return Math.max(house[0],house[1]);
-    
-    function robLinear(arr){
-        let previousStolen = 0;
-        let currentStolen = 0;
+    // Edge cases: 
+    if (n === 0) return 0;             // No houses to rob
+    if (n === 1) return house[0];      // Only one house, rob it
+    if (n === 2) return Math.max(house[0], house[1]); // Two houses, rob the one with more money
 
-    for(let money of house){
-        let tempMax = Math.max(currentStolen, previousStolen + money)
-        previousStolen = currentStolen;
-        currentStolen = tempMax
+    // Function to solve the linear house robbery problem (non-circular)
+    function robLinear(arr) {
+        let n = arr.length;
+
+        // Edge cases:
+        if (n === 0) return 0;    // No houses to rob
+        if (n === 1) return arr[0];  // Only one house, rob it
+        if (n === 2) return Math.max(arr[0], arr[1]); // Two houses, rob the one with more money
+
+        // Initialize firstStolen and secondStolen
+        let firstStolen = arr[0]; // Max money if we rob only the first house
+        let secondStolen = Math.max(arr[0], arr[1]); // Max money if we rob the first or second house
+
+        // Traverse the remaining houses starting from index 2
+        for (let i = 2; i < n; i++) {
+            // Option 1: Skip the current house, keep secondStolen
+            // Option 2: Rob the current house, add its money to firstStolen
+            let tempMax = Math.max(secondStolen, firstStolen + arr[i]);
+
+            // Update the window: move secondStolen to firstStolen, and tempMax to secondStolen
+            firstStolen = secondStolen;
+            secondStolen = tempMax;
+        }
+
+        return secondStolen; // Return the maximum money that can be robbed
     }
 
-    //console.log(currentStolen);
-    return currentStolen
-    }
-    
-    let excludeFirst = robLinear(house.slice(1))
-    let excludeLast = robLinear(0,n-1)
+    // Exclude the first house and solve the problem on the remaining houses
+    let excludeFirst = robLinear(house.slice(1));
 
-    return Math.max(excludeFirst,excludeLast)
-    
+    // Exclude the last house and solve the problem on the remaining houses
+    let excludeLast = robLinear(house.slice(0, n - 1));
+
+    // The result is the maximum of robbing either excluding the first or last house
+    return Math.max(excludeFirst, excludeLast);
 }
+
 
 let CirularHouse = [1,2,4,6,7,9,7,8,9]
 CircularHouseRobbery(CirularHouse);

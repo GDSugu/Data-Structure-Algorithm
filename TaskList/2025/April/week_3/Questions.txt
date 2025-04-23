@@ -13,3 +13,8 @@
 /************************************** PERMUTATION - II *************************************************
  * Leetcode 4: https://leetcode.com/problems/permutations-ii/
 */
+
+/************************************** JUMP GAME - I *************************************************
+ * Leetcode 5: https://leetcode.com/problems/jump-game/description/
+*/
+

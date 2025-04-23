@@ -161,3 +161,31 @@ var permuteUnique = function (nums) {
     // 5. Return all unique permutations
     return result;
 };
+
+
+/************************************** JUMP GAME - I *************************************************
+ * Leetcode 1: https://leetcode.com/problems/jump-game/description/
+*/
+
+// SOLUTION: GREEDY ALGORITHM -> O(N)
+
+/**
+ * @param {number[]} nums - Array where each element represents the max jump from that index
+ * @return {boolean} - Returns true if you can reach the last index, false otherwise
+ */
+var canJump = function(nums) {
+    // Keeps track of the farthest index we can reach so far
+    let farthest = 0;
+
+    // Iterate through each index of the array
+    for (let i = 0; i < nums.length; i++) {
+        // If our current index is beyond the farthest reachable point, we can't proceed
+        if (i > farthest) return false;
+
+        // Update the farthest reachable index from the current position
+        farthest = Math.max(farthest, i + nums[i]);
+    }
+
+    // If we finish the loop, it means we can reach the end
+    return true;
+};
