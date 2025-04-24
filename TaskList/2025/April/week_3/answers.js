@@ -73,7 +73,7 @@ var longestConsecutive = function(nums) {
 };
 
 /************************************** JUMP GAME - II *************************************************
- * Leetcode 3: https://leetcode.com/problems/longest-consecutive-sequence/description/
+ * Leetcode 3: https://leetcode.com/problems/jump-game-ii/
 */
 
 // SOLUTION: GREEDY ALGORITHM -> O(N)

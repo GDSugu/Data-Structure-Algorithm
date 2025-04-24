@@ -6,4 +6,14 @@
 /************************************** NEXT GREATER ELEMENT - I  *************************************************
  * Leetcode 1: https://leetcode.com/phttps://leetcode.com/problems/next-greater-element-i/
 */
-Status: Completd
+Status: Completed
+
+            ################################################################################
+            #                     🌟  24 | April | 2025  🌟                               #
+            #                          📅  Wednesday 📅                                   #
+            ################################################################################
+
+/************************************** LONGEST SUBSTRING ATLEAST K REPEATING CHARACTER  *************************************************
+ * Leetcode 1: https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/
+*/
+Status: Completed
