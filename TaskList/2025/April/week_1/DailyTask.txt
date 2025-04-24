@@ -50,7 +50,7 @@ Status: Completed
 */
 Status: Completed
 
-/************************************** GAS STATION  *************************************************
+/************************************** CINEMA SEAT ALLOCATION *************************************************
  * Leetcode 5: https://leetcode.com/problems/cinema-seat-allocation/
 */
 Status: Completed

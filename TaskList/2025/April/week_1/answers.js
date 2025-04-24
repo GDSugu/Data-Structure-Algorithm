@@ -215,7 +215,7 @@ var canCompleteCircuit = function(gas, cost) {
     return start;
 };
 
-/************************************** GAS STATION  *************************************************
+/************************************** CINEMA SEAT ALLOCATION  *************************************************
  * Leetcode 5: https://leetcode.com/problems/cinema-seat-allocation/
 */
 
