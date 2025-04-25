@@ -14,3 +14,6 @@
  * Geeks 4: https://www.geeksforgeeks.org/problems/subarray-with-0-sum-1587115621/1
 */
 
+/************************************** FIND ALL ANAGRAMS IN THE STRING  *************************************************
+ * leetcode 1: https://leetcode.com/problems/find-all-anagrams-in-a-string/
+*/

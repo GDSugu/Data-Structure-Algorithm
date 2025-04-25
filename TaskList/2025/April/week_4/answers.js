@@ -156,3 +156,67 @@ class Solution {
     }
 }
 
+/************************************** FIND ALL ANAGRAMS IN THE STRING  *************************************************
+ * leetcode 1: https://leetcode.com/problems/find-all-anagrams-in-a-string/
+*/
+
+// SOLUTION: HASHMAP + SLIDING WINDOW -> O(N+K)
+
+/**
+ * @param {string} s - The source string in which we look for anagrams of p.
+ * @param {string} p - The pattern string whose anagrams we're searching for.
+ * @return {number[]} - An array of starting indices of p's anagrams in s.
+ */
+var findAnagrams = function(s, p) {
+    let k = p.length; // Length of the pattern string
+
+    let targetMap = new Map(); // Frequency map of characters in p
+    let windowMap = new Map(); // Frequency map for the current window in s
+    let result = []; // Stores the starting indices of found anagrams
+
+    // Build the frequency map for pattern p
+    for (let i = 0; i < k; i++) {
+        targetMap.set(p[i], (targetMap.get(p[i]) || 0) + 1);
+    }
+
+    let left = 0; // Start index of the sliding window
+
+    // Iterate over the string s with the right pointer
+    for (let right = 0; right < s.length; right++) {
+        // Add current character to window map
+        windowMap.set(s[right], (windowMap.get(s[right]) || 0) + 1);
+
+        // If the window size exceeds the pattern length, shrink it from the left
+        if (right - left + 1 > k) {
+            let leftChar = s[left];
+            if (windowMap.get(leftChar) === 1) {
+                windowMap.delete(leftChar); // Remove character if count becomes 0
+            } else {
+                windowMap.set(leftChar, windowMap.get(leftChar) - 1); // Decrease count
+            }
+            left++; // Slide the window forward
+        }
+
+        // If window size equals pattern length, compare the frequency maps
+        if (right - left + 1 === k && compare(targetMap, windowMap)) {
+            result.push(left); // If maps match, it's an anagram — store the start index
+        }
+    }
+
+    return result; // Return all starting indices where anagrams were found
+};
+
+/**
+ * Helper function to compare two frequency maps
+ * @param {Map} map1 - First map to compare
+ * @param {Map} map2 - Second map to compare
+ * @return {boolean} - True if maps are equal, else false
+ */
+function compare(map1, map2) {
+    if (map1.size !== map2.size) return false;
+
+    for (let [key, val] of map1) {
+        if (map2.get(key) !== val) return false;
+    }
+    return true;
+}

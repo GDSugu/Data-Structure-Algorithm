@@ -32,4 +32,9 @@ Status: Completed
 /************************************** SUBARRAY WITH SUM EQUALS 0  *************************************************
  * Geeks 1: https://www.geeksforgeeks.org/problems/subarray-with-0-sum-1587115621/1
 */
+Status: 
+
+/************************************** FIND ALL ANAGRAMS IN THE STRING  *************************************************
+ * leetcode 2: https://leetcode.com/problems/find-all-anagrams-in-a-string/
+*/
 Status: Completed
