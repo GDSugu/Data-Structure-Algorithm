@@ -17,3 +17,19 @@ Status: Completed
  * Leetcode 1: https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/
 */
 Status: Completed
+
+/************************************* FIRST NEGATIVE INTEGER IN THE EVERY WINDOW K SIZE  *************************************************
+ * Geeks 1: https://www.geeksforgeeks.org/problems/first-negative-integer-in-every-window-of-size-k3345/1
+*/
+Status: Completed
+
+
+            ################################################################################
+            #                     🌟  25 | April | 2025  🌟                               #
+            #                          📅  Friday 📅                                      #
+            ################################################################################
+
+/************************************** SUBARRAY WITH SUM EQUALS 0  *************************************************
+ * Geeks 1: https://www.geeksforgeeks.org/problems/subarray-with-0-sum-1587115621/1
+*/
+Status: Completed

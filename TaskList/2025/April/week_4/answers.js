@@ -71,3 +71,88 @@ var longestSubstring = function(s, k) {
     return s.length;
 };
 
+/************************************* FIRST NEGATIVE INTEGER IN THE EVERY WINDOW K SIZE  *************************************************
+ * Geeks 1: https://www.geeksforgeeks.org/problems/first-negative-integer-in-every-window-of-size-k3345/1
+*/
+
+// SOLUTION: SLIDING WINDOW -> O(N)
+
+class Solution {
+    firstNegInt(arr, k) {
+        let result = [];   // This will store the final results (first negative integer for each window)
+        let queue = [];    // This will hold the indices of negative integers in the current window
+        let left = 0;      // This is the left boundary of the sliding window
+
+        // Loop through the array with 'right' pointer representing the right boundary of the window
+        for (let right = 0; right < arr.length; right++) {
+            
+            // If the current element is negative, store its index in the queue
+            if (arr[right] < 0) {
+                queue.push(right);
+            }
+
+            // Check if the window size has reached 'k' (right - left + 1 is the window size)
+            if (right - left + 1 === k) {
+                
+                // If no negative integers are found in the current window
+                if (queue.length === 0) {
+                    result.push(0);  // Add 0 to the result (no negative integer in the window)
+                } else {
+                    // The first negative integer in the window is at the front of the queue
+                    result.push(arr[queue[0]]);
+                    
+                    // If the first negative integer is going out of the window (left boundary)
+                    if (queue[0] === left) {
+                        queue.shift();  // Remove it from the queue as it's no longer in the window
+                    }
+                }
+                
+                // Move the left boundary of the window (slide the window right)
+                left++;
+            }
+        }
+
+        // Return the list of first negative integers for each window of size k
+        return result;
+    }
+}
+
+/************************************** SUBARRAY WITH SUM EQUALS 0  *************************************************
+ * Geeks 1: https://www.geeksforgeeks.org/problems/subarray-with-0-sum-1587115621/1
+*/
+
+// SOLUTION: PREFIX SUM + SET -> O(N)
+
+/**
+ * @param {number[]} arr
+ * @returns {boolean}
+ */
+class Solution {
+    // Function to check whether there is a subarray present with 0-sum or not.
+    subArrayExists(arr) {
+        // Create a Set to store prefix sums we've seen so far
+        let set = new Set();
+
+        // Initialize prefix sum as 0
+        let sum = 0;
+
+        // Traverse through the array
+        for (let num of arr) {
+            // Add current element to cumulative sum
+            sum += num;
+
+            // Case 1: If at any point, sum is 0, a subarray from the start has sum 0
+            // Case 2: If we've seen this sum before, the elements in between sum to 0
+            if (sum === 0 || set.has(sum)) {
+                return true;
+            }
+
+            // Add current sum to the set
+            set.add(sum);
+        }
+
+        // If loop completes and we didn't find any zero-sum subarray
+        return false;
+    }
+}
+

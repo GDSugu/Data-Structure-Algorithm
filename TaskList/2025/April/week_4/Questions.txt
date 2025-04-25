@@ -5,3 +5,12 @@
 /************************************** LONGEST SUBSTRING ATLEAST K REPEATING CHARACTER  *************************************************
  * Leetcode 2: https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/
 */
+
+/************************************* FIRST NEGATIVE INTEGER IN THE EVERY WINDOW K SIZE  *************************************************
+ * Geeks 3: https://www.geeksforgeeks.org/problems/first-negative-integer-in-every-window-of-size-k3345/1
+*/
+
+/************************************** SUBARRAY WITH SUM EQUALS 0  *************************************************
+ * Geeks 4: https://www.geeksforgeeks.org/problems/subarray-with-0-sum-1587115621/1
+*/
+
