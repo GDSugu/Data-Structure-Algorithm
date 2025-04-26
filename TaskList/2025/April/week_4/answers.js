@@ -220,3 +220,78 @@ function compare(map1, map2) {
     }
     return true;
 }
+
+/************************************** MINIMUM WINDOW SUBSTRING  *************************************************
+ * Leetcode 1: https://leetcode.com/problems/minimum-window-substring/
+*/
+
+// SOLUTION: HASHMAP + SLIDING WINDOW -> O(N+M)
+
+/**
+ * @param {string} s - The string to search in
+ * @param {string} t - The string with required characters
+ * @return {string} - The minimum window in s which contains all characters in t
+ */
+var minWindow = function(s, t) {
+    // Edge case: if s is smaller than t, it's impossible
+    if (s.length === 0 || t.length === 0 || s.length < t.length) {
+        return "";
+    }
+
+    // Step 1: Build a frequency map for t
+    const targetCounts = new Map();
+    for (const char of t) {
+        targetCounts.set(char, (targetCounts.get(char) || 0) + 1);
+    }
+
+    const required = targetCounts.size; // Number of unique characters to match
+    let formed = 0;                     // Number of unique characters matched with required count
+    const windowCounts = new Map();     // Frequency of characters in current window
+
+    let left = 0;
+    let right = 0;
+
+    let minLength = Infinity;
+    let result = "";
+
+    // Step 2: Start expanding the right pointer
+    while (right < s.length) {
+        const char = s[right];
+
+        // Update window count if char is in t
+        if (targetCounts.has(char)) {
+            windowCounts.set(char, (windowCounts.get(char) || 0) + 1);
+
+            // If current character count matches required, increment formed
+            if (windowCounts.get(char) === targetCounts.get(char)) {
+                formed++;
+            }
+        }
+
+        // Step 3: Try to shrink from the left as much as possible while valid
+        while (left <= right && formed === required) {
+            // Update result if smaller window found
+            if (right - left + 1 < minLength) {
+                minLength = right - left + 1;
+                result = s.substring(left, right + 1);
+            }
+
+            const leftChar = s[left];
+
+            // If removing this char, update counts and formed
+            if (targetCounts.has(leftChar)) {
+                windowCounts.set(leftChar, windowCounts.get(leftChar) - 1);
+                if (windowCounts.get(leftChar) < targetCounts.get(leftChar)) {
+                    formed--;
+                }
+            }
+
+            left++; // Shrink window
+        }
+
+        right++; // Expand window
+    }
+
+    return result;
+};
+

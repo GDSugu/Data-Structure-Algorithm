@@ -179,7 +179,7 @@ var findCenter = function(edges) {
 
 
 /************************************** GAS STATION  *************************************************
- * Leetcode 3: https://leetcode.com/problems/find-center-of-star-graph/
+ * Leetcode 3: https://leetcode.com/problems/gas-station/description/
 */
 
 // SOLUTION: GREEDY ALGORITHM -> O(N)

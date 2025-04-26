@@ -46,7 +46,7 @@ Status: Completed
 Status: Completed
 
 /************************************** GAS STATION  *************************************************
- * Leetcode 4: https://leetcode.com/problems/find-center-of-star-graph/
+ * Leetcode 4: https://leetcode.com/problems/gas-station/description/
 */
 Status: Completed
 

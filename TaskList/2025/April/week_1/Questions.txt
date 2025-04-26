@@ -19,7 +19,7 @@
 */
 
 /************************************** GAS STATION  *************************************************
- * Leetcode 6: https://leetcode.com/problems/find-center-of-star-graph/
+ * Leetcode 6: https://leetcode.com/problems/gas-station/description/
 */
 
 /************************************** CINEMA SEAT ALLOCATION  *************************************************
