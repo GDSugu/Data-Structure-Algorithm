@@ -211,32 +211,6 @@ function count(nums, bound) {
 };
 
 
-/**************************************** TWO SUM  ********************************
- * Leetcode 7: https://leetcode.com/problems/two-sum/
-*/
-
-// SOLUTION: USING HASHMAP METHOD -> O(N)
-/**
- * @param {number[]} nums
- * @param {number} target
- * @return {number[]}
- */
-var twoSum = function(nums, target) {
-    let map = new Map()
-
-    for(let i=0; i<nums.length; i++){
-        // target = nums[i]+ pairvalue
-        let pairvalue = target - nums[i]
-
-        if(map.has(pairvalue)){
-            return [map.get(pairvalue),i]
-        }
-        map.set(nums[i],i)
-    }
-
-};
-
-
 /**************************************** TWO SUM- II INPUT ARRAY IS SORTED  ********************************
  * Leetcode 8: https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
 */

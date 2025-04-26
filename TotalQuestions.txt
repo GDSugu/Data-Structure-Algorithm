@@ -10,10 +10,6 @@
  * Leetcode 3: https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
 */
 
-/**************************************** TWO SUM  ********************************
- * Leetcode 4: https://leetcode.com/problems/two-sum/
-*/
-
 /************************************** NEXT GREATER ELEMENT II *************************************************
  * Leetcode 5: https://leetcode.com/problems/next-greater-element-ii/
 */
