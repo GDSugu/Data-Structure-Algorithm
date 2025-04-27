@@ -20,9 +20,7 @@ Remarks:
 3) condition [i % n] because for twice iteration
 
 
-/************************************** THREE SUM ***************************
- * Leetcode 6: https://leetcode.com/problems/3sum/description/
-*/
+
 
 Remarks:
 1) dont forget to sort the nums;

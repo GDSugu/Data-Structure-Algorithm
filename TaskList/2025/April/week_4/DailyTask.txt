@@ -48,3 +48,13 @@ Status: Completed
  * Leetcode 1: https://leetcode.com/problems/minimum-window-substring/
 */
 Status: Completed
+
+            ################################################################################
+            #                     🌟  27 | April | 2025  🌟                               #
+            #                          📅  Sunday 📅                                      #
+            ################################################################################
+
+/************************************** 132 Pattern  *************************************************
+ * Leetcode 1: https://leetcode.com/problems/132-pattern/description/
+*/
+Status: Completed

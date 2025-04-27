@@ -295,3 +295,44 @@ var minWindow = function(s, t) {
     return result;
 };
 
+
+/************************************** 132 Pattern  *************************************************
+ * Leetcode 1: https://leetcode.com/problems/132-pattern/description/
+*/
+
+// SOLUTION: STACK -> O(N)
+
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+var find132pattern = function(nums) {
+    
+    let stack = []; // Initialize an empty stack to store elements.
+    let middle = -Infinity; // Variable to keep track of the "middle" value (nums[k] in the 132 pattern).
+
+    // Loop through the array from right to left (starting from the last element).
+    for (let i = nums.length - 1; i >= 0; i--) {
+
+        // Check if the current element nums[i] is less than the "middle" value (nums[k]).
+        // If so, we have found a valid 132 pattern, return true.
+        while (nums[i] < middle) {
+            return true;
+        }
+
+        // While there are elements in the stack and the top of the stack is smaller than nums[i],
+        // pop elements from the stack and update the "middle" value. 
+        // This will help identify the largest possible "middle" value for a valid 132 pattern.
+        while (stack.length > 0 && stack[stack.length - 1] < nums[i]) {
+            middle = stack.pop(); // Update the middle to the top element of the stack.
+        }
+
+        // Push the current element nums[i] onto the stack, as it might be a candidate for nums[j] in the future.
+        stack.push(nums[i]);
+    }
+    
+    // If no valid 132 pattern is found, return false.
+    return false;
+};
+
+

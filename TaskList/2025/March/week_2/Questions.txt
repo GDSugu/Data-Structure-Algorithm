@@ -1,6 +1,4 @@
-/************************************** THREE SUM *************************************************
- * Leetcode 1: https://leetcode.com/problems/3sum/description/
-*/
+
 
 /************************************** FOUR SUM *************************************************
  * Leetcode 2: https://leetcode.com/problems/4sum/description/
