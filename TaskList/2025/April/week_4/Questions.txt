@@ -1,6 +1,4 @@
-/************************************** NEXT GREATER ELEMENT - I  *************************************************
- * Leetcode 1: https://leetcode.com/phttps://leetcode.com/problems/next-greater-element-i/
-*/
+
 
 /************************************** LONGEST SUBSTRING ATLEAST K REPEATING CHARACTER  *************************************************
  * Leetcode 2: https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/

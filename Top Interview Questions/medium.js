@@ -116,72 +116,6 @@ var deleteDuplicates = function(head) {
     return dummy.next;
 };
 
-
-/************************************** NEXT GREATER ELEMENT II *************************************************
- * Leetcode: https://leetcode.com/problems/next-greater-element-ii/
-*/
-
-// MONOTONIC DECREASING STACK
-
-const nextGreaterElements = nums => {
-    const n = nums.length;
-    const result = new Array(n).fill(-1);
-    const stack = [];
-
-    for (let i = 0; i < 2 * n; i++) {
-        while (stack.length > 0 && nums[i % n] > nums[stack[stack.length - 1]]) {
-            const smallest = stack.pop();
-            result[smallest] = nums[i % n];
-        }
-
-        if (i < n) {
-            stack.push(i);
-        }
-    }
-
-    return result;
-};
-
-
-/************************************** SERACH IN ROTATED SORTED ARRAY *************************************************
- * Leetcode 16: https://leetcode.com/problems/search-in-rotated-sorted-array/description/
-*/
-
-// SOLUTION: BINARY SEARCH -> O(log n)
-
-var search = function(nums, target) {
-    let left = 0, right = nums.length - 1;
-
-    while (left <= right) {
-        let mid = Math.floor((left + right) / 2);
-
-        if (nums[mid] === target) {
-            return mid; // Found the target
-        }
-
-        // Check if the left half is sorted
-        if (nums[left] <= nums[mid]) {
-            // If target is in the left sorted range
-            if (nums[left] <= target && target < nums[mid]) {
-                right = mid - 1; // Search left
-            } else {
-                left = mid + 1; // Search right
-            }
-        } 
-        // Otherwise, the right half must be sorted
-        else { 
-            // If target is in the right sorted range
-            if (nums[mid] < target && target <= nums[right]) {
-                left = mid + 1; // Search right
-            } else {
-                right = mid - 1; // Search left
-            }
-        }
-    }
-
-    return -1; // Target not found
-};
-
 /************************************** SET MATRIX ZERO *************************************************
  * Leetcode 3: https://leetcode.com/problems/set-matrix-zeroes/description/
 */
@@ -315,45 +249,6 @@ var maxVowels = function(s, k) {
     }
 
     return maxVowelCount;
-};
-
-
-/************************************** GENERATE PARENTHESIS *************************************************
- * Leetcode 1: https://leetcode.com/problems/generate-parentheses/
-*/
-
-// SOLUTION: BACKTRACKING
-
-/**
- * @param {number} n
- * @return {string[]}
- */
-var generateParenthesis = function(n) {
-    const result = [];
-
-    // Helper function to perform backtracking
-    function backtrack(current, openCount, closeCount) {
-        // Base case: If we've used n opening and n closing parentheses, add the result
-        if (openCount === n && closeCount === n) {
-            result.push(current);
-            return;
-        }
-        
-        // Add opening parenthesis if we can
-        if (openCount < n) {
-            backtrack(current + '(', openCount + 1, closeCount);
-        }
-        
-        // Add closing parenthesis if we can
-        if (closeCount < openCount) {
-            backtrack(current + ')', openCount, closeCount + 1);
-        }
-    }
-    
-    // Start the backtracking process with an empty string
-    backtrack("", 0, 0);
-    
-    return result;
 };
 
 

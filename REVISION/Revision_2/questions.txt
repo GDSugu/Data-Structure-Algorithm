@@ -1,0 +1,15 @@
+/************************************** NEXT GREATER ELEMENT - I  *************************************************
+ * Leetcode 1: https://leetcode.com/phttps://leetcode.com/problems/next-greater-element-i/
+*/
+
+/************************************** NEXT GREATER ELEMENT II *************************************************
+ * Leetcode 2: https://leetcode.com/problems/next-greater-element-ii/
+*/
+
+/************************************** SERACH IN ROTATED SORTED ARRAY *************************************************
+ * Leetcode 3: https://leetcode.com/problems/search-in-rotated-sorted-array/description/
+*/
+
+/************************************** GENERATE PARENTHESIS *************************************************
+ * Leetcode 4: https://leetcode.com/problems/generate-parentheses/
+*/

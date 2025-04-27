@@ -2,16 +2,10 @@
 
 
 
-/************************************** NEXT GREATER ELEMENT II *************************************************
- * Leetcode 3: https://leetcode.com/problems/next-greater-element-ii/
-*/
+
 
 /************************************** REMOVE DUPLICATES FROM SORTED LIST II *************************************************
  * Leetcode 4: https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/description/
-*/
-
-/************************************** SEARCH IN ROTATED SORTED ARRAY *************************************************
- * Leetcode 5: https://leetcode.com/problems/search-in-rotated-sorted-array/description/
 */
 
 /************************************** LONGEST SUBSTRING WITHOUT REPEATING CHARACTER *************************************************
@@ -26,9 +20,6 @@
  * Leetcode 8: https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/
 */
 
-/************************************** GENERATE PARENTHESIS *************************************************
- * Leetcode 9: https://leetcode.com/problems/generate-parentheses/
-*/
 
 /************************************** MAXIMUM NUMBER OF EVENTS THAT CAN BE ATTENDED *************************************************
  * Leetcode 10: https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended/description/

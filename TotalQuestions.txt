@@ -1,8 +1,6 @@
 
 
-/************************************** NEXT GREATER ELEMENT II *************************************************
- * Leetcode 5: https://leetcode.com/problems/next-greater-element-ii/
-*/
+
 
 Remarks:
 1) create a monotonic stack to store the next greater index
