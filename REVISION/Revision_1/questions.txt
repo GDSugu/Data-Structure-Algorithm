@@ -6,3 +6,59 @@
  * Leetcode 2: https://leetcode.com/problems/3sum/description/
 */
 
+/************************************** FOUR SUM ***************************
+ * Leetcode 3: https://leetcode.com/problems/4sum/description/
+*/
+
+/**************************************** TWO SUM- II INPUT ARRAY IS SORTED  ********************************
+ * Leetcode 4: https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
+*/
+
+/*************************************** FIND ALL PERMUTATION  ***************************
+ * Leetcode 5: https://leetcode.com/problems/permutations/description/
+*/
+
+/************************************** PERMUTATION - II *************************************************
+ * Leetcode 6: https://leetcode.com/problems/permutations-ii/
+*/
+
+/*************************************** NEXT PERMUTATION  ***************************
+ * Leetcode 7: https://leetcode.com/problems/next-permutation/description/
+*/
+
+/************************************** COMBINATIONS  *************************************************
+ * Leetcode 8: https://leetcode.com/problems/combinations/
+*/
+
+/************************************** COMBINATION SUMS  *************************************************
+ * Leetcode 9: https://leetcode.com/problems/combination-sum/description/
+*/
+
+/************************************** COMBINATION SUMS - II  *************************************************
+ * Leetcode 10: https://leetcode.com/problems/combination-sum-ii/
+*/
+
+/************************************** House Robber - I ********************************
+* Leetcode 11: https://leetcode.com/problems/house-robber/description/
+*/
+
+/**************************************  HOUSE ROBBER - II ********************************
+* Leetcode 12: https://leetcode.com/problems/house-robber/description/
+*/
+
+/************************************** JUMP GAME - I *************************************************
+ * Leetcode 13: https://leetcode.com/problems/jump-game/description/
+*/
+
+/************************************** JUMP GAME - II *************************************************
+ * Leetcode 14: https://leetcode.com/problems/jump-game-ii/
+*/
+
+/****************************************  COIN CHANGE PROBLEM  ********************************
+ * Leetcode 15: https://leetcode.com/problems/coin-change/
+*/
+
+/************************************** COIN CHANGE - II  *************************************************
+ * Leetcode 16: htthttps://leetcode.com/problems/coin-change-ii/
+*/
+

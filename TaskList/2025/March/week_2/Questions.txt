@@ -1,8 +1,6 @@
 
 
-/************************************** FOUR SUM *************************************************
- * Leetcode 2: https://leetcode.com/problems/4sum/description/
-*/
+
 
 /************************************** NEXT GREATER ELEMENT II *************************************************
  * Leetcode 3: https://leetcode.com/problems/next-greater-element-ii/

@@ -1,5 +1,5 @@
 /************************************** FIBONACCI NUMBERS *************************************************
- * Leetcode 1: https://leetcode.com/problems/combination-sum-ii/
+ * Leetcode 1: https://leetcode.com/problems/fibonacci-number/description/
 */
 
 /************************************** CLIMBING STAIRS *************************************************

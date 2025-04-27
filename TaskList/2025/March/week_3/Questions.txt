@@ -10,28 +10,14 @@
  * Leetcode 3: https://leetcode.com/problems/subarray-product-less-than-k/
 */
 
-/************************************** COMBINATIONS  *************************************************
- * Leetcode 4: https://leetcode.com/problems/combinations/
-*/
-
 /************************************** FIND ALL SUBSET  *************************************************
  * Leetcode 5: https://leetcode.com/problems/subsets/
 */
 
-/****************************************  COIN CHANGE PROBLEM  ********************************
- * Leetcode 6: https://leetcode.com/problems/coin-change/
-*/
 
-/************************************** COMBINATION SUMS  *************************************************
- * Leetcode 7: https://leetcode.com/problems/combination-sum/description/
-*/
-
-/************************************** COMBINATION SUMS - II  *************************************************
- * Leetcode 8: https://leetcode.com/problems/combination-sum-ii/
-*/
 
 /************************************** FIBONACCI NUMBERS *************************************************
- * Leetcode 9: https://leetcode.com/problems/combination-sum-ii/
+ * Leetcode 9: https://leetcode.com/problems/fibonacci-number/description/
 */
 
 /************************************** CLIMBING STAIRS *************************************************

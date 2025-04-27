@@ -106,35 +106,6 @@ function numSubarrayProductLessThanK(nums, k) {
 }
 
 
-/************************************** COMBINATIONS  *************************************************
- * Leetcode 4: https://leetcode.com/problems/combinations/
-*/
-
-// SOLUTIONS: BACKTRACKING AND RECURSION
-
-var combine = function(n, k) {
-    let result = [];
-
-    function backtrack(start, currentCombination) {
-        // Base case: if the current combination is of size k, add it to the result
-        if (currentCombination.length === k) {
-            result.push([...currentCombination]); // Make a copy of the combination
-            return;
-        }
-
-        // Explore all possible numbers from start to n
-        for (let i = start; i <= n; i++) {
-            currentCombination.push(i); // Add the current number to the combination
-            backtrack(i + 1, currentCombination); // Recursively explore further
-            currentCombination.pop(); // Backtrack: remove the last number
-        }
-    }
-
-    // Start the backtracking process
-    backtrack(1, []);
-    return result;
-};
-
 /************************************** FIND ALL SUBSETS  *************************************************
  * Leetcode 5: https://leetcode.com/problems/subsets/
 */
@@ -162,155 +133,18 @@ var subsets = function(nums) {
 };
 
 
-/****************************************  COIN CHANGE PROBLEM  ********************************
- * Leetcode 6: https://leetcode.com/problems/coin-change/
-*/
-
-// SOLUTION : DYNAMIC PROGRAMMING (Bottom-Up DP APPROACH) -> O(amount * n)
 
 
-/**
- * @param {number[]} coins
- * @param {number} amount
- * @return {number}
- */
-function coinChange(coins, amount) {
-    let dp = new Array(amount + 1).fill(Infinity);
-    dp[0] = 0;  // Base case: 0 coins needed for amount 0
-
-    for (let i = 1; i <= amount; i++) {
-        for (let coin of coins) {
-            if (i >= coin) {
-                dp[i] = Math.min(dp[i], 1 + dp[i - coin]);
-            }
-        }
-    }
-
-    return dp[amount] === Infinity ? -1 : dp[amount];
-}
-
-/*
-What this is doing:
-
-Compare:
-
-dp[i] → current minimum coins needed to form i (starts as Infinity)
-
-1 + dp[i - coin] → if we use this coin, how many coins do we need?
-
-1 for the current coin
-
-dp[i - coin] = coins needed to make the remaining amount
-
-So as soon as 1 + dp[i - coin] is smaller than Infinity, we replace it.
-
-*/
 
 
-/************************************** COMBINATION SUMS  *************************************************
- * Leetcode 7: https://leetcode.com/problems/combination-sum/description/
-*/
 
-// SOLUTION 1: BACKTRACKING -> O(n^T)
 
-var combinationSum = function(candidates, target) {
-    let result = [];
 
-    function backtrack(start, combination, remainingTarget) {
-        if (remainingTarget === 0) {
-            result.push([...combination]);
-            return;
-        }
-        if (remainingTarget < 0) {
-            return;
-        }
 
-        for (let i = start; i < candidates.length; i++) {
-            combination.push(candidates[i]);
-            backtrack(i, combination, remainingTarget - candidates[i]);
-            combination.pop();  // Undo the last choice
-        }
-    }
-
-    backtrack(0, [], target);
-    return result;
-};
-
-// Example Usage:
-console.log(combinationSum([2,3,6,7], 7)); // Output: [[2,2,3],[7]]
-console.log(combinationSum([2,3,5], 8));   // Output: [[2,2,2,2],[2,3,3],[3,5]]
-console.log(combinationSum([2], 1));       // Output: []
-
-// SOLUTION 2: BACKTRACKING + SORTING -> O(n^T)
-
-function combinationSum(candidates, target) {
-    candidates.sort((a, b) => a - b); // Step 1: Sort the array
-    let result = [];
-
-    function backtrack(start, path, remainingTarget) {
-        if (remainingTarget === 0) {
-            result.push([...path]); // Found a valid combination
-            return;
-        }
-
-        for (let i = start; i < candidates.length; i++) {
-            if (candidates[i] > remainingTarget) break; // Early stopping
-
-            path.push(candidates[i]);
-            backtrack(i, path, remainingTarget - candidates[i]); // Allow repeated elements
-            path.pop(); // Backtrack
-        }
-    }
-
-    backtrack(0, [], target);
-    return result;
-}
-
-// Example Test Cases
-console.log(combinationSum([2,3,6,7], 7)); // Output: [[2,2,3],[7]]
-console.log(combinationSum([2,3,5], 8)); // Output: [[2,2,2,2],[2,3,3],[3,5]]
-console.log(combinationSum([2], 1)); // Output: []
-
-/************************************** COMBINATION SUMS - II  *************************************************
- * Leetcode 8: https://leetcode.com/problems/combination-sum-ii/
-*/
-
-// SOLUTION: SORTING + BACKTRACKING -> O(n^T)
-var combinationSum2 = function(candidates, target) {
-    candidates.sort((a, b) => a - b); // Step 1: Sort to handle duplicates
-    let result = [];
-
-    function backtrack(start, combination, remainingTarget) {
-        if (remainingTarget === 0) {
-            result.push([...combination]); // Found a valid combination
-            return;
-        }
-
-        for (let i = start; i < candidates.length; i++) {
-            if (i > start && candidates[i] === candidates[i - 1]) continue; // Step 2: Skip duplicates
-
-            if (candidates[i] > remainingTarget) break; // Optimization: Stop if number exceeds target
-
-            combination.push(candidates[i]);
-            backtrack(i + 1, combination, remainingTarget - candidates[i]); // Move to next index
-            combination.pop(); // Undo choice (backtrack)
-        }
-    }
-
-    backtrack(0, [], target);
-    return result;
-};
-
-// Example Test Cases
-console.log(combinationSum2([10,1,2,7,6,1,5], 8));
-// Output: [[1,1,6],[1,2,5],[1,7],[2,6]]
-
-console.log(combinationSum2([2,5,2,1,2], 5));
-// Output: [[1,2,2],[5]]
 
 
 /************************************** FIBONACCI NUMBERS *************************************************
- * Leetcode 9: https://leetcode.com/problems/combination-sum-ii/
+ * Leetcode 9: https://leetcode.com/problems/fibonacci-number/description/
 */
 
 // SOLUTION 1: RECURSION -> O(2^n)

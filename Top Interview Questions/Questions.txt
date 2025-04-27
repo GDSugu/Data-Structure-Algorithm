@@ -10,32 +10,12 @@
  * Leetcode 4: https://leetcode.com/problems/longest-increasing-subsequence/
 */
 
-/*************************************** FIND ALL PERMUTATION  ******************************
- * Leetcode 5: https://leetcode.com/problems/permutations/description/
-*/
-
-/*************************************** NEXT PERMUTATION  ***********************************
- * Leetcode 6: https://leetcode.com/problems/next-permutation/description/
-*/
-
-/*************************************** House Robber - I *************************************
- * Leetcode 8: https://leetcode.com/problems/house-robber/description/
-*/
-
-/**************************************** House Robber - II ************************************
- * Leetcode 9: https://leetcode.com/problems/house-robber-ii/description/
-*/
-
 /************************************** GRID PUZZLE-I (UNIQUE PATH)*****************************
  * Leetcode 10: https://leetcode.com/problems/unique-paths/description/
 */
 
 /************************************** GRID PUZZLE-II (UNIQUE PATH) ***************************
  * Leetcode 11:https://leetcode.com/problems/unique-paths-ii/description/
-*/
-
-/************************************** FOUR SUM *************************************************
- * Leetcode 13:https://leetcode.com/problems/4sum/description/
 */
 
 /************************************** REMOVE DUPLICATES FROM SORTED LIST II ***********************

@@ -23,6 +23,3 @@
 */
 
 
-/**************************************** TWO SUM- II INPUT ARRAY IS SORTED  ********************************
- * Leetcode 8: https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
-*/

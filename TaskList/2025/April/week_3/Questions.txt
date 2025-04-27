@@ -1,20 +1,5 @@
-/************************************** COIN CHANGE - II  *************************************************
- * Leetcode 1: htthttps://leetcode.com/problems/coin-change-ii/
-*/
+
 
 /************************************** LONGEST CONSECUTIVE SEQUENCE *************************************************
  * Leetcode 2: https://leetcode.com/problems/longest-consecutive-sequence/description/
 */
-
-/************************************** JUMP GAME - II *************************************************
- * Leetcode 3: https://leetcode.com/problems/jump-game-ii/
-*/
-
-/************************************** PERMUTATION - II *************************************************
- * Leetcode 4: https://leetcode.com/problems/permutations-ii/
-*/
-
-/************************************** JUMP GAME - I *************************************************
- * Leetcode 5: https://leetcode.com/problems/jump-game/description/
-*/
-

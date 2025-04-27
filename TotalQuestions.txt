@@ -1,14 +1,4 @@
-/*************************************** FIND ALL PERMUTATION  ***************************
- * Leetcode 1: https://leetcode.com/problems/permutations/description/
-*/
 
-/*************************************** NEXT PERMUTATION  ***************************
- * Leetcode 2: https://leetcode.com/problems/next-permutation/description/
-*/
-
-/*************************************** TWO SUM- II INPUT ARRAY IS SORTED  *******************
- * Leetcode 3: https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
-*/
 
 /************************************** NEXT GREATER ELEMENT II *************************************************
  * Leetcode 5: https://leetcode.com/problems/next-greater-element-ii/
@@ -27,9 +17,7 @@ Remarks:
 2) for loop iteration must have condition nums.length -2;
 3) condition for checking duplicates
 
-/************************************** FOUR SUM ***************************
- * Leetcode 7: https://leetcode.com/problems/4sum/description/
-*/
+
 
 /************************************** Sort Colors  *************************************************
  * Leetcode 8: https://leetcode.com/problems/sort-colors/
@@ -48,13 +36,6 @@ Remarks:
 1) use two pointer left will be start at 0 and 
 2) right should be found from the round value of sqrt of target value
 
-/****************************************  COIN CHANGE PROBLEM  ********************************
- * Leetcode 10: https://leetcode.com/problems/coin-change/
-*/
-
-/************************************** COIN CHANGE - II  *************************************************
- * Leetcode 11: htthttps://leetcode.com/problems/coin-change-ii/
-*/
 
 /************************************** MAXIMUM SUM SUBARRAY  *************************************************
  * Leetcode 12: https://leetcode.com/problems/maximum-subarray/
