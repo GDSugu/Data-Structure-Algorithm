@@ -1,42 +1,4 @@
 
-
-let permutations = permute([1, 2, 3]);
-console.log(permutations);
-
-// SOLUTION 2: USING HEAPS ALGORITHM
-
-var permute = function(nums) {
-    
-    let result = [];
-
-    function generate(n){
-        if(n === 1){
-            result.push([...nums]);
-            return;
-        }
-
-        for(let i=0; i<n; i++){
-            generate(n-1);
-
-            if(n % 2 === 0){
-                [nums[i], nums[n-1]] = [nums[n-1], nums[i]];
-            }else{
-                [nums[0], nums[n-1]] = [nums[n-1], nums[0]];
-           }
-        }
-    }
-
-    generate(nums.length);
-    return result;
-};
-
-let permutations1 = permute([1, 2, 3]);
-console.log(permutations1);
-
-
-
-
-
 /*************************************** Kth PERMUTATION SEQUENCE  ***************************
  * Leetcode 2: https://leetcode.com/problems/permutation-sequence/description/
 */

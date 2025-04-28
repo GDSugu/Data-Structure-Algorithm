@@ -303,3 +303,49 @@ var find132pattern = function(nums) {
 };
 
 
+/************************************** UNIQUE PATHS - II  *************************************************
+ * Leetcode 2: https://leetcode.com/problems/unique-paths-ii/description/
+*/
+
+// SOLUTION: DYNAMIC PROGRAMMING -> O(M*N)
+
+/**
+ * @param {number[][]} obstacleGrid - 2D grid where 1 represents an obstacle and 0 represents a free cell
+ * @return {number} - Number of unique paths from top-left to bottom-right avoiding obstacles
+ */
+var uniquePathsWithObstacles = function(obstacleGrid) {
+    let m = obstacleGrid.length;       // Total number of rows
+    let n = obstacleGrid[0].length;     // Total number of columns
+
+    // 🚫 Edge case: If start or end cell is blocked, no paths are possible
+    if (obstacleGrid[0][0] === 1 || obstacleGrid[m-1][n-1] === 1) return 0;
+
+    // 🛤️ Create a 2D array to store the number of unique paths to reach each cell
+    let path = new Array(m).fill(0).map(() => new Array(n).fill(0));
+
+    // 🔥 Set the starting cell. There's exactly 1 way to stand at the start.
+    path[0][0] = 1;
+
+    // 🧠 Traverse the grid cell by cell
+    for (let i = 0; i < m; i++) {
+        for (let j = 0; j < n; j++) {
+            
+            // Skip the start cell because it's already initialized
+            if (i === 0 && j === 0) continue;
+
+            // 🚧 If the current cell has an obstacle, set paths to 0 (unreachable)
+            if (obstacleGrid[i][j] === 1) {
+                path[i][j] = 0;
+            } else {
+                // 👆 If not in the first row, add the number of ways from the cell directly above
+                if (i > 0) path[i][j] += path[i-1][j];
+
+                // 👉 If not in the first column, add the number of ways from the cell directly to the left
+                if (j > 0) path[i][j] += path[i][j-1];
+            }
+        }
+    }
+
+    // ✅ The final result will be the number of paths to reach the bottom-right cell
+    return path[m-1][n-1];
+};

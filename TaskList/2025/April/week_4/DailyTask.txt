@@ -58,3 +58,8 @@ Status: Completed
  * Leetcode 1: https://leetcode.com/problems/132-pattern/description/
 */
 Status: Completed
+
+/************************************** UNIQUE PATHS - II  *************************************************
+ * Leetcode 2: https://leetcode.com/problems/unique-paths-ii/description/
+*/
+Status: Completed
