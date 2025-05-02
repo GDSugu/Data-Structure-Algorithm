@@ -16,10 +16,6 @@
  * leetcode 1: https://leetcode.com/problems/find-all-anagrams-in-a-string/
 */
 
-/************************************** MINIMUM WINDOW SUBSTRING  *************************************************
- * Leetcode 1: https://leetcode.com/problems/minimum-window-substring/
-*/
-
 /************************************** 132 Pattern  *************************************************
  * Leetcode 1: https://leetcode.com/problems/132-pattern/description/
 */

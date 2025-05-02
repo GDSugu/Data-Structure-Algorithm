@@ -13,3 +13,235 @@
 /************************************** GENERATE PARENTHESIS *************************************************
  * Leetcode 4: https://leetcode.com/problems/generate-parentheses/
 */
+
+/************************************** LONGEST SUBSTRING WITHOUT REPEATING CHARACTER *************************************************
+ * Leetcode 5: https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
+*/
+
+/************************************** LONGEST SUBSTRING WITH K UNIQUE CHARACTER *************************************************
+ * Geeks 6: https://www.geeksforgeeks.org/problems/longest-k-unique-characters-substring0853/1
+*/
+
+/************************************** LONGEST SUBSTRING ATLEAST K REPEATING CHARACTER  *************************************************
+ * Leetcode 7: https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/
+*/
+
+/************************************* FIRST NEGATIVE INTEGER IN THE EVERY WINDOW K SIZE  *************************************************
+ * Geeks 8: https://www.geeksforgeeks.org/problems/first-negative-integer-in-every-window-of-size-k3345/1
+*/
+
+/************************************** SUBARRAY WITH SUM EQUALS ZERO  *************************************************
+ * Geeks 9: https://www.geeksforgeeks.org/problems/subarray-with-0-sum-1587115621/1
+*/
+
+/**************** ABSOLUTE DIFFERENCE BETWEEN PREFIX AND SUFFIX SUM EQUALS ZERO  ****************
+ * HEYCOACH 10: Rohan loves 0. He has been assigned a task by his coach to find all the indexes of an array having length n, 
+               such that on those indexes i, (0 <= i <= n-1), the absolute difference between PrefixSum[i] and SuffixSum[i] is 0.
+
+Note:
+
+Prefix Sum: PrefixSum[i] is defined as the sum of all the values of the array up to index i.
+PrefixSum[0] = nums[0]
+PrefixSum[1] = nums[0] + nums[1]
+PrefixSum[i] = nums[0] + nums[1] + nums[2] + ... + nums[i]
+Suffix Sum: SuffixSum[i] is defined as the sum of all the values from the end of the array up to index i.
+SuffixSum[n-1] = nums[n-1]
+SuffixSum[n-2] = nums[n-2] + nums[n-1]
+SuffixSum[i] = nums[i] + nums[i+1] + nums[i+2] + ... + nums[n-1]
+Input Format:
+
+The first line contains an integer n, which specifies the length of the array nums.
+The second line contains n integers representing the array nums.
+Output Format:
+
+Return a list of integers representing the indexes where the absolute difference between PrefixSum[i] and SuffixSum[i] is 0. If no such index exists, return -1.
+Sample Input 1:
+
+5
+4 2 -3 1 6
+Sample Output 1:
+
+1
+Explanation: At index 1, the prefix sum and suffix sum are equal:
+
+PrefixSum[1] = 4 + 2 = 6
+SuffixSum[1] = 2 + (-3) + 1 + 6 = 6
+Sample Input 2:
+
+4
+1 2 -2 3
+Sample Output 2:
+
+1 2
+Explanation: At indexes 1 and 2, the prefix sum and suffix sum are equal:
+
+PrefixSum[1] = 1 + 2 = 3
+SuffixSum[1] = 2 + (-2) + 3 = 3
+PrefixSum[2] = 1 + 2 + (-2) = 1
+SuffixSum[2] = -2 + 3 = 1
+Constraints:
+
+(1 <= n <= 10^4)
+(-10^4 <= nums[i] <= 10^4)
+Note:The function should return the result. The driver code will handle printing the output.
+
+*/
+
+
+/**************** LENGTH OF THE LONGEST SUBSTRING AFTER K TIMES REPLACEMENT ****************
+ * HEYCOACH 11: Diwali Party
+ 
+You are given a string S representing Diwali lights. Some lights are working well, while others are dim. 
+You can pick any dim light and replace it with a working one. You can perform this operation at most K times, and replacement lights can be sourced from a supply of working lights. 
+Return the length of the longest substring containing all working lights after performing the above operations.
+
+
+Note:
+
+A working light is defined as '*'.
+A damaged light is defined as '.'.
+Input Format:
+
+The first line contains two integers N and K, which specify the length of the string and K respectively.
+The second line contains the string S of length N.
+Output Format:
+
+Return a single integer: the length of the longest substring containing all working lights.
+Sample Input 1:
+
+10 2
+.*.*..**.*
+Sample Output 1:
+
+5
+Explanation:
+
+In a 0-index representation, if we replace the '.'s at index 4 and 5, the substring changes from *..** to ***** - which is the largest possible substring possible with the given conditions and is of size 5.
+
+Constraints:
+
+(1 <= |S| <= 10^5)
+S consists only of '*' and '.'
+(0 <= K <= |S|)
+Note:The function should return the result. The driver code will handle printing the output.
+
+*/
+
+
+/************************************** MINIMUM WINDOW SUBSTRING  *************************************************
+ * Leetcode 12: https://leetcode.com/problems/minimum-window-substring/
+*/
+
+
+/**************** FIND ALL THE FIRST INDEX OF THE STRING THAT MATCHES THE PATTERN ****************
+ * HEYCOACH 13: Unraveling Clues with Professor
+Professor Prateek from HeyCoach coding academy in Bangalore challenges Varshil to find all indices where a given pattern appears within a given text. Both text and pattern consist of lowercase alphabetical characters. The goal is to identify the starting indices in the text where the complete pattern is found.
+
+Input Format:
+
+The first line contains the string text, consisting of lowercase alphabetical characters (1 <= |text| <= 10^5).
+The second line contains the string pattern, consisting of lowercase alphabetical characters (1 <= |pattern| <= 10^5).
+Output Format:
+
+A list of integers separated by spaces, representing the starting indices of the text where the pattern appears in its entirety.
+Sample Input 1:
+
+text = "ababcabab"
+pattern = "ab"
+Sample Output 1:
+
+0 2 5 7
+Explanation:
+
+The pattern "ab" appears at indices 0, 2, 5, and 7 within the text.
+
+Constraints:
+
+(1 <= |text| <= 10^5)
+(1 <= |pattern| <= 10^5)
+The text and pattern consist only of lowercase alphabetical characters.
+Note:The function should return the result. The driver code will handle printing the output.
+*/
+
+
+/**************** FIND ALL THE FIRST INDEX OF THE STRING THAT MATCHES THE PATTERN ****************
+ * HEYCOACH 14: Mars Mission
+You are an astronaut on your way to Mars. There have been reports that extraterrestrial life forms have been found there, and they speak a language similar to English.
+They use syllables to form sentences and use two types of syllables which are formed:
+
+(Consonant)(vowel)
+(Consonant)(vowel)(consonant)
+You are given a string consisting of English letters, and you have to convert this string into a sentence that the aliens can understand.
+
+Note: The inputs are given in such a way that there exists an answer.
+
+Input Format:
+
+The first line contains a single integer n denoting the length of the string.
+The second line contains a single string which has to be converted to a sentence.
+Output Format:
+
+Return the converted sentence as a string.
+Sample Input 1:
+
+5
+badef
+Sample Output 1:
+
+ba def
+Explanation:
+
+The string "badef" is split into "ba" and "def" based on the syllable rules.
+
+Constraints:
+
+(2 <= length of word <= 10^5)
+Note:The function should print the result.
+
+*/
+
+/************************************** GAS STATION  *************************************************
+ * Leetcode 15: https://leetcode.com/problems/gas-station/description/
+*/
+
+
+/**************** FIND ALL THE FIRST INDEX OF THE STRING THAT MATCHES THE PATTERN ****************
+ * HEYCOACH 16: First Non Repeating
+
+Given a string str which denotes a stream of characters, your task is to find a new string output_str. output_str is formed such that 
+we have to find the first non-repeating character at each instance when a character is inserted into the stream and append it at the end of output_str. If no such non-repeating character is found, then append 'X' at the end of output_str.
+
+
+Input Format:
+
+Only one line which contains a string that needs to be converted to output_str.
+Output Format:
+
+Return the updated string.
+Sample Input 1:
+
+dabc
+Sample Output 1:
+
+dddd
+Explanation:
+
+"d" - first non-repeating character 'd'.
+"da" - first non-repeating character 'd'.
+"dab" - first non-repeating character 'd'.
+"dabc" - first non-repeating character 'd'.
+Sample Input 2:
+
+bbe
+Sample Output 2:
+
+bXe
+Explanation:
+
+"b" - first non-repeating character 'b'.
+"bb" - no non-repeating character so 'X'.
+"bbe" - first non-repeating character 'e'.
+Constraints:
+
+(1 <= |str| <= 10^5)
+Note: The function should return the result.

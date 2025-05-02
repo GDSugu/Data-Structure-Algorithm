@@ -32,43 +32,7 @@ var deleteDuplicates = function (head) {
 
 
 
-/************************************** LONGEST SUBSTRING WITHOUT REPEATING CHARACTER *************************************************
- * Leetcode 6: https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
-*/
 
-// SOLUTION: HASHMAP WITH SLIDING WINDOW -> O(n)
-
-function longestSubstringWithNoRepeatingChars(s) {
-    let left = 0; // Left pointer
-    let maxLength = 0; // Maximum length of substring without repeating characters
-    let charCount = new Map(); // Map to store character counts
-
-    // Traverse the string with the right pointer
-    for (let right = 0; right < s.length; right++) {
-        let rightChar = s[right];
-
-        // Increment count of the character in the map
-        charCount.set(rightChar, (charCount.get(rightChar) || 0) + 1);
-
-        // If the character count exceeds 1, shrink the window from the left
-        while (charCount.get(rightChar) > 1) {
-            let leftChar = s[left];
-            charCount.set(leftChar, charCount.get(leftChar) - 1);
-
-            // If count becomes 0, remove the character from the map
-            if (charCount.get(leftChar) === 0) {
-                charCount.delete(leftChar);
-            }
-
-            left++; // Move the left pointer to shrink the window
-        }
-
-        // Update the maxLength after adjusting the window
-        maxLength = Math.max(maxLength, right - left + 1);
-    }
-
-    return maxLength; // ✅ Return the result instead of just logging it
-}
 
 
 

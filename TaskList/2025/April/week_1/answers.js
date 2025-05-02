@@ -178,42 +178,6 @@ var findCenter = function(edges) {
 };
 
 
-/************************************** GAS STATION  *************************************************
- * Leetcode 3: https://leetcode.com/problems/gas-station/description/
-*/
-
-// SOLUTION: GREEDY ALGORITHM -> O(N)
-
-/**
- * @param {number[]} gas
- * @param {number[]} cost
- * @return {number}
- */
-var canCompleteCircuit = function(gas, cost) {
-    // Step 1: Calculate total gas available and total cost required
-    let totalGas = gas.reduce((sum, g) => sum + g, 0);  // Sum of all gas stations
-    let totalCost = cost.reduce((sum, c) => sum + c, 0); // Sum of all costs
-
-    // Step 2: If total gas is less than total cost, it's impossible to complete the circuit
-    if (totalGas < totalCost) return -1;
-
-    // Step 3: Initialize variables to track remaining gas and starting station index
-    let remainingGas = 0, start = 0;
-
-    // Step 4: Iterate through each gas station
-    for (let i = 0; i < gas.length; i++) {
-        remainingGas += gas[i] - cost[i]; // Update remaining gas after reaching next station
-
-        // Step 5: If remaining gas becomes negative, reset start index to the next station
-        if (remainingGas < 0) {
-            start = i + 1; // Set new starting station
-            remainingGas = 0; // Reset remaining gas
-        }
-    }
-
-    // Step 6: Return the starting station index
-    return start;
-};
 
 /************************************** CINEMA SEAT ALLOCATION  *************************************************
  * Leetcode 5: https://leetcode.com/problems/cinema-seat-allocation/

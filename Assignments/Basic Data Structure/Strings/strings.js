@@ -31,35 +31,50 @@ Constraints:
 // NOTE: Dont forget to incremet the left++ in the while loop
 
 class Solution {
-    longestUniqueSubstr(str) {
-      let left = 0; // left pointer for the sliding window
-      let maxLength = 0; // to store the maximum length of unique substrings
-      let charMap = new Map(); // to store characters and their counts
-  
-      // Iterate through the string with the right pointer
-      for (let right = 0; right < str.length; right++) {
-        let rightChar = str[right];
-  
-        // Add/update the character count in the map
-        charMap.set(rightChar, (charMap.get(rightChar) || 0) + 1);
-  
-        // If there are more than 1 occurrence of any character, shrink the window
-        while (charMap.get(rightChar) > 1) {
-          let leftChar = str[left];
-          charMap.set(leftChar, charMap.get(leftChar) - 1);
-          if (charMap.get(leftChar) === 0) {
-            charMap.delete(leftChar); // Remove it from the map if count reaches 0
+  longestKSubstr(s, k) {
+      // Initialize the maximum length to -1 (to indicate no valid substring found yet)
+      let maxLength = -1;
+      
+      // Use a Map to store character frequencies in the current window
+      let map = new Map();
+      
+      // Left pointer of the sliding window
+      let left = 0;
+      
+      // Iterate through the string using the right pointer
+      for (let right = 0; right < s.length; right++) {
+          let rightChar = s[right];
+          
+          // Add current character to the map and update its frequency
+          map.set(rightChar, (map.get(rightChar) || 0) + 1);
+          
+          // If the number of unique characters exceeds k, shrink the window from the left
+          while (map.size > k) {
+              let leftChar = s[left];
+              
+              // Decrease the frequency of the character at the left pointer
+              map.set(leftChar, map.get(leftChar) - 1);
+              
+              // If the frequency becomes 0, remove the character from the map
+              if (map.get(leftChar) === 0) {
+                  map.delete(leftChar);
+              }
+              
+              // Move the left pointer to shrink the window
+              left++;
           }
-          left++; // Move the left pointer
-        }
-  
-        // Calculate the max length of the substring with unique characters
-        maxLength = Math.max(maxLength, right - left + 1);
+          
+          // If the current window has exactly k unique characters, update maxLength
+          if (map.size === k) {
+              maxLength = Math.max(maxLength, right - left + 1);
+          }
       }
-  
-      return maxLength; // Return the result after the loop
-    }
+      
+      // Return the length of the longest substring with exactly k unique characters
+      return maxLength;
   }
+}
+
   
 /************************************** LENGTH OF LONGEST SUBSTRING WITH NO REPEATED CHARACTER ********
 
