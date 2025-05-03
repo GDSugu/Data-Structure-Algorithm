@@ -1,0 +1,63 @@
+/************************************** REMOVE DUPLICATES FROM SORTED LIST II *************************************************
+ * Leetcode 1: https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/description/
+*/
+
+/************************************** UNIQUE LENGTH - 3 PALINDROMIC SUBSEQUENCE  *************************************************
+ * Leetcode 2: https://leetcode.com/problems/minimum-number-of-work-sessions-to-finish-the-tasks/description/
+*/
+
+/****************************************  LONGEST INCREASING SUBSEQUENCE  ********************************
+ * Leetcode 3: https://leetcode.com/problems/longest-increasing-subsequence/
+*/
+
+/****************************************  REMOVE DUPLICATES FROM THE SORTED ARRAY  ********************************
+ * Leetcode 4: https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
+*/
+
+/**************************************** RAIN WATER TRAPPING  ********************************
+ * Leetcode 5: https://leetcode.com/problems/trapping-rain-water/
+*/
+
+/************************************** FIBONACCI NUMBERS *************************************************
+ * Leetcode 6: https://leetcode.com/problems/fibonacci-number/description/
+*/
+
+/**************************************** BEST TO BUY AND SELL THE STOCK-II  ******************
+ * Leetcode 7: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
+*/
+
+/****************************************  BEST TIME TO BUY AND SELL STOCK-III  ********************************
+ * Leetcode 8: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/
+*/
+
+/****************************************  SLIDING WINDOW MAXIMUM  ********************************
+ * Leetcode 9: https://leetcode.com/problems/sliding-window-maximum/
+*/
+
+/****************************************  MAXIMUM MATRIX SUM  ********************************
+ * Leetcode 10: https://leetcode.com/problems/maximum-matrix-sum/description/
+*/
+
+/************************************** MAXIMIZE THE CONFUSION OF EXAM  *************************************************
+ * Leetcode 11: https://leetcode.com/problems/maximize-the-confusion-of-an-exam/
+*/
+
+/**************************************** LARGEST RTECTANGLE IN HISTOGRAM  ********************************
+ * Leetcode 12: https://leetcode.com/problems/largest-rectangle-in-histogram/
+*/
+
+/****************************************  SUPER EGG DROP  ********************************
+ * Leetcode 13: https://leetcode.com/problems/super-egg-drop/
+*/
+
+/************************************** MAXIMUM SUM SUBARRAY  *************************************************
+ * Leetcode 14: https://leetcode.com/problems/maximum-subarray/
+*/
+
+/************************************** Sum of Square Numbers  ****************************************
+ * Leetcode 15: https://leetcode.com/problems/sum-of-square-numbers/
+*/
+
+/************************************** Sort Array by Parity  ****************************************
+ * Leetcode 16: https://leetcode.com/problems/sort-array-by-parity/
+*/

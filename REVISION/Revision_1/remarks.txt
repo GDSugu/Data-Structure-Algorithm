@@ -1,0 +1,6 @@
+1) Combination Sum 2 problems & Subset -II
+     -> the backtracking recursive call should be backtrack(i+1) inside the iteration not backtrack(start+1)
+     -> to avoid duplicates in the set we must first sort the given inputs 
+     -> use the below condition inside the for loop to skip the duplicate element
+     -> if(i > start && candidates[i] === candidates[i-1]) continue
+

@@ -1,0 +1,15 @@
+/************************************** Reverse only Letters  ****************************************
+ * Leetcode 1: https://leetcode.com/problems/reverse-only-letters
+*/
+
+/************************************** PARTITION LIST  ****************************************
+ * Leetcode 2: https://leetcode.com/problems/partition-list/
+*/
+
+/************************************** NUMBER OF SUBARRAYS WITH BOUNDED MAXIMUM  *************************************************
+ * Leetcode 3: https://leetcode.com/problems/number-of-subarrays-with-bounded-maximum/
+*/
+
+/*************************************** Kth PERMUTATION SEQUENCE  ***************************
+ * Leetcode 4: https://leetcode.com/problems/permutation-sequence/description/
+*/

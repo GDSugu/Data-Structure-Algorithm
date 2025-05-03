@@ -1,64 +1,5 @@
-
-
-
-/************************************** Sum of Square Numbers  ****************************************
- * Leetcode 2: https://leetcode.com/problems/sum-of-square-numbers/
-*/
-
-// SOLUTION: TWO POINTER -> O(N)
-
-/**
- * @param {number} c
- * @return {boolean}
- */
-var judgeSquareSum = function(c) {
-    let a = 0;
-    let b = Math.floor(Math.sqrt(c));
-
-    while (a <= b) {
-        const sum = a * a + b * b;
-
-        if (sum === c) {
-            return true;
-        } else if (sum < c) {
-            a++; // Need a bigger sum
-        } else {
-            b--; // Need a smaller sum
-        }
-    }
-
-    return false; // No pair found
-};
-
-/************************************** Sort Array by Parity  ****************************************
- * Leetcode 3: https://leetcode.com/problems/sort-array-by-parity/
-*/
-
-// SOLUTION: TWO POINTER -> O(N)
-
-/**
- * @param {number[]} nums
- * @return {number[]}
- */
-var sortArrayByParity = function(nums) {
-    let left = 0;
-    let right = nums.length - 1;
-
-    while(left <= right){
-        if(nums[left] % 2 === 0){
-            left++; // Even is in the correct place
-        } else {
-            // Swap odd to the right side
-            [nums[left], nums[right]] = [nums[right], nums[left]];
-            right--; // Now check the swapped value at nums[left] in next iteration
-        }
-    }
-
-    return nums;
-};
-
 /************************************** Reverse only Letters  ****************************************
- * Leetcode 4: https://leetcode.com/problems/reverse-only-letters
+ * Leetcode 1: https://leetcode.com/problems/reverse-only-letters
 */
 
 // SOLUTION: TWO POINTER -> O(N)
@@ -98,7 +39,7 @@ var reverseOnlyLetters = function(s) {
 };
 
 /************************************** PARTITION LIST  ****************************************
- * Leetcode 5: https://leetcode.com/problems/partition-list/
+ * Leetcode 2: https://leetcode.com/problems/partition-list/
 */
 
 // SOLUTION: DIVIDE AND CONQUER -> O(N)
@@ -141,7 +82,7 @@ var partition = function(head, x) {
 
 
 /************************************** NUMBER OF SUBARRAYS WITH BOUNDED MAXIMUM  *************************************************
- * Leetcode 6: https://leetcode.com/problems/number-of-subarrays-with-bounded-maximum/
+ * Leetcode 3: https://leetcode.com/problems/number-of-subarrays-with-bounded-maximum/
 */
 
 // SOLUTION: MATHEMATICAL WAY -> O(N)
@@ -173,3 +114,35 @@ function count(nums, bound) {
 };
 
 
+/*************************************** Kth PERMUTATION SEQUENCE  ***************************
+ * Leetcode 4: https://leetcode.com/problems/permutation-sequence/description/
+*/
+
+// Solution:
+/**
+ * @param {number} n
+ * @param {number} k
+ * @return {string}
+ */
+var getPermutation = function(n, k) {
+    let nums = [];  // Store numbers 1 to n
+    let fact = [1]; // Factorials array
+    let result = "";
+
+    // Initialize numbers and factorials
+    for (let i = 1; i <= n; i++) {
+        nums.push(i);
+        fact[i] = fact[i - 1] * i;
+    }
+
+    k--; // Convert k to 0-based index
+
+    for (let i = n; i > 0; i--) {
+        let index = Math.floor(k / fact[i - 1]);
+        result += nums[index];  // Add selected number
+        nums.splice(index, 1);  // Remove used number
+        k %= fact[i - 1];       // Update k
+    }
+
+    return result;
+};
