@@ -164,7 +164,7 @@ Note:The function should return the result. The driver code will handle printing
 */
 
 
-/**************** FIND ALL THE FIRST INDEX OF THE STRING THAT MATCHES THE PATTERN ****************
+/**************** VOWELS AND CONSONANT MATCHING ****************
  * HEYCOACH 14: Mars Mission
 You are an astronaut on your way to Mars. There have been reports that extraterrestrial life forms have been found there, and they speak a language similar to English.
 They use syllables to form sentences and use two types of syllables which are formed:

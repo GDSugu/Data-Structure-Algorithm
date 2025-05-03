@@ -16,11 +16,6 @@ Remarks:
 3) condition for checking duplicates
 
 
-
-/************************************** Sort Colors  *************************************************
- * Leetcode 8: https://leetcode.com/problems/sort-colors/
-*/
-
 Remarks:
 1) need three pointers left,mid,right
 2) left,mid should be start at same;

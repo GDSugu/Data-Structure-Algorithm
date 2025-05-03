@@ -12,7 +12,7 @@ https://leetcode.com/discuss/post/6519304/2025-hiring-prep-sprint-big-tech-inter
 Status: completed
 
 /************************************** SUM OF TWO INTEGERS  *************************************************
- * Leetcode 2: https://leetcode.com/problems/spiral-matrix/description/
+ * Leetcode 2: https://leetcode.com/problems/sum-of-two-integers/
 */
 
 Status: completed

@@ -1,0 +1,63 @@
+/************************************** 132 Pattern  *************************************************
+ * Leetcode 1: https://leetcode.com/problems/132-pattern/description/
+*/
+
+/************************************** SORT CHARACTER BY FREQUENCY  *************************************************
+ * Leetcode 2: https://leetcode.com/problems/sort-characters-by-frequency/description/
+*/
+
+/************************************** Sort Colors  *************************************************
+ * Leetcode 3: https://leetcode.com/problems/sort-colors/
+*/
+
+/************************************** FIND ALL ANAGRAMS IN THE STRING  *************************************************
+ * Leetcode 4: https://leetcode.com/problems/find-all-anagrams-in-a-string/
+*/
+
+/************************************** UNIQUE PATHS - II  *************************************************
+ * Leetcode 5: https://leetcode.com/problems/unique-paths-ii/description/
+*/
+
+/************************************** LONGEST CONSECUTIVE SEQUENCE *************************************************
+ * Leetcode 6: https://leetcode.com/problems/longest-consecutive-sequence/description/
+*/
+
+/************************************** SET MATRIX ZERO *************************************************
+ * Leetcode 7: https://leetcode.com/problems/set-matrix-zeroes/description/
+*/
+
+/************************************** MAXIMUM NUMBER OF VOWELS IN A SUBSTRING OF A GIVEN LENGTH *************************************************
+ * Leetcode 8: https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/
+*/
+
+/************************************** MAXIMUM NUMBER OF EVENTS THAT CAN BE ATTENDED *************************************************
+ * Leetcode 9: https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended/description/
+*/
+
+/************************************** NUMBER OF ISLANDS*********************************
+ * Leetcode 10: https://leetcode.com/problems/number-of-islands/description/
+*/
+
+/************************************** GROUP ANAGRAMS *********************************
+ * Leetcode 11: https://leetcode.com/problems/group-anagrams/
+*/
+
+/************************************** SUM OF TWO INTEGERS  *************************************************
+ * Leetcode 12: https://leetcode.com/problems/sum-of-two-integers/
+*/
+
+/************************************** SPIRAL MATRIX  *************************************************
+ * Leetcode 13: https://leetcode.com/problems/spiral-matrix/description/
+*/
+
+/************************************** SUB ARRAY PRODUCT LESS THAN K  *************************************************
+ * Leetcode 14: https://leetcode.com/problems/subarray-product-less-than-k/
+*/
+
+/************************************** FIND ALL SUBSETS  *************************************************
+ * Leetcode 15: https://leetcode.com/problems/subsets/
+*/
+
+/************************************** CLIMBING STAIRS *************************************************
+ * Leetcode 16: https://leetcode.com/problems/climbing-stairs/
+*/

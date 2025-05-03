@@ -1,18 +1,7 @@
-/************************************** SPIRAL MATRIX  *************************************************
- * Leetcode 1: https://leetcode.com/problems/spiral-matrix/description/
-*/
 
-/************************************** SUM OF TWO INTEGERS  *************************************************
- * Leetcode 2: https://leetcode.com/problems/spiral-matrix/description/
-*/
 
-/************************************** SUB ARRAY PRODUCT LESS THAN K  *************************************************
- * Leetcode 3: https://leetcode.com/problems/subarray-product-less-than-k/
-*/
 
-/************************************** FIND ALL SUBSET  *************************************************
- * Leetcode 5: https://leetcode.com/problems/subsets/
-*/
+
 
 
 

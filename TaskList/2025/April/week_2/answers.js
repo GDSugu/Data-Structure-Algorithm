@@ -1,42 +1,4 @@
-/************************************** Sort Colors  *************************************************
- * Leetcode 1: https://leetcode.com/problems/sort-colors/
-*/
 
-// SOLUTION: THREE POINTERS -> O(N)
-
-/**
- * Sorts the array containing only 0s, 1s, and 2s in-place.
- * Uses Dutch National Flag algorithm.
- * 
- * @param {number[]} nums
- * @return {void} Do not return anything, modify nums in-place instead.
- */
-var sortColors = function(nums) {
-    let low = 0;                // Pointer for next position of 0
-    let mid = 0;                // Current index being processed
-    let high = nums.length - 1; // Pointer for next position of 2
-
-    // Process elements until mid passes high
-    while (mid <= high) {
-        if (nums[mid] === 0) {
-            // Swap the current element with the low pointer
-            // Move both low and mid forward
-            [nums[low], nums[mid]] = [nums[mid], nums[low]];
-            low++;
-            mid++;
-        } else if (nums[mid] === 1) {
-            // 1 is in the correct position, just move mid forward
-            mid++;
-        } else if (nums[mid] === 2) {
-            // Swap the current element with the high pointer
-            // Decrease high only, as the swapped-in element needs to be checked again
-            [nums[mid], nums[high]] = [nums[high], nums[mid]];
-            high--;
-        }
-    }
-
-    // No return needed as the array is modified in-place
-};
 
 
 /************************************** Sum of Square Numbers  ****************************************

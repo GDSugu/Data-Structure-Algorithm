@@ -1,6 +1,3 @@
-/************************************** Sort Colors  *************************************************
- * Leetcode 1: https://leetcode.com/problems/sort-colors/
-*/
 
 /************************************** Sum of Square Numbers  ****************************************
  * Leetcode 2: https://leetcode.com/problems/sum-of-square-numbers/
