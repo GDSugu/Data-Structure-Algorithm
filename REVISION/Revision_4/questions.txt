@@ -2,7 +2,7 @@
  * Leetcode 1: https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/description/
 */
 
-/************************************** UNIQUE LENGTH - 3 PALINDROMIC SUBSEQUENCE  *************************************************
+/************************************** MINIMUM NUMBER OF WORK SESSION TO FINISH THE TASK  *************************************************
  * Leetcode 2: https://leetcode.com/problems/minimum-number-of-work-sessions-to-finish-the-tasks/description/
 */
 

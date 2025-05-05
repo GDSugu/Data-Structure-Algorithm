@@ -2,28 +2,43 @@
  * Leetcode 1: https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/description/
 */
 
-// SOLUTION: 
+// SOLUTION: TWO POINTER TECHNIQUE + DUMMY NODE -> O(N)
 
 var deleteDuplicates = function (head) {
-    let dummy = new ListNode(0, head); // Dummy node to handle edge cases
+    // Create a dummy node that points to the head of the list.
+    // This helps in handling edge cases where the head itself might be a duplicate.
+    let dummy = new ListNode(0, head); 
 
+    // 'prev' will always point to the last node before the sequence of duplicates.
     let prev = dummy;
+
+    // 'current' is used to scan through the list.
     let current = head;
 
+    // Traverse the entire list
     while (current) {
+
+        // Skip all nodes that have the same value as 'current'
+        // This loop moves 'current' to the last node of a group of duplicates.
         while (current.next && current.val === current.next.val) {
-            current = current.next; // Skip all duplicates
+            current = current.next;
         }
 
+        // Check if 'prev.next' is still 'current'.
+        // If true, no duplicates were found for 'current', so move 'prev' forward.
         if (prev.next === current) {
-            prev = prev.next; // Move prev forward only if no duplicates were found
+            prev = prev.next;
         } else {
-            prev.next = current.next; // Remove duplicates by linking prev to current.next
+            // If 'prev.next' is not 'current', duplicates were found.
+            // So we skip the entire duplicate sequence by pointing 'prev.next' to 'current.next'.
+            prev.next = current.next;
         }
 
-        current = current.next; // Move to the next node
+        // Move 'current' to the next node to continue the process
+        current = current.next;
     }
 
+    // Return the cleaned-up list, skipping the dummy node
     return dummy.next;
 };
 
@@ -119,51 +134,78 @@ var lengthOfLIS = function (nums) {
  * @return {number}
  */
 var removeDuplicates = function (nums) {
-    let i = 0; // Tracks unique element position
+    // Edge case: if the array is empty, return 0
+    if (nums.length === 0) return 0;
 
-    for (let j = 1; j < nums.length; j++) {
-        if (nums[i] !== nums[j]) {
-            i++;  // Move `i` only when we find a new unique element
-            nums[i] = nums[j];  // Place the unique element at `i`
+    let left = 0;      // Points to the position of the last unique element
+    let count = 1;     // Start with 1 because the first element is always unique
+
+    // Start from the second element and iterate through the array
+    for (let right = 1; right < nums.length; right++) {
+        // If current element is not equal to the last unique element
+        if (nums[right] !== nums[left]) {
+            left++;                        // Move the left pointer forward
+            nums[left] = nums[right];     // Overwrite the duplicate with the new unique element
+            count++;                      // Increase the count of unique elements
         }
+        // If nums[right] === nums[left], do nothing (skip the duplicate)
     }
 
-    return i + 1;  // Length of unique elements
+    // Return the number of unique elements
+    return count;
 };
-
 
 
 /**************************************** RAIN WATER TRAPPING  ********************************
  * Leetcode 5: https://leetcode.com/problems/trapping-rain-water/
 */
 
-// SOLUTION: TWO POINTER METHOD
+// SOLUTION: TWO POINTER METHOD -> O(N)
 
 /**
  * @param {number[]} height
  * @return {number}
  */
 var trap = function (height) {
-    let left = 0; right = height.length - 1;
-    let leftMax = 0; rightMax = 0;
+    // Initialize two pointers: left starts at 0, right starts at the last index
+    let left = 0;
+    let right = height.length - 1;
+    
+    // Initialize variables to store the maximum heights encountered so far from left and right
+    let leftMax = 0;
+    let rightMax = 0;
+    
+    // Variable to store the total trapped water
     let trappedWater = 0;
 
+    // While the two pointers haven't crossed each other
     while (left < right) {
+        // If the height at the left pointer is smaller than the height at the right pointer
         if (height[left] < height[right]) {
+            // Update leftMax to be the greater of the current leftMax or the current height[left]
             leftMax = Math.max(leftMax, height[left]);
-            trappedWater += leftMax - height[left]
+
+            // Calculate the trapped water at the current left position (if any)
+            trappedWater += leftMax - height[left];
+
+            // Move the left pointer to the right
             left++;
         } else {
+            // If the height at the right pointer is smaller or equal to the height at the left pointer
+            // Update rightMax to be the greater of the current rightMax or the current height[right]
             rightMax = Math.max(rightMax, height[right]);
+
+            // Calculate the trapped water at the current right position (if any)
             trappedWater += rightMax - height[right];
+
+            // Move the right pointer to the left
             right--;
         }
     }
 
+    // Return the total trapped water
     return trappedWater;
-
 };
-
 
 
 /************************************** FIBONACCI NUMBERS *************************************************
@@ -299,6 +341,7 @@ var maxSlidingWindow = function (nums, k) {
 console.log(maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3));
 // Output: [3, 3, 5, 5, 6, 7]
 
+
 // SOLUTION 2: DEQUE (DOUBLE ENDED QUEUE) -> O(n)
 
 /**
@@ -344,28 +387,37 @@ var maxSlidingWindow = function (nums, k) {
  * @param {number[][]} matrix
  * @return {number}
  */
-
 var maxMatrixSum = function(matrix) {
 
-    let totalSum = 0;
-    let totalNegativeCount = 0;
-    let minAbsolute = Infinity;
+    let totalSum = 0;                // Total sum of absolute values
+    let totalNegativeCount = 0;     // Count of negative numbers in the matrix
+    let minAbsolute = Infinity;     // Track the smallest absolute value in the matrix
     
-    for(let row of matrix){
-        for(let value of row){
-            totalSum+= Math.abs(value);
-            if(value < 0){
-                totalNegativeCount++;
+    // Loop through every element in the 2D matrix
+    for (let row of matrix) {
+        for (let value of row) {
+            totalSum += Math.abs(value);  // Add absolute value to total sum
+
+            if (value < 0) {
+                totalNegativeCount++;     // Count how many values are negative
             }
-            minAbsolute = Math.min(minAbsolute,Math.abs(value))
+
+            // Update the smallest absolute value seen so far
+            minAbsolute = Math.min(minAbsolute, Math.abs(value));
         }
     }
 
-    if(totalNegativeCount % 2 === 0){
+    // If the number of negative values is even,
+    // we can flip all to positive → maximum sum possible
+    if (totalNegativeCount % 2 === 0) {
         return totalSum;
     }
 
-    return totalSum -2 * minAbsolute;
+    // If there's an odd number of negatives,
+    // one value must remain negative.
+    // To minimize the loss, we leave the smallest absolute value negative.
+    // So we subtract it twice (undo +x and apply -x)
+    return totalSum - 2 * minAbsolute;
 };
 
 
@@ -376,35 +428,45 @@ var maxMatrixSum = function(matrix) {
 // SOLUTION: SLIDING WINDOW + TWO POINTER -> O(N)
 
 /**
- * @param {string} answerKey
- * @param {number} k
- * @return {number}
+ * @param {string} answerKey    // A string of 'T' and 'F' characters
+ * @param {number} k            // Maximum number of flips allowed
+ * @return {number}             // Maximum number of consecutive same answers after flipping
  */
 var maxConsecutiveAnswers = function(answerKey, k) {
-    const n = answerKey.length;
+    
+    // Helper function to calculate max consecutive characters 
+    // we can get by changing at most k characters to 'key'
+    const maxConsecutive = (key) => {
+        let left = 0;           // Start of the sliding window
+        let maxLength = 0;      // Maximum length of valid window
+        let count = 0;          // Number of chars in window that are not equal to 'key'
 
-    // Function to find the longest subarray with at most k changes
-    const maxConsecutiveChar = (key) => {
-        let maxLen = 0, left = 0, count = 0;
+        // Expand the right end of the window
+        for (let right = 0; right < answerKey.length; right++) {
 
-        for (let right = 0; right < n; right++) {
-            if (answerKey[right] !== key) count++; // Count the changes needed
-            
-            // Shrink window if too many changes
-            while (count > k) {
-                if (answerKey[left] !== key) count--; // Restore original count
-                left++;
+            // If current char is not the desired key, count it as a flip
+            if (answerKey[right] !== key) {
+                count++;
             }
 
-            maxLen = Math.max(maxLen, right - left + 1);
+            // If flips exceed allowed 'k', shrink the window from the left
+            while (count > k) {
+                if (answerKey[left] !== key) {
+                    count--;    // Undo a flip
+                }
+                left++;         // Shrink the window
+            }
+
+            // Update the maximum length
+            maxLength = Math.max(maxLength, right - left + 1);
         }
 
-        return maxLen;
-    };
-
-    return Math.max(maxConsecutiveChar('T'), maxConsecutiveChar('F'));
+        return maxLength;
+    }
+    
+    // Try both flipping to all 'T' and all 'F', take the max
+    return Math.max(maxConsecutive('T'), maxConsecutive('F'));
 };
-
 
 
 /**************************************** LARGEST RTECTANGLE IN HISTOGRAM  ********************************
