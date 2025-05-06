@@ -539,20 +539,27 @@ var superEggDrop = function (k, n) {
 // SOLUTION: KADANE'S ALGORITHM -> O(N)
 
 /**
- * @param {number[]} nums
- * @return {number}
+ * @param {number[]} nums - An array of integers
+ * @return {number} - The maximum subarray sum
  */
-function maxSubArray(nums) {
-    let maxSum = nums[0];  // Stores the maximum sum found
-    let currentSum = 0;    // Tracks the current subarray sum
+var maxSubArray = function(nums) {
+    // Initialize maxSum to the first element
+    let maxSum = nums[0];
+    // This will track the current subarray sum
+    let currentSum = 0;
 
     for (let num of nums) {
-        currentSum = Math.max(num, currentSum + num); // Extend or restart subarray
-        maxSum = Math.max(maxSum, currentSum); // Update max sum if needed
+        // Either start a new subarray at this number, or extend the previous one
+        currentSum = Math.max(num, currentSum + num);
+        
+        // Update the maxSum if currentSum is higher
+        maxSum = Math.max(maxSum, currentSum);
     }
 
+    // Return the largest sum found
     return maxSum;
-}
+};
+
 
 // Test Cases
 console.log(maxSubArray([-2,1,-3,4,-1,2,1,-5,4])); // Output: 6
@@ -598,22 +605,23 @@ var judgeSquareSum = function(c) {
 // SOLUTION: TWO POINTER -> O(N)
 
 /**
- * @param {number[]} nums
- * @return {number[]}
+ * @param {number[]} nums - An array of integers
+ * @return {number[]} - The array sorted by parity (evens at the front, odds at the back)
  */
 var sortArrayByParity = function(nums) {
-    let left = 0;
-    let right = nums.length - 1;
+    let left = 0; // Pointer to track where to place the next even number
 
-    while(left <= right){
-        if(nums[left] % 2 === 0){
-            left++; // Even is in the correct place
-        } else {
-            // Swap odd to the right side
+    // Loop through the array with 'right' pointer
+    for (let right = 0; right < nums.length; right++) {
+        // If the current number is even
+        if (nums[right] % 2 === 0) {
+            // Swap the even number at 'right' with the number at 'left'
             [nums[left], nums[right]] = [nums[right], nums[left]];
-            right--; // Now check the swapped value at nums[left] in next iteration
+            // Increment 'left' to move to the next position for the next even number
+            left++;
         }
     }
 
+    // Return the modified array where all even numbers are at the front and odd numbers at the back
     return nums;
 };

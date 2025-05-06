@@ -1,5 +1,5 @@
 /************************************** NEXT GREATER ELEMENT - I  *************************************************
- * Leetcode 1: https://leetcode.com/phttps://leetcode.com/problems/next-greater-element-i/
+ * Leetcode 1: https://leetcode.com/problems/next-greater-element-i/
 */
 
 /************************************** NEXT GREATER ELEMENT II *************************************************
