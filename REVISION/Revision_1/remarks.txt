@@ -4,3 +4,20 @@
      -> use the below condition inside the for loop to skip the duplicate element
      -> if(i > start && candidates[i] === candidates[i-1]) continue
 
+
+
+/************************************** JUMP GAME - II *************************************************
+ * Leetcode 45: https://leetcode.com/problems/jump-game-ii/
+ * 
+ * 🔍 Goal: Find the **minimum number of jumps** needed to reach the last index.
+ * 🧠 Strategy: Use a greedy sliding window approach.
+ * 
+ * ✅ Notes to Remember:
+ * - `currentEnd`: marks the **end of the current jump range** (like right pointer).
+ * - `farthest`: tracks the **farthest index reachable** from current window.
+ * - Each time we reach `currentEnd`, we:
+ *     → increase jump count
+ *     → update `currentEnd = farthest` (slide the window)
+ * 
+ * 🔁 Pattern: Similar to **sliding window** → jump when window ends.
+ */

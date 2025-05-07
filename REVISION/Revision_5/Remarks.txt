@@ -1,0 +1,17 @@
+/************************************** PARTITION LABELS *************************************************
+ * Leetcode 763: https://leetcode.com/problems/partition-labels/
+ * 
+ * 🔍 Goal: Partition string `s` into as many parts as possible 
+ *         so that **each letter appears in only one part**.
+ * 🧠 Strategy: Greedy + two-pointer (sliding window).
+ * 
+ * ✅ Notes to Remember:
+ * - `map`: stores the **last occurrence** of each character.
+ * - `left`: start of current window.
+ * - `right`: end of current window (max of all characters' last positions in this window).
+ * - When `i === right`:
+ *     → all characters in this window are fully contained
+ *     → push partition size and move `left = i + 1`
+ * 
+ * 🔁 Pattern: **Sliding window** defined by [left...right]
+ */

@@ -610,7 +610,7 @@ var canJump = function(nums) {
  * Leetcode 14: https://leetcode.com/problems/jump-game-ii/
 */
 
-// SOLUTION: GREEDY ALGORITHM -> O(N)
+// SOLUTION: SLIDING WINDOW + GREEDY ALGORITHM -> O(N)
 
 /**
  * @param {number[]} nums
@@ -695,7 +695,7 @@ function coinChange(coins, amount) {
 
 
 /************************************** COIN CHANGE - II  *************************************************
- * Leetcode 16: htthttps://leetcode.com/problems/coin-change-ii/
+ * Leetcode 16: https://leetcode.com/problems/coin-change-ii/
 */
 
 // SOLUTION: DYNAMIC PROGRAMMING -> O(amount * coins)
