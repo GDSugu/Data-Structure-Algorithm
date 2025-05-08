@@ -101,26 +101,28 @@ function minSessions(tasks, sessionTime) {
  * @return {number}
  */
 var lengthOfLIS = function (nums) {
-    let sub = [];
+    let increasingSequence = [];
 
     for (let num of nums) {
-        let left = 0, right = sub.length - 1;
+        let left = 0, right = increasingSequence.length - 1;
 
         // Binary search to find the first element >= num
         while (left <= right) {
             let mid = Math.floor((left + right) / 2);
-            if (sub[mid] >= num) right = mid - 1;
+            if (increasingSequence[mid] >= num) right = mid - 1;
             else left = mid + 1;
         }
 
         // If left is within the array, replace; otherwise, append
-        if (left < sub.length) sub[left] = num;
-        else sub.push(num);
+        if (left < increasingSequence.length) {
+            increasingSequence[left] = num;
+        } else {
+            increasingSequence.push(num);
+        }
     }
 
-    return sub.length;
+    return increasingSequence.length;
 };
-
 
 
 /****************************************  REMOVE DUPLICATES FROM THE SORTED ARRAY  ********************************
@@ -609,7 +611,7 @@ var judgeSquareSum = function(c) {
  * @return {number[]} - The array sorted by parity (evens at the front, odds at the back)
  */
 var sortArrayByParity = function(nums) {
-    let left = 0; // Pointer to track where to place the next even number
+    let  left =0; // Pointer to track where to place the next even number
 
     // Loop through the array with 'right' pointer
     for (let right = 0; right < nums.length; right++) {
