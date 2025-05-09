@@ -452,67 +452,65 @@ class Solution {
  * @return {string} - The minimum window in s which contains all characters in t
  */
 var minWindow = function(s, t) {
-    // Edge case: if s is smaller than t, it's impossible
-    if (s.length === 0 || t.length === 0 || s.length < t.length) {
-        return "";
-    }
+    // Edge case: if s or t is empty, or s is smaller than t, return empty string
+    if (s.length === 0 || t.length === 0 || s.length < t.length) return "";
 
-    // Step 1: Build a frequency map for t
+    // Step 1: Build a frequency map for all characters in t
     const targetCounts = new Map();
     for (const char of t) {
         targetCounts.set(char, (targetCounts.get(char) || 0) + 1);
     }
 
-    const required = targetCounts.size; // Number of unique characters to match
-    let formed = 0;                     // Number of unique characters matched with required count
-    const windowCounts = new Map();     // Frequency of characters in current window
+    const required = targetCounts.size; // Number of unique characters in t to match in the window
+    let formed = 0;                     // Number of characters that have the desired frequency in current window
+    const windowCounts = new Map();     // Frequency map for the current sliding window
 
-    let left = 0;
-    let right = 0;
+    let left = 0;                       // Left pointer of the window
+    let minLength = Infinity;          // Minimum length of a valid window found
+    let result = "";                   // Final result to return
 
-    let minLength = Infinity;
-    let result = "";
+    // Step 2: Start sliding the right pointer to expand the window
+    for (let right = 0; right < s.length; right++) {
+        const char = s[right]; // Current character entering the window
 
-    // Step 2: Start expanding the right pointer
-    while (right < s.length) {
-        const char = s[right];
-
-        // Update window count if char is in t
+        // If it's a character we care about (present in t), update its count in window
         if (targetCounts.has(char)) {
             windowCounts.set(char, (windowCounts.get(char) || 0) + 1);
 
-            // If current character count matches required, increment formed
+            // If the count in window matches the required count in target, increment formed
             if (windowCounts.get(char) === targetCounts.get(char)) {
                 formed++;
             }
         }
 
-        // Step 3: Try to shrink from the left as much as possible while valid
+        // Step 3: Try to shrink the window from the left if all characters matched
         while (left <= right && formed === required) {
-            // Update result if smaller window found
+            // Update result if this window is smaller than previously recorded one
             if (right - left + 1 < minLength) {
                 minLength = right - left + 1;
                 result = s.substring(left, right + 1);
             }
 
-            const leftChar = s[left];
+            const leftChar = s[left]; // Character that's going to be removed from window
 
-            // If removing this char, update counts and formed
+            // Update window counts and 'formed' if necessary
             if (targetCounts.has(leftChar)) {
                 windowCounts.set(leftChar, windowCounts.get(leftChar) - 1);
+
+                // If we drop below required frequency, reduce 'formed'
                 if (windowCounts.get(leftChar) < targetCounts.get(leftChar)) {
                     formed--;
                 }
             }
 
-            left++; // Shrink window
+            left++; // Shrink window from the left
         }
-
-        right++; // Expand window
     }
 
+    // Return the smallest valid window found
     return result;
 };
+
 
  
 /**************** FIND ALL THE FIRST INDEX OF THE STRING THAT MATCHES THE PATTERN ****************
