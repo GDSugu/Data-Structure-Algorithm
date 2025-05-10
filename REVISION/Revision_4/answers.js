@@ -519,18 +519,30 @@ var largestRectangleArea = function(heights) {
  * @return {number}
  */
 var superEggDrop = function (k, n) {
+    // dp[i] represents the maximum number of floors that can be tested with i eggs and 'moves' moves
     let dp = new Array(k + 1).fill(0);
-    let moves = 0;
+    
+    let moves = 0; // Total number of moves (attempts) made
 
-    while (dp[k] < n) {  // Keep increasing moves until we can check all n floors
-        moves++;
-        for (let egg = k; egg > 0; egg--) {
-            dp[egg] = dp[egg - 1] + dp[egg] + 1;
+    // Continue until we can check at least 'n' floors using 'k' eggs
+    while (dp[k] < n) {
+        moves++; // Increase the number of allowed moves
+
+        // Update dp from right to left to avoid overwriting dp[i - 1] too early
+        for (let i = k; i > 0; i--) {
+            /*
+             * Transition formula:
+             * dp[i] = dp[i - 1] (egg breaks) + dp[i] (egg survives) + 1 (current floor tested)
+             * This tells how many floors can be tested with 'i' eggs and 'moves' moves.
+             */
+            dp[i] = dp[i - 1] + dp[i] + 1;
         }
     }
 
-    return moves;  // Return after the loop completes
+    // Once dp[k] >= n, we have enough moves to check all floors
+    return moves;
 };
+
 
 
 
