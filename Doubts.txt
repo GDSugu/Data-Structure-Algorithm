@@ -1,0 +1,16 @@
+/************************************** MINIMUM NUMBER OF WORK SESSION TO FINISH THE TASK  *************************************************
+ * Leetcode 2: https://leetcode.com/problems/minimum-number-of-work-sessions-to-finish-the-tasks/description/
+*/
+
+/****************************************  LONGEST INCREASING SUBSEQUENCE  ********************************
+ * Leetcode 3: https://leetcode.com/problems/longest-increasing-subsequence/
+*/
+
+/****************************************  SLIDING WINDOW MAXIMUM  ********************************
+ * Leetcode 9: https://leetcode.com/problems/sliding-window-maximum/
+*/
+
+/**************************************** LARGEST RECTANGLE IN HISTOGRAM  ********************************
+ * Leetcode 12: https://leetcode.com/problems/largest-rectangle-in-histogram/
+*/
+

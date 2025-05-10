@@ -471,7 +471,7 @@ var maxConsecutiveAnswers = function(answerKey, k) {
 };
 
 
-/**************************************** LARGEST RTECTANGLE IN HISTOGRAM  ********************************
+/**************************************** LARGEST RECTANGLE IN HISTOGRAM  ********************************
  * Leetcode 12: https://leetcode.com/problems/largest-rectangle-in-histogram/
 */
 
