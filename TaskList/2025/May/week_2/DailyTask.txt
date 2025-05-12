@@ -8,3 +8,8 @@
  * Leetcode 1: https://leetcode.com/problems/fair-distribution-of-cookies/description/
 */
 Status: completed
+
+/************************************** LARGEST NUMBER *************************************************
+ * Leetcode 2: https://leetcode.com/problems/largest-number/
+*/
+Status: completed

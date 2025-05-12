@@ -5,12 +5,13 @@ DSA Explanation
 https://docs.google.com/spreadsheets/d/1zf02JTnlLbUHzHVT_8oOFHaFZ1161dIc7dxe3UE0KaA/edit?usp=sharing
 
 System Design
-https://www.karanpratapsingh.com/courses/system-design/sql-databases
+https://www.karanpratapsingh.com/courses/system-design/
 
 Backtrack - https://leetcode.com/problem-list/5uyxateg/
 Greedy - https://leetcode.com/problem-list/50f6p33i/
 TwoPointer - https://leetcode.com/discuss/post/1688903/solved-all-two-pointers-problems-in-100-z56cn/
 
+InterviewBit - https://www.interviewbit.com/search/?q=Microsoft
 
 🚀 Must Do DSA Topics
 ✅ Arrays & Strings → Sliding window, Two pointers, Kadane’s Algorithm
