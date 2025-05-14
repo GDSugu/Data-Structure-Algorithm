@@ -119,3 +119,186 @@ var largestNumber = function(nums) {
     // Handle edge case: if the number starts with '0', return "0"
     return result[0] === "0" ? "0" : result;
 };
+
+
+/************************************** MEETING ROOMS II  *************************************************
+ * Geeks 3: https://www.geeksforgeeks.org/problems/attend-all-meetings-ii/1
+*/
+
+// SOLUTION: SORTING + TWO POINTER -> O(N log N)
+
+class Solution {
+    minMeetingRooms(start, end) {
+        // Get the number of meetings
+        let n = start.length;
+
+        // Sort the start and end times independently
+        // This helps us simulate the order of meeting events over time
+        start.sort((a, b) => a - b);
+        end.sort((a, b) => a - b);
+
+        // room: current number of rooms in use
+        // minRoom: maximum number of rooms needed at any time
+        let room = 0;
+        let minRoom = 0;
+
+        // i: pointer to traverse start times
+        // j: pointer to traverse end times
+        let i = 0;
+        let j = 0;
+
+        // Traverse through all the start times
+        while (i < n) {
+            // If a new meeting starts before the earliest current one ends
+            // Then we need an additional room
+            if (start[i] < end[j]) {
+                room++; // Allocate a new room
+                i++;    // Move to next start time
+            } else {
+                // A meeting has ended, free up a room
+                room--;
+                j++;    // Move to next end time
+            }
+
+            // Track the maximum number of rooms ever used at once
+            minRoom = Math.max(minRoom, room);
+        }
+
+        // Return the minimum number of rooms required to host all meetings
+        return minRoom;
+    }
+}
+
+
+/************************************** MAJORITY ELEMENT  *************************************************
+ * Leetcode 4: https://leetcode.com/problems/majority-element/
+*/
+
+// SOLUTION: BOYER-MOORE -> O(N)
+
+/**
+ * @param {number[]} nums - An array of integers
+ * @return {number} - The majority element that appears more than n/2 times
+ */
+var majorityElement = function(nums) {
+    let candidate = null; // Will hold the potential majority element
+    let count = 0;        // Vote counter for the current candidate
+
+    for (let num of nums) {
+        // If count is 0, we choose the current number as a new candidate
+        if (count === 0) {
+            candidate = num;
+        }
+
+        // If the current number is the same as the candidate, increase the count
+        if (num === candidate) {
+            count++;
+        } else {
+            // Otherwise, decrease the count
+            count--;
+        }
+    }
+
+    // After one pass, the candidate is guaranteed to be the majority element
+    return candidate;
+};
+
+
+/************************************** MAJORITY ELEMENT-II  *************************************************
+ * Leetcode 5: https://leetcode.com/problems/majority-element-ii/description/
+*/
+
+// SOLUTION: HASHMAP -> O(N) / SPACE COMPLEXITY -> O(N)
+
+/**
+ * @param {number[]} nums - An array of integers
+ * @return {number[]} - An array of elements that appear more than ⌊n/3⌋ times
+ */
+var majorityElement = function(nums) {
+
+    let result = []; // Array to store the elements that appear more than n/3 times
+    let map = new Map(); // Map to keep track of the frequency of each element
+
+    // Step 1: Count the frequency of each element in the array
+    for (let num of nums) {
+        // If the number already exists in the map, increment its count, otherwise set it to 1
+        map.set(num, (map.get(num) || 0) + 1);
+    }
+
+    // Step 2: Determine the threshold for majority elements (⌊n/3⌋)
+    let size = Math.floor(nums.length / 3);
+
+    // Step 3: Iterate through the map to find elements that appear more than ⌊n/3⌋ times
+    for (let [num, count] of map) {
+        // If the count of the current number exceeds the threshold, add it to the result array
+        if (count > size) {
+            result.push(num);
+        }
+    }
+
+    // Return the result array containing the majority elements
+    return result;
+};
+
+
+// SOLUTION: BOYER-MOORE -> O(N) / SPACE COMPLEXITY -> O(1)
+
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var majorityElement = function(nums) {
+    let result = [];
+
+    // Initialize two potential candidates for majority elements
+    let candidate1 = null;
+    let candidate2 = null;
+
+    // Counts for the candidates
+    let count1 = 0;
+    let count2 = 0;
+
+    // First pass: find potential candidates using Boyer-Moore Voting Algorithm (modified for n/3 case)
+    for (let num of nums) {
+        if (num === candidate1) {
+            // If num matches candidate1, increment count1
+            count1++;
+        } else if (num === candidate2) {
+            // If num matches candidate2, increment count2
+            count2++;
+        } else if (count1 === 0) {
+            // If count1 is 0, assign new candidate1
+            candidate1 = num;
+            count1 = 1;
+        } else if (count2 === 0) {
+            // If count2 is 0, assign new candidate2
+            candidate2 = num;
+            count2 = 1;
+        } else {
+            // If num doesn't match either candidate and both counts are non-zero, decrement both
+            count1--;
+            count2--;
+        }
+    }
+
+    // Reset counts for actual validation
+    count1 = 0;
+    count2 = 0;
+
+    // Second pass: count actual occurrences of the two candidates
+    for (let num of nums) {
+        if (num === candidate1) count1++;
+        if (num === candidate2) count2++;
+    }
+
+    // Compute the threshold for majority (more than ⌊n/3⌋ times)
+    let size = Math.floor(nums.length / 3);
+
+    // Include candidates in result if they appear more than n/3 times
+    if (count1 > size) result.push(candidate1);
+    if (candidate2 !== candidate1 && count2 > size) result.push(candidate2); // Avoid duplicates
+
+    return result;
+};
+
+

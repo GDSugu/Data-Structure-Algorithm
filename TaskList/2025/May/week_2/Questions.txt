@@ -1,3 +1,19 @@
 /************************************** FAIR DISTRIBUTION OF COOKIES  *************************************************
  * Leetcode 1: https://leetcode.com/problems/fair-distribution-of-cookies/description/
 */
+
+/************************************** LARGEST NUMBER *************************************************
+ * Leetcode 2: https://leetcode.com/problems/largest-number/
+*/
+
+/************************************** MEETING ROOMS II  *************************************************
+ * Geeks 3: https://www.geeksforgeeks.org/problems/attend-all-meetings-ii/1
+*/
+
+/************************************** MAJORITY ELEMENT  *************************************************
+ * Leetcode 4: https://leetcode.com/problems/majority-element/
+*/
+
+/************************************** MAJORITY ELEMENT-II  *************************************************
+ * Leetcode 5: https://leetcode.com/problems/majority-element-ii/description/
+*/
