@@ -360,3 +360,28 @@ var generateMatrix = function(n) {
 };
 
 
+/************************************** SPIRAL MATRIX-II  *************************************************
+ * Leetcode 7: https://leetcode.com/problems/missing-number/
+*/
+
+// SOLUTION: MATHEMATICAL APPROACH -> O(N) && O(1)
+
+/**
+ * @param {number[]} nums - An array containing n distinct numbers from 0 to n, missing one number
+ * @return {number} - The missing number in the range [0, n]
+ */
+var missingNumber = function(nums) {
+    // Step 1: Find the length of the array (which is n)
+    let n = nums.length;
+
+    // Step 2: Calculate the expected sum of numbers from 0 to n using the formula: n * (n + 1) / 2
+    let expectedSum = (n * (n + 1)) / 2;
+
+    // Step 3: Calculate the actual sum of elements present in the array
+    let actualSum = nums.reduce((acc, num) => acc + num, 0);
+
+    // Step 4: The missing number is the difference between expected and actual sum
+    return expectedSum - actualSum;
+};
+
+
