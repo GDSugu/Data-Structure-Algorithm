@@ -302,3 +302,61 @@ var majorityElement = function(nums) {
 };
 
 
+/************************************** SPIRAL MATRIX-II  *************************************************
+ * Leetcode 6: https://leetcode.com/problems/spiral-matrix-ii/
+*/
+
+// SOLUTION: O(N^2)
+
+/**
+ * @param {number} n
+ * @return {number[][]}
+ */
+var generateMatrix = function(n) {
+    // Step 1: Create an empty n x n matrix
+    let matrix = Array.from({ length: n }, () => new Array(n));
+
+    // Step 2: Define the boundaries of the spiral traversal
+    let left = 0, right = n - 1;
+    let top = 0, bottom = n - 1;
+
+    // Step 3: Start filling numbers from 1 to n*n
+    let num = 1;
+
+    // Step 4: Continue the spiral traversal while boundaries are valid
+    while (left <= right && top <= bottom) {
+
+        // 👉 Traverse from Left to Right on the top row
+        for (let i = left; i <= right; i++) {
+            matrix[top][i] = num++;
+        }
+        top++; // Move the top boundary down
+
+        // 👉 Traverse from Top to Bottom on the right column
+        for (let i = top; i <= bottom; i++) {
+            matrix[i][right] = num++;
+        }
+        right--; // Move the right boundary left
+
+        // 👉 Traverse from Right to Left on the bottom row (only if still within bounds)
+        if (top <= bottom) {
+            for (let i = right; i >= left; i--) {
+                matrix[bottom][i] = num++;
+            }
+            bottom--; // Move the bottom boundary up
+        }
+
+        // 👉 Traverse from Bottom to Top on the left column (only if still within bounds)
+        if (left <= right) {
+            for (let i = bottom; i >= top; i--) {
+                matrix[i][left] = num++;
+            }
+            left++; // Move the left boundary right
+        }
+    }
+
+    // Step 5: Return the filled spiral matrix
+    return matrix;
+};
+
+

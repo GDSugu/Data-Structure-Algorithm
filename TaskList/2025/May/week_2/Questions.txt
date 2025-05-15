@@ -17,3 +17,7 @@
 /************************************** MAJORITY ELEMENT-II  *************************************************
  * Leetcode 5: https://leetcode.com/problems/majority-element-ii/description/
 */
+
+/************************************** SPIRAL MATRIX-II  *************************************************
+ * Leetcode 6: https://leetcode.com/problems/spiral-matrix-ii/
+*/
