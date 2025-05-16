@@ -385,3 +385,40 @@ var missingNumber = function(nums) {
 };
 
 
+/************************************** HOTEL BOOKING  *************************************************
+ * Interview Bit 8: https://www.interviewbit.com/problems/hotel-bookings-possible/
+*/
+
+// SOLUTION: SORTING + TWO POINTER -> O(N log N)
+
+function hotelBooking(A, B, C){
+    // Step 1: Sort the arrival and departure arrays
+    A.sort((a, b) => a - b);
+    B.sort((a, b) => a - b);
+
+    let guest = 0; // Keeps track of the number of guests currently staying
+    let i = 0;     // Pointer for arrivals
+    let j = 0;     // Pointer for departures
+
+    // Step 2: Traverse both arrays using two pointers
+    while(i < A.length && j < B.length){
+        if(A[i] <= B[j]){
+            // A guest arrives before the next guest leaves (or at same time)
+            guest++; // Need one more room
+
+            // If at any time the guests exceed available rooms, return 0
+            if(guest > C){
+                return 0;
+            }
+
+            i++; // Move to next arrival
+        } else {
+            // A guest has left before the next arrives
+            guest--; // Room freed
+            j++;     // Move to next departure
+        }
+    }
+
+    // All guests accommodated without exceeding available rooms
+    return 1;
+}

@@ -25,3 +25,8 @@
 /************************************** SPIRAL MATRIX-II  *************************************************
  * Leetcode 7: https://leetcode.com/problems/missing-number/
 */
+
+/************************************** HOTEL BOOKING  *************************************************
+ * Interview Bit 8: https://www.interviewbit.com/problems/hotel-bookings-possible/
+*/
+

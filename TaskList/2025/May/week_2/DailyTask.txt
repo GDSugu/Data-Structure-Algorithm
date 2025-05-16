@@ -53,3 +53,8 @@ Status: completed
  * Leetcode 2: https://leetcode.com/problems/missing-number/
 */
 Status: completed
+
+/************************************** HOTEL BOOKING  *************************************************
+ * Interview Bit 3: https://www.interviewbit.com/problems/hotel-bookings-possible/
+*/
+Status: completed
