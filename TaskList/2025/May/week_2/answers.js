@@ -422,3 +422,82 @@ function hotelBooking(A, B, C){
     // All guests accommodated without exceeding available rooms
     return 1;
 }
+
+
+/************************************** PALINDROMIC SUBSTRING  *************************************************
+ * Leetcode 9: https://leetcode.com/problems/palindromic-substrings/
+*/
+
+// SOLUTION: TWO POINTER -> O(N^2)
+
+/**
+ * @param {string} s - Input string
+ * @return {number} - Total number of palindromic substrings in the input string
+ */
+var countSubstrings = function(s) {
+    let count = 0; // Counter to keep track of all palindromic substrings
+
+    /**
+     * Helper function to expand around a center and count palindromes.
+     * @param {number} left - Left index of the center
+     * @param {number} right - Right index of the center
+     */
+    function palindrome(left, right) {
+        // Expand outward while the characters at left and right match,
+        // and indices stay within bounds
+        while (left >= 0 && right < s.length && s[left] === s[right]) {
+            count++;   // Found a valid palindrome
+            left--;    // Move left pointer outward
+            right++;   // Move right pointer outward
+        }
+    }
+
+    // Loop through each character in the string
+    for (let i = 0; i < s.length; i++) {
+        palindrome(i, i);     // Check for odd-length palindromes (center at i)
+        palindrome(i, i + 1); // Check for even-length palindromes (center between i and i+1)
+    }
+
+    return count; // Return the total count of palindromic substrings
+};
+
+
+/************************************** CONTAINER WITH MOST WATER  *************************************************
+ * Leetcode 10: https://leetcode.com/problems/container-with-most-water/
+*/
+
+// SOLUTION: TWO POINER -> O(n)
+
+/**
+ * @param {number[]} height - Array of heights representing vertical lines
+ * @return {number} - The maximum area of water that can be contained
+ */
+var maxArea = function(height) {
+    let left = 0; // Pointer starting from the beginning of the array
+    let right = height.length - 1; // Pointer starting from the end of the array
+
+    let maxArea = 0; // Variable to keep track of the maximum area found so far
+
+    // Continue until the two pointers meet
+    while (left < right) {
+        // Find the minimum height between the two pointers
+        let minHeight = Math.min(height[left], height[right]);
+
+        // Width is the distance between the two pointers
+        let width = right - left;
+
+        // Calculate area and update maxArea if this one is larger
+        maxArea = Math.max(maxArea, minHeight * width);
+
+        // Move the pointer pointing to the shorter line inward
+        // This is because moving the taller one won't help increase the area
+        if (height[left] < height[right]) {
+            left++; // Move left pointer to the right
+        } else {
+            right--; // Move right pointer to the left
+        }
+    }
+
+    // Return the maximum area found
+    return maxArea;
+};

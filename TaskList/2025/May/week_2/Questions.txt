@@ -30,3 +30,10 @@
  * Interview Bit 8: https://www.interviewbit.com/problems/hotel-bookings-possible/
 */
 
+/************************************** PALINDROMIC SUBSTRING  *************************************************
+ * Leetcode 9: https://leetcode.com/problems/palindromic-substrings/
+*/
+
+/************************************** CONTAINER WITH MOST WATER  *************************************************
+ * Leetcode 10: https://leetcode.com/problems/container-with-most-water/
+*/

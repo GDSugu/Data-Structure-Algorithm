@@ -58,3 +58,18 @@ Status: completed
  * Interview Bit 3: https://www.interviewbit.com/problems/hotel-bookings-possible/
 */
 Status: completed
+
+            ################################################################################
+            #                     🌟  16 | May | 2025  🌟                               #
+            #                          📅  Friday 📅                                    #
+            ################################################################################
+
+/************************************** PALINDROMIC SUBSTRING  *************************************************
+ * Leetcode 1: https://leetcode.com/problems/palindromic-substrings/
+*/
+Status: completed
+
+/************************************** CONTAINER WITH MOST WATER  *************************************************
+ * Leetcode 2: https://leetcode.com/problems/container-with-most-water/
+*/
+Status: completed
