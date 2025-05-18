@@ -22,7 +22,7 @@
  * Leetcode 6: https://leetcode.com/problems/spiral-matrix-ii/
 */
 
-/************************************** SPIRAL MATRIX-II  *************************************************
+/************************************** MISSING NUMBER  *************************************************
  * Leetcode 7: https://leetcode.com/problems/missing-number/
 */
 

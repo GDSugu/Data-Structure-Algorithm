@@ -49,7 +49,7 @@ Status: completed
 */
 Status: completed
 
-/************************************** SPIRAL MATRIX-II  *************************************************
+/************************************** MISSING NUMBER *************************************************
  * Leetcode 2: https://leetcode.com/problems/missing-number/
 */
 Status: completed

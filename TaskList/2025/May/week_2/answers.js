@@ -360,7 +360,7 @@ var generateMatrix = function(n) {
 };
 
 
-/************************************** SPIRAL MATRIX-II  *************************************************
+/************************************** MISSING NUMBER  *************************************************
  * Leetcode 7: https://leetcode.com/problems/missing-number/
 */
 
