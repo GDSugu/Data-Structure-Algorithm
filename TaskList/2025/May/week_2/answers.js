@@ -501,3 +501,210 @@ var maxArea = function(height) {
     // Return the maximum area found
     return maxArea;
 };
+
+
+/************************************** MAXIMIXE MINIMUM PAIR SUM IN ARRAY  *************************************************
+ * Leetcode 11: https://leetcode.com/problems/minimize-maximum-pair-sum-in-array/
+*/
+
+// SOLUTION: SORTING + TWO POINTER -> O(N log N)
+
+/**
+ * @param {number[]} nums - An array of integers of even length
+ * @return {number} - The minimized maximum pair sum after optimal pairing
+ */
+var minPairSum = function(nums) {
+    // Step 1: Sort the array in ascending order
+    // This helps us pair the smallest elements with the largest to balance the sums
+    nums.sort((a, b) => a - b);
+
+    // Initialize two pointers: one at the start, one at the end
+    let left = 0;
+    let right = nums.length - 1;
+
+    // Variable to keep track of the maximum pair sum found so far
+    let maxSum = 0;
+
+    // Step 2: Use two pointers to form pairs (smallest + largest)
+    while (left < right) {
+        // Calculate current pair sum
+        let sum = nums[left] + nums[right];
+
+        // Update maxSum if this pair sum is greater than the current max
+        maxSum = Math.max(sum, maxSum);
+
+        // Move both pointers towards the center
+        left++;
+        right--;
+    }
+
+    // Step 3: Return the minimized maximum pair sum
+    return maxSum;
+};
+
+
+/************************************** LONGEST PALINDROMIC SUBSTRING  *************************************************
+ * Leetcode 12: https://leetcode.com/problems/longest-palindromic-substring/description/
+*/
+
+// SOLUTION: TWO POINTER -> O(n^2)
+
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var longestPalindrome = function (s) {
+    // Initialize start and end pointers of the longest palindrome found so far
+    let start = 0, end = 0;
+
+    // Helper function to expand around the given center indices (left, right)
+    function expandAroundCenter(left, right) {
+        // Expand while characters at left and right are the same and indices are valid
+        while (left >= 0 && right < s.length && s[left] === s[right]) {
+            // If the current palindrome length is greater than the previously recorded one
+            if (right - left > end - start) {
+                // Update the start and end pointers to this new longer palindrome
+                start = left;
+                end = right;
+            }
+            // Move outwards to check the next possible palindrome bounds
+            left--;
+            right++;
+        }
+    }
+
+    // Loop over each character in the string
+    for (let i = 0; i < s.length; i++) {
+        // Check for odd-length palindromes (single character center)
+        expandAroundCenter(i, i);
+
+        // Check for even-length palindromes (center between two characters)
+        expandAroundCenter(i, i + 1);
+    }
+
+    // Return the longest palindromic substring found using start and end indices
+    return s.slice(start, end + 1);
+};
+
+
+/************************************** 3 SUM CLOSEST  *************************************************
+ * Leetcode 13: https://leetcode.com/problems/3sum-closest/description/
+*/
+
+// SOLUTION: SORTING + TWO POINTER -> O(n log n)
+
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+var threeSumClosest = function(nums, target) {
+    nums.sort((a, b) => a - b); // Sort the array
+    
+    let closestSum = nums[0] + nums[1] + nums[2]; // Initialize with first 3 elements sum
+    
+    for (let i = 0; i < nums.length - 2; i++) {
+        let left = i + 1;
+        let right = nums.length - 1;
+        
+        while (left < right) {
+            const currentSum = nums[i] + nums[left] + nums[right];
+            
+            // Update closestSum if currentSum is closer to target
+            if (Math.abs(currentSum - target) < Math.abs(closestSum - target)) {
+                closestSum = currentSum;
+            }
+            
+            if (currentSum === target) {
+                // Perfect match found, return immediately
+                return currentSum;
+            } else if (currentSum < target) {
+                // Need a bigger sum, move left pointer right
+                left++;
+            } else {
+                // Need a smaller sum, move right pointer left
+                right--;
+            }
+        }
+    }
+    
+    return closestSum;
+};
+
+
+/************************************** REMOVE DUPLICATES FROM SORTED ARRAY II  *************************************************
+ * Leetcode 14: https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/description/
+*/
+
+// SOLUTION: TWO POINTER -> O(n)
+
+/**
+ * @param {number[]} nums - Sorted array of integers
+ * @return {number} - Length of array after removing extra duplicates (keeping at most 2 of each)
+ */
+var removeDuplicates = function(nums) {
+    let i = 0; // Pointer for the position to insert the next valid element
+
+    for (let n of nums) {
+        // If we already have at least two elements in the result,
+        // and the current element is the same as the element two positions before,
+        // then it's the third (or more) occurrence — skip it.
+        if (i >= 2 && n === nums[i - 2]) continue;
+
+        // Otherwise, it's valid to keep the element
+        nums[i] = n;
+        i++; // Move pointer forward
+    }
+
+    // i is the new length of the modified array with at most two duplicates per unique element
+    return i;
+};
+
+
+/************************************** ROTATE ARRAY  *************************************************
+ * Leetcode 15: https://leetcode.com/problems/rotate-array/description/
+*/
+
+// SOLUTION: THREE REVERSE TECHNIQUE -> O(n)
+
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {void} Do not return anything, modify nums in-place instead.
+ */
+var rotate = function(nums, k) {
+    const n = nums.length;
+    k = k % n;  // Ensure k is within bounds
+
+    // Helper function to reverse part of array in-place
+    const reverse = (start, end) => {
+        while (start < end) {
+            [nums[start], nums[end]] = [nums[end], nums[start]];
+            start++;
+            end--;
+        }
+    };
+
+    // Step 1: Reverse the whole array
+    reverse(0, n - 1);
+    // Step 2: Reverse first k elements
+    reverse(0, k - 1);
+    // Step 3: Reverse the rest
+    reverse(k, n - 1);
+};
+
+
+/************************************** REVERSE WORDS IN A STRING  *************************************************
+ * Leetcode 16: https://leetcode.com/problems/reverse-words-in-a-string/description/
+*/
+
+// SOLUTION: REGULAR EXPRESSION -> O(n)
+
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var reverseWords = function(s) {
+    return s.trim().split(/\s+/).reverse().join(" ");
+};
+

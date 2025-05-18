@@ -73,3 +73,43 @@ Status: completed
  * Leetcode 2: https://leetcode.com/problems/container-with-most-water/
 */
 Status: completed
+
+            ################################################################################
+            #                     🌟  17 | May | 2025  🌟                               #
+            #                          📅  Saturday 📅                                  #
+            ################################################################################
+
+/************************************** PALINDROMIC SUBSTRING  *************************************************
+ * Leetcode 1: https://leetcode.com/problems/minimize-maximum-pair-sum-in-array/
+*/
+Status: completed
+
+/************************************** LONGEST PALINDROMIC SUBSTRING  *************************************************
+ * Leetcode 2: https://leetcode.com/problems/longest-palindromic-substring/description/
+*/
+Status: completed
+
+/************************************** 3 SUM CLOSEST  *************************************************
+ * Leetcode 3: https://leetcode.com/problems/3sum-closest/description/
+*/
+Status: completed
+
+/************************************** REMOVE DUPLICATES FROM SORTED ARRAY II  *************************************************
+ * Leetcode 4: https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/description/
+*/
+Status: completed
+
+            ################################################################################
+            #                     🌟  18 | May | 2025  🌟                               #
+            #                          📅  Sunday   📅                                  #
+            ################################################################################
+
+/************************************** ROTATE ARRAY  *************************************************
+ * Leetcode 1: https://leetcode.com/problems/rotate-array/description/
+*/
+Status: completed
+
+/************************************** REVERSE WORDS IN A STRING  *************************************************
+ * Leetcode 2: https://leetcode.com/problems/reverse-words-in-a-string/description/
+*/
+Status: completed
