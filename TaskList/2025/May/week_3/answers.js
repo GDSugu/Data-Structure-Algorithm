@@ -27,7 +27,7 @@ var minimumSteps = function(s) {
 };
 
 
-/************************************** SEPARATE BLACK AND WHITE BALLS  *************************************************
+/************************************** FIND MINIMUM IN ROTATED SORTED ARRAY  *************************************************
  * Leetcode 2: https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/description/
 */
 
