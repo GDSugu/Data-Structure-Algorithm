@@ -1,0 +1,14 @@
+            ################################################################################
+            #                     🌟  19 | May | 2025  🌟                               #
+            #                          📅  Monday 📅                                    #
+            ################################################################################
+
+/************************************** SEPARATE BLACK AND WHITE BALLS  *************************************************
+ * Leetcode 1: https://leetcode.com/problems/separate-black-and-white-balls/description/
+*/
+Status: completed
+
+/************************************** SEPARATE BLACK AND WHITE BALLS  *************************************************
+ * Leetcode 2: https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/description/
+*/
+Status: completed
