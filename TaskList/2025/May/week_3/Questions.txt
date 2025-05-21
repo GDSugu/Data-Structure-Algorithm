@@ -21,3 +21,7 @@
 /************************************** REMOVE DUPLICATE LETTERS  *************************************************
  * Leetcode 6: https://leetcode.com/problems/remove-duplicate-letters/description/
 */
+
+/************************************** DIVIDE ARRAY IN SETS OF K CONSECUTIVE NUMBERS  *************************************************
+ * Leetcode 7: https://leetcode.com/problems/divide-array-in-sets-of-k-consecutive-numbers/description/
+*/

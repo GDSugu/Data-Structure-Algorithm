@@ -37,3 +37,8 @@ Status: completed
  * Leetcode 4: https://leetcode.com/problems/remove-duplicate-letters/description/
 */
 Status: completed
+
+/************************************** DIVIDE ARRAY IN SETS OF K CONSECUTIVE NUMBERS  *************************************************
+ * Leetcode 5: https://leetcode.com/problems/divide-array-in-sets-of-k-consecutive-numbers/description/
+*/
+Status: completed

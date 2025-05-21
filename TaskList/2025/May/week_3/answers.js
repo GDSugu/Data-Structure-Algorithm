@@ -262,3 +262,52 @@ var removeDuplicateLetters = function(s) {
     // Step 4: Join the stack to form the result string
     return stack.join('');
 };
+
+
+/************************************** DIVIDE ARRAY IN SETS OF K CONSECUTIVE NUMBERS  *************************************************
+ * Leetcode 7: https://leetcode.com/problems/divide-array-in-sets-of-k-consecutive-numbers/description/
+*/
+
+// SOLUTION: HASHMAP + SORTING + GREEDY O(n + m log m + m * k)
+
+/**
+ * @param {number[]} nums - Array of integers
+ * @param {number} k - Size of each consecutive group
+ * @return {boolean} - True if nums can be divided into sets of k consecutive numbers
+ */
+var isPossibleDivide = function(nums, k) {
+
+    // If total number of elements isn't divisible by k, division into equal groups is impossible
+    if (nums.length % k !== 0) return false;
+
+    let map = new Map();
+
+    // Count the frequency of each number in the array
+    for (let num of nums) {
+        map.set(num, (map.get(num) || 0) + 1);
+    }
+
+    // Sort the unique numbers to always start forming groups from the smallest
+    let sorted = Array.from(map.keys()).sort((a, b) => a - b);
+
+    // Try to form groups starting from each unique number
+    for (let num of sorted) {
+        let count = map.get(num);
+
+        if (count === 0) continue; // If all of this number has been used, skip
+
+        // Try to build a group of k consecutive numbers starting from `num`
+        for (let i = 0; i < k; i++) {
+            let current = num + i;
+
+            // If any of the required numbers is missing or not enough to match `count`, return false
+            if ((map.get(current) || 0) < count) return false;
+
+            // Subtract `count` from each number in the sequence since we're forming `count` groups
+            map.set(current, map.get(current) - count);
+        }
+    }
+
+    // If all groups were successfully formed, return true
+    return true;
+};
