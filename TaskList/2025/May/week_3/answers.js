@@ -57,3 +57,105 @@ var findMin = function(nums) {
     // When left == right, we've found the minimum
     return nums[left];
 };
+
+
+/************************************** FIND PEAK ELEMENT  *************************************************
+ * Leetcode 3: https://leetcode.com/problems/find-peak-element/
+*/
+
+// SOLUTION: BINARY SERACH -> O(log n)
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var findPeakElement = function(nums) {
+    // Initialize pointers to the start and end of the array
+    let left = 0;
+    let right = nums.length - 1;
+
+    // Binary search loop
+    while (left < right) {
+        // Find the middle index
+        let mid = Math.floor((left + right) / 2);
+
+        // Compare middle element with its right neighbor
+        if (nums[mid] < nums[mid + 1]) {
+            // If mid is less than mid+1, peak must be on the right side
+            left = mid + 1;
+        } else {
+            // If mid is greater than or equal to mid+1, peak is on the left side (including mid)
+            right = mid;
+        }
+    }
+
+    // At the end, left and right will point to the peak element
+    return left;
+};
+
+
+/************************************** FIND FIRST AND LAST POSITION OF ELEMENT  *************************************************
+ * Leetcode 4: https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/
+*/
+
+// SOLUTION: BINARY SEARCH -> O(log n)
+
+/**
+ * @param {number[]} nums - The sorted array
+ * @param {number} target - The number we are searching for
+ * @return {number[]} - The first and last index of target, or [-1, -1] if not found
+ */
+var searchRange = function(nums, target) {
+
+    // Function to find the first occurrence (leftmost index) of the target
+    function findFirst(nums, target) {
+        let left = 0;
+        let right = nums.length - 1;
+        let index = -1; // Store the result if target is found
+
+        // Binary search loop
+        while (left <= right) {
+            let mid = Math.floor((left + right) / 2);
+
+            if (nums[mid] === target) {
+                index = mid;      // Record the index
+                right = mid - 1;  // Keep searching on the left side
+            } else if (nums[mid] < target) {
+                left = mid + 1;   // Move right
+            } else {
+                right = mid - 1;  // Move left
+            }
+        }
+
+        return index;
+    }
+
+    // Function to find the last occurrence (rightmost index) of the target
+    function findLast(nums, target) {
+        let left = 0;
+        let right = nums.length - 1;
+        let index = -1; // Store the result if target is found
+
+        // Binary search loop
+        while (left <= right) {
+            let mid = Math.floor((left + right) / 2);
+
+            if (nums[mid] === target) {
+                index = mid;     // Record the index
+                left = mid + 1;  // Keep searching on the right side
+            } else if (nums[mid] < target) {
+                left = mid + 1;  // Move right
+            } else {
+                right = mid - 1; // Move left
+            }
+        }
+
+        return index;
+    }
+
+    // Call both functions to get start and end index
+    let start = findFirst(nums, target);
+    let end = findLast(nums, target);
+
+    return [start, end];
+};

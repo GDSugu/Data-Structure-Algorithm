@@ -12,3 +12,18 @@ Status: completed
  * Leetcode 2: https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/description/
 */
 Status: completed
+
+            ################################################################################
+            #                     🌟  21 | May | 2025  🌟                               #
+            #                          📅  Wednesday 📅                                 #
+            ################################################################################
+
+/************************************** FIND PEAK ELEMENT  *************************************************
+ * Leetcode 1: https://leetcode.com/problems/find-peak-element/
+*/
+Status: completed
+
+/************************************** FIND FIRST AND LAST POSITION OF ELEMENT  *************************************************
+ * Leetcode 2: https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/
+*/
+Status: completed
