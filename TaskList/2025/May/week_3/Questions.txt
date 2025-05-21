@@ -13,3 +13,11 @@
 /************************************** FIND FIRST AND LAST POSITION OF ELEMENT  *************************************************
  * Leetcode 4: https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/
 */
+
+/************************************** SMALLEST SUBSEQUENCE OF DISTINCT CHARACTER  *************************************************
+ * Leetcode 5: https://leetcode.com/problems/smallest-subsequence-of-distinct-characters/
+*/
+
+/************************************** REMOVE DUPLICATE LETTERS  *************************************************
+ * Leetcode 6: https://leetcode.com/problems/remove-duplicate-letters/description/
+*/

@@ -159,3 +159,106 @@ var searchRange = function(nums, target) {
 
     return [start, end];
 };
+
+
+/************************************** SMALLEST SUBSEQUENCE OF DISTINCT CHARACTER  *************************************************
+ * Leetcode 5: https://leetcode.com/problems/smallest-subsequence-of-distinct-characters/
+*/
+
+// SOLUTION: GREEDY + MONOTONIC INCREASING STACK + SET
+
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var smallestSubsequence = function(s) {
+    // Step 1: Count frequency of each character
+    let count = new Map();
+    for (let char of s) {
+        count.set(char, (count.get(char) || 0) + 1);
+    }
+
+    let seen = new Set();  // Tracks characters already added to result
+    let stack = [];        // Used to build the result (monotonic stack)
+
+    // Step 2: Traverse each character in the string
+    for (let ch of s) {
+        // Decrease the frequency as we've seen this character now
+        count.set(ch, count.get(ch) - 1);
+
+        // If character is already in result, skip it
+        if (seen.has(ch)) continue;
+
+        // Step 3: Maintain lexicographical order
+        // While stack is not empty,
+        // and current char is smaller than top of stack (for lex order),
+        // and the top character still appears later in the string
+        while (
+            stack.length &&
+            ch < stack[stack.length - 1] &&
+            count.get(stack[stack.length - 1]) > 0
+        ) {
+            // Remove top of stack from both stack and seen
+            seen.delete(stack.pop());
+        }
+
+        // Step 4: Add current char to stack and mark it as seen
+        stack.push(ch);
+        seen.add(ch);
+    }
+
+    // Step 5: Join the stack to form the final result string
+    return stack.join('');
+};
+
+
+/************************************** REMOVE DUPLICATE LETTERS  *************************************************
+ * Leetcode 6: https://leetcode.com/problems/remove-duplicate-letters/description/
+*/
+
+// SOLUTION: GREEDY + MONOTONIC INCREASING STACK + SET
+
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var removeDuplicateLetters = function(s) {
+    let map = new Map(); // To count the frequency of each character in the string
+
+    // Step 1: Count how many times each character appears
+    for (let char of s) {
+        map.set(char, (map.get(char) || 0) + 1);
+    }
+
+    let stack = [];       // Stack to store the final result characters
+    let set = new Set();  // Set to track which characters are already in the stack
+
+    // Step 2: Iterate through the string
+    for (let ch of s) {
+        // Decrease the remaining count of the current character
+        map.set(ch, map.get(ch) - 1);
+
+        // If the character is already in the stack, skip it
+        if (set.has(ch)) continue;
+
+        // Step 3: Maintain lexicographical order and uniqueness
+        // Remove characters from the stack if:
+        // - The current character is smaller (to get lexicographically smaller string)
+        // - The character at the top of the stack will appear again later (safe to remove)
+        while (
+            stack.length &&
+            ch < stack[stack.length - 1] &&
+            map.get(stack[stack.length - 1]) > 0
+        ) {
+            // Remove the character from the set and stack
+            set.delete(stack.pop());
+        }
+
+        // Add the current character to the stack and mark it as seen
+        stack.push(ch);
+        set.add(ch);
+    }
+
+    // Step 4: Join the stack to form the result string
+    return stack.join('');
+};

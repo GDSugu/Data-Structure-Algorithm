@@ -27,3 +27,13 @@ Status: completed
  * Leetcode 2: https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/
 */
 Status: completed
+
+/************************************** SMALLEST SUBSEQUENCE OF DISTINCT CHARACTER  *************************************************
+ * Leetcode 3: https://leetcode.com/problems/smallest-subsequence-of-distinct-characters/
+*/
+Status: completed
+
+/************************************** REMOVE DUPLICATE LETTERS  *************************************************
+ * Leetcode 4: https://leetcode.com/problems/remove-duplicate-letters/description/
+*/
+Status: completed
