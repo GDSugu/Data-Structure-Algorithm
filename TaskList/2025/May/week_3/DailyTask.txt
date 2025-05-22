@@ -42,3 +42,33 @@ Status: completed
  * Leetcode 5: https://leetcode.com/problems/divide-array-in-sets-of-k-consecutive-numbers/description/
 */
 Status: completed
+
+            ################################################################################
+            #                     🌟  22 | May | 2025  🌟                               #
+            #                          📅  Thursday 📅                                  #
+            ################################################################################
+
+/************************************** TIME BASED KEY - VALUE STORE  *************************************************
+ * Leetcode 1: https://leetcode.com/problems/time-based-key-value-store/description/
+*/
+Status: completed
+
+/************************************** FIRST BAD VERSION  *************************************************
+ * Leetcode 2: https://leetcode.com/problems/first-bad-version/
+*/
+Status: completed
+
+/************************************** FIRST SMALLEST LETTER GREATER THAN TARGET  *************************************************
+ * Leetcode 3: https://leetcode.com/problems/find-smallest-letter-greater-than-target/
+*/
+Status: completed
+
+/************************************** AGGRESSIVE COWS  *************************************************
+ * Geeks 4: https://www.geeksforgeeks.org/problems/aggressive-cows/1
+*/
+Status: completed
+
+/************************************** ALLOCATE MINIMUM PAGES  *************************************************
+ * Geeks 5: https://www.geeksforgeeks.org/problems/allocate-minimum-number-of-pages0937/1
+*/
+Status: completed
