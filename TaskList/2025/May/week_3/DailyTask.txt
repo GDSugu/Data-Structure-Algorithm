@@ -72,3 +72,13 @@ Status: completed
  * Geeks 5: https://www.geeksforgeeks.org/problems/allocate-minimum-number-of-pages0937/1
 */
 Status: completed
+
+            ################################################################################
+            #                     🌟  23 | May | 2025  🌟                               #
+            #                          📅  FRIDAY 📅                                    #
+            ################################################################################
+
+/************************************** TIME BASED KEY - VALUE STORE  *************************************************
+ * Leetcode 1: https://leetcode.com/problems/time-based-key-value-store/description/
+*/
+Status: completed
