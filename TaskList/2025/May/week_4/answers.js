@@ -49,3 +49,41 @@ var lemonadeChange = function(bills) {
     // Successfully gave change to all customers
     return true;
 };
+
+
+/************************************** LEMONADE CHANGE  *************************************************
+ * Leetcode 2: https://leetcode.com/problems/assign-cookies/description/
+*/
+
+// SOLUTION: O(n log n + m log m)
+
+/**
+ * Finds the maximum number of children who can be contented with the given cookies.
+ * @param {number[]} g - Array of greed factors of children.
+ * @param {number[]} s - Array of cookie sizes.
+ * @return {number} - Maximum number of content children.
+ */
+var findContentChildren = function(g, s) {
+    // Sort the greed factors in ascending order
+    g.sort((a, b) => a - b);
+    // Sort the cookie sizes in ascending order
+    s.sort((a, b) => a - b);
+
+    // Initialize pointers for children and cookies
+    let child = 0;  // Index for children
+    let cookie = 0; // Index for cookies
+
+    // Loop through both arrays until we reach the end of one of them
+    while (child < g.length && cookie < s.length) {
+        // If the current cookie can satisfy the current child's greed factor
+        if (s[cookie] >= g[child]) {
+            // Move to the next child, as this child is content now
+            child++;
+        }
+        // Move to the next cookie in either case
+        cookie++;
+    }
+
+    // Return the number of children that have been contented
+    return child;
+};

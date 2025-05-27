@@ -7,3 +7,8 @@
  * Leetcode 1: https://leetcode.com/problems/lemonade-change/description/
 */
 Status: completed
+
+/************************************** LEMONADE CHANGE  *************************************************
+ * Leetcode 2: https://leetcode.com/problems/assign-cookies/description/
+*/
+Status: completed
