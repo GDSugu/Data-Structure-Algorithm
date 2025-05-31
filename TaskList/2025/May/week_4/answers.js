@@ -51,7 +51,7 @@ var lemonadeChange = function(bills) {
 };
 
 
-/************************************** LEMONADE CHANGE  *************************************************
+/************************************** ASSIGN COOKIES  *************************************************
  * Leetcode 2: https://leetcode.com/problems/assign-cookies/description/
 */
 
